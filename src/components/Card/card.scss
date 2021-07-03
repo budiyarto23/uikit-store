@@ -1,0 +1,194 @@
+.badges {
+  box-sizing: border-box;
+  display: inline-block;
+  background: #E9F5FF;
+  color: #2296FF;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+  // padding: .40rem 1rem .45rem;
+  padding: .45rem .70rem .30rem;
+  line-height: inherit;
+  font-family: "Heebo", sans-serif;
+  font-weight: 600 !important;
+}
+
+.badges--free {
+  background: #DEFBEA !important;
+  color: #25C469 !important;
+}
+
+.dollar-price {
+
+  box-sizing: border-box;
+  display: inline-block;
+  background: rgba(255, 106, 142, 0.1) !important;
+  color: #FF6A8E !important;
+  border-radius: 4px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  margin-left: 10px;
+  padding: .45rem .70rem .30rem;
+  line-height: inherit;
+  font-family: "Heebo", sans-serif;
+  font-weight: 600 !important;
+}
+
+.divider-horizontal {
+  height: .5px;
+  width: auto;
+  margin-left: 10px !important;
+  margin-right: 10px !important;
+  background: #EEE !important;
+  margin-bottom: 20px !important;
+}
+
+.responsive-img {
+  width: 100%;
+  height: 15vw !important;
+  object-fit: cover !important;
+}
+
+.embed-responsive .card-img-top {
+  width: 100% !important;
+  height: 240px !important;
+  object-fit: cover !important;
+  border-radius: 10px 10px 0 0 !important;
+}
+
+// Card Product
+
+.card-product {
+  display: flex;
+  margin-bottom: 2rem;
+  width: 100%;
+  // box-shadow: 4px 12px 26px 20px rgba(156, 178, 197, 0.1), 0px 2px 3px rgba(217, 219, 225, 0.3);
+  // box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3);
+  background-color: #FFF;
+  border: 1px solid #EEE !important;
+  border-radius: 10px;
+
+  .card-item-product {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow: hidden;
+    transition: transform 0.5s;
+    -webkit-transition: transform 0.5s;
+
+    &:hover {
+      .embed-responsive {
+        overflow: hidden !important;
+        border-radius: 10px 10px 0px 0px;
+      }
+
+      .card-img-top {
+        transform: scale(1.1);
+        transition: 0.50s transform ease-in-out;
+      }
+    }
+  }
+
+  .card-text-product {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #57575A;
+    padding-left: 10px !important;
+  }
+
+  // Content
+  .card-info-product {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+    padding: 16px 12px 20px 12px;
+    line-height: 1.5em;
+  }
+
+  .card-title-product {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+    color: #3f3f3f;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    margin-top: 6px;
+
+    &:hover {
+      color: #2296FF;
+    }
+  }
+
+}
+
+@media (max-width: 576px) {
+
+  .card-product {
+
+    .card-text-product {
+      font-size: 15px;
+      line-height: 18px;
+      padding-left: 0px !important;
+    }
+
+    .card-title-product {
+      font-size: 20px;
+      line-height: 24px;
+      padding-left: 0px !important;
+      padding-right: 0px !important;
+      margin-top: 6px;
+    }
+
+  }
+
+  .embed-responsive .card-img-top {
+    height: 30vh !important;
+  }
+
+  .badges {
+    font-size: 15px;
+    margin-left: 0px;
+    padding: .30rem .90rem .35rem;
+    font-weight: 600 !important;
+  }
+
+  // .badges--free {
+  //   background: rgba(34, 150, 255, 0.1) !important;
+  //   color: #2296FF !important;
+  // }
+
+  .dollar-price {
+    font-size: 16px !important;
+  }
+
+  .divider-horizontal {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+  }
+
+  .responsive-img {
+    width: 100%;
+    height: 10vw !important;
+    object-fit: cover !important;
+  }
+
+}
+
+@media screen and (max-width: 900px) and (min-width: 577px) {
+
+  .embed-responsive .card-img-top {
+    width: 100% !important;
+    height: 210px !important;
+    object-fit: cover !important;
+    border-radius: 10px 10px 0 0 !important;
+  }
+  
+}

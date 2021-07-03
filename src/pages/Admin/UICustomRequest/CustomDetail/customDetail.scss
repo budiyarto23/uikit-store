@@ -1,0 +1,90 @@
+.radioPad {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+  width: 50%;
+
+  &__wrapper {
+    display: block;
+    cursor: pointer;
+    background: blue !important;
+    color: white;
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    margin: 0.5rem;
+    padding: 3rem;
+    text-align: center;
+
+    &:active,
+    &--selected {
+      background-color: skyblue !important;
+    }
+
+    // &:hover {
+    //     background: blueviolet !important;
+    // }
+  }
+
+  &__radio {
+    visibility: hidden;
+    height: 0;
+    width: 0;
+    opacity: 0;
+  }
+}
+
+input[type="radio"].form-check-input.custom-radio {
+  border: 3px solid #cbcbcb !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin-top: 2px;
+  margin-left: 12px;
+  margin-right: 16px;
+}
+
+.frame-follup-option {
+  border-radius: 4px;
+  height: 42px;
+  width: 160px;
+  background-color: #fff;
+  border: 2px solid #ddd;
+  margin-right: 16px;
+  &.actived {
+    background-color: #2296ff !important;
+    border: 2px solid #2296ff;
+  }
+}
+
+.label-custom-style {
+  color: #57575a;
+  font-family: "Heebo", sans-serif;
+  text-align: center;
+  font-weight: 500;
+  padding-right: 12px;
+  &.actived {
+    color: #fff !important;
+  }
+}
+
+.badge-status-confirm {
+  box-sizing: border-box;
+  display: inline-block;
+  background: #ebebeb;
+  color: #57575a;
+  border-radius: 6px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+  margin-left: 10px;
+  padding: 0.45rem 0.9rem 0.5rem;
+  line-height: inherit;
+  font-family: "Heebo", sans-serif;
+  &.confirm {
+    background: #e9f5ff;
+    color: #2296ff;
+  }
+  &.reject {
+    background: #f7e6e6;
+    color: #ab0808;
+  }
+}

@@ -1,0 +1,178 @@
+.request-title {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #18191f;
+    margin-bottom: 20px;
+  }
+  
+  .frame-request-custom {
+    background: #FFF;
+    border-radius: 10px;
+    border: 1px solid #EEE;
+  }
+  
+  .note-request-custom {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #57575a;
+    margin-bottom: 20px;
+  }
+
+  textarea {
+      height: 90px !important;
+  }
+  
+  .badges-product-category {
+    font-family: "Heebo", sans-serif !important;
+    box-sizing: border-box;
+    display: inline-block;
+    background: rgba(163, 106, 255, 0.1);
+    color: #a36aff;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 12px;
+    padding: 2px 6px 2px 6px;
+    line-height: inherit;
+    margin-bottom: 10px !important;
+    font-weight: normal;
+}
+  
+.frame-title-confirm {
+  width: auto;
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  color: #3f3f3f;
+}
+
+.bg-title-confirm {
+  background-color: #FFF;
+  border-radius: 10px 10px 0px 0px;
+  padding: 0px 20px 0px 20px;
+  height: 60px;
+  border-bottom: 1px solid #EEE !important;
+}
+
+.divider-title-custom {
+  height: .5px;
+  width: auto;
+  background: #EEE;
+  z-index: 1000;
+}
+
+.divider-confirm {
+  height: .5px;
+  width: auto;
+  background: #eee;
+}
+
+.price-frame {
+  border-radius: 0px 0px 10px 10px;
+  background: rgba(34, 150, 255, 0.01);
+  border-top: .5px solid #EEF7FF;
+}
+
+.link-see-detail {
+  padding: 14px 20px 14px 20px;
+  font-family: "Heebo", sans-serif;
+  font-size: 16px;
+  padding-bottom: 25px;
+}
+
+.title-price-custom {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 26px;
+  color: #57575a;
+  padding: 12px 12px 0px 20px;
+}
+
+.price-custom-idr {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #FEB019; 
+  margin-bottom: -8px;
+  padding: 0px 4px 0px 20px;
+}
+
+.price-custom-free {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 20px;
+  text-align: center;
+  color: #25C469; 
+  margin-bottom: -8px;
+  padding: 0px 4px 0px 20px;
+}
+
+.price-custom-usd {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 15px;
+  line-height: 30px;
+  color: #FEB019;
+  margin-bottom: -8px;
+  margin-left: -12px;
+  padding: 0px 4px 0px 20px;
+}
+
+.note-payment-confirm {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  color: #57575a;
+  margin-top: -10px;
+  margin-bottom: 20px;
+}
+
+.form-request {
+  padding: 30px 20px 40px 20px;
+}
+
+@media (max-width: 768px) {
+
+  .price-custom-idr {
+    font-size: 20px;
+    line-height: 26px;
+  }
+  
+  .price-custom-usd {
+    font-size: 16px;
+    line-height: 30px;
+  }
+
+  .link-see-detail {
+    padding: 10px 0px 14px 20px;
+    font-size: 14px;
+    padding-bottom: 20px;
+  }
+
+  .note-request-custom {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    color: #57575a;
+    margin-top: -2px;
+    margin-bottom: 20px;
+  }
+
+}

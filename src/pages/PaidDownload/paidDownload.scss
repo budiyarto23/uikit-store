@@ -1,0 +1,459 @@
+.frame-paid-download {
+    background: #FFF;
+    border-radius: 10px;
+    border: 1px solid #EEE;
+    padding-bottom: 54px !important;
+}
+
+.frame-paid-download-1 {
+    background: #FFF;
+    border-radius: 10px;
+    border: 1px solid #EEE;
+}
+
+.note-paid-download {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #57575a;
+    margin-top: -10px;
+}
+
+.paid-title {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 28px;
+    line-height: 32px;
+    color: #18191f;
+    margin-bottom: 6px;
+}
+
+.paid-subtitle {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 26px;
+    color: #57575A;
+}
+
+.bg-title-paid {
+    background-color: #FFF;
+    border-radius: 10px 10px 0px 0px;
+    padding: 0px 20px 0px 20px;
+    height: 60px;
+    border-bottom: 1px solid #EEE;
+}
+
+.frame-title-paid {
+    width: auto;
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 30px;
+    color: #3f3f3f;
+}
+
+.divider-title-paid {
+    height: 0.5px !important;
+    width: 100%;
+    background-color: #eee;
+}
+
+.see-detail-paid {
+    padding: 10px 14px 0px 0px;
+    font-family: "Heebo", sans-serif;
+    font-size: 16px;
+    // padding-bottom: 12px;
+}
+
+.frame-standart-price {
+    margin: 16px 16px 0px 16px;
+    min-width: 140px;
+    max-width: 300px;
+}
+
+.title-price {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 15px;
+    line-height: 26px;
+    color: #57575A;
+}
+
+.standart-price-idr {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    // line-height: 18px;
+    color: #FEB019;
+}
+
+.standart-price-usd {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    // line-height: 14px;
+    color: #FEB019;
+    margin-left: 4px;
+}
+
+.price-divider-paid {
+    height: .5px;
+    width: auto;
+    background-color: #EEE;
+    margin-bottom: 14px;
+}
+
+.price-not-paid {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    text-align: center;
+    color: #25C469; 
+    margin-bottom: -8px;
+  }
+
+.frame-buyout {
+    margin: 16px;
+}
+
+.buyout-option-title {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #18191f;
+    // margin-top: 12px;
+}
+
+.buyout-option-decsription {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 18px;
+    color: #3F3F3F;
+    margin-top: 4px;
+    max-width: 400px;
+}
+
+.buyout-price-idr {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 14px;
+    color: #18191F;
+    margin-top: 16px;
+
+    &:last-child {
+        margin-left: 8px;
+    }
+}
+
+.hack-btn-buyout {
+    color: #2296FF;
+    font-weight: 500;
+    font-family: "Heebo", sans-serif;
+    border: 1px solid #2296FF !important;
+    font-size: 14px;
+    min-height: 36px !important;
+    margin-top: 16px;
+    width: 110px;
+    margin-bottom: 8px;
+
+    &:hover {
+        color: #2296FF !important;
+    }
+}
+
+.title-free-note {
+    font-family: "Heebo", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    color: #18191F;
+    text-align: center;
+    margin-top: 12px !important;
+    margin-bottom: 6px !important;
+}
+
+.subtitle-free-note {
+    font-family: "Heebo", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    color: #3f3f3f;
+    text-align: center;
+    margin-bottom: 26px !important;
+    max-width: 400px !important;
+}
+
+.hack-btn-buyout.added {
+    background-color: #2296FF !important;
+    color: #FFF;
+    transition: ease 1s;
+    &:hover {
+        color: #FFF !important;
+    }
+}
+
+.frame-paid-form {
+    margin: 30px 20px -20px 20px;
+}
+
+.product-title-paid {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    color: #18191f;
+}
+
+.product-subtitle-paid {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 22px;
+    color: #3f3f3f;
+    margin-top: 6px;
+}
+
+.divider-price {
+    height: 1px;
+    width: auto;
+    background: #eee;
+    margin: 15px 0 10px 0;
+}
+
+.title-price-paid {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #57575a;
+}
+
+.price-paid {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 30px;
+    color: #2296ff;
+    margin-top: -10px;
+    margin-bottom: -14px;
+}
+
+.frame-paid-payment {
+    margin: 10px 20px -20px 20px;
+}
+
+.product-title-payment {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 32px;
+    color: #18191f;
+}
+
+.note-paid-payment {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 20px;
+    color: #57575a !important;
+    margin-right: 12px;
+}
+
+.note-paid-payment-info {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 16px;
+    color: #57575a;
+    margin-right: 12px;
+    margin-top: 8px;
+}
+
+.frame-payment-option {
+    margin-top: 16px;
+    border: 1.2px solid #EEE;
+    background-color: #fbfbfd;
+    height: 54px;
+    padding: 0 14px 0 14px;
+    border-radius: 4px;
+    &.actived {
+        border: 2px solid #2296FF !important;
+    }
+}
+
+.payment-label {
+    font-family: "Heebo", sans-serif;
+    font-size: 18px;
+    color: #57575A;
+    font-weight: 500;
+    padding-left: 12px;
+    &.text-actived {
+        color: #2296FF;
+    }
+}
+
+input[type="radio"] {
+    border: 3px solid #cbcbcb;
+    width: 20px;
+    height: 20px;
+}
+
+.title-payment {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    width: 190px;
+    color: #57575a;
+    margin-right: 40px;
+}
+
+.value-payment {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 26px;
+    color: #18191f;
+}
+
+.total-value-payment {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 26px;
+    color: #FEB019;
+}
+
+.value-payment-not-selected {
+    font-family: "Heebo", sans-serif;
+    font-style: italic;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    color: #7e7e7e;
+}
+
+.note-before-checkout {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #57575a;
+    margin-top: 18px;
+    margin-bottom: 18px;
+}
+
+.buy-now-button {
+    width: 100%;
+}
+
+@media (max-width: 576px) {
+
+    .title-payment {
+        font-family: "Heebo", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 20px;
+        width: 126px !important;
+        color: #57575a;
+        margin-right: 30px;
+    }
+
+    .buy-now-button {
+        // margin-top: 20px;
+        width: 100%;
+    }
+
+    .value-payment {
+        font-family: "Heebo", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 14px;
+        line-height: 20px;
+        color: #18191f;
+    }
+
+    .total-value-payment {
+        font-family: "Heebo", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 22px;
+        color: #FEB019;
+    }
+
+    .value-payment-not-selected {
+        font-size: 14px;
+        line-height: 20px;
+        color: #7E7E7E;
+    }
+}
+
+
+@media screen and (max-width: 996px) and (min-width: 577px) {
+    .title-payment {
+        font-family: "Heebo", sans-serif;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        width: 150px !important;
+        color: #57575a;
+        margin-right: 30px;
+    }
+
+    .buy-now-button {
+        margin-top: 20px;
+        width: 100%;
+    }
+
+    .value-payment {
+        font-family: "Heebo", sans-serif;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 20px;
+        color: #18191f;
+    }
+
+    .total-value-payment {
+        font-family: "Heebo", sans-serif;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 18px;
+        line-height: 22px;
+        color: #FEB019;
+    }
+
+    .value-payment-not-selected {
+        font-size: 16px;
+        line-height: 20px;
+        color: #7E7E7E;
+    }
+}

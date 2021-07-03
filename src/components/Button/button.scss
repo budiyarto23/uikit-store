@@ -1,0 +1,29 @@
+.btn {
+  color: #fff;
+  font-family: "Heebo", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  min-height: 46px !important;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 10px !important;
+}
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open>.dropdown-toggle.btn-primary {
+  color: #fff;
+  background-color: #0084F5;
+  border-color: #0084F5;
+  box-shadow: 0px 6px 12px rgba(34, 150, 255, 0.25);
+  transition: linear 1s;
+}
+
+@media (max-width: 576px) {
+  .btn {
+    font-size: 15px;
+    min-height: 44px;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+}

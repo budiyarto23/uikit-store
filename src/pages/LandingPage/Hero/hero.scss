@@ -1,0 +1,248 @@
+.default-margin-from-navbar {
+  margin-top: 90px;
+}
+
+.header-title {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 42px;
+  line-height: 64px;
+  color: #18191F;
+  margin-top: 90px;
+}
+
+.note-divider {
+  height: 74px;
+  width: 4px;
+  border-radius: 10px;
+  background-color: #FEB019;
+}
+
+.header-subtitle {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 18px;
+  align-items: center;
+  color: #909193;
+  margin-left: 20px;
+  width: 450px;
+}
+
+.hero-feature-1 {
+  height: 66px;
+  border-radius: 100px;
+  background-color: #feb019;
+  box-shadow: 4px 8px 12px 5px rgba(254, 176, 25, 0.08);
+}
+
+.hero-title-feature {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 20px;
+  color: #ffffff;
+  margin-top: 16px;
+}
+
+.icon-feature {
+  width: 50px;
+  height: 50px;
+}
+
+.hero-feature-container {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 34px 18px 34px 18px;
+  box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3), 4px 12px 26px 20px rgba(156, 178, 197, 0.1);
+
+  &.hack-margin {
+    margin-top: -90px;
+  }
+}
+
+.hero-title-feature-1 {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 28px;
+  color: #3f3f3f;
+  margin-top: 16px;
+  margin-bottom: 4px;
+}
+
+.hero-subtitle-feature-1 {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 15px;
+  line-height: 22px;
+  color: #57575A;
+}
+
+.btn-outline-primary {
+  border: 2px solid #2296FF !important;
+}
+
+.btn-outline-primary:hover {
+  background-color: #E9F4FF !important;
+  border: 2px solid #2296FF !important;
+}
+
+.border-cstm {
+  border: 2px solid #FAFAFA;
+  border-radius: 6px;
+  max-width: 440px;
+}
+
+.btn-small-1 {
+  width: 200px;
+  font-size: 16px;
+  height: 54px;
+  margin: 30px 20px 60px 0px;
+}
+
+.btn-small-2 {
+  width: 200px;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  height: 54px;
+  margin: 30px 0px 60px 0px;
+  color: #2296FF !important;
+  padding-left: 12px !important;
+  padding-right: 12px !important;
+  line-height: 40px !important;
+}
+
+
+@media (max-width: 576px) {
+  .header-title {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px !important;
+    line-height: 52px;
+    color: #18191F;
+    margin-top: 40px;
+  }
+
+  .hero-title-feature {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+    color: #ffffff;
+    margin-top: 16px;
+  }
+
+  .btn-small-1 {
+    font-size: 15px !important;
+    height: 56px !important;
+  }
+
+  a.btn.btn-outline-primary.btn-small-2 {
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    height: 56px !important;
+    line-height: 40px !important;
+    color: #2296FF !important;
+  }
+
+  .bg-button {
+    justify-content: center;
+  }
+
+  .border-cstm {
+    border: 2px solid #FAFAFA;
+    border-radius: 6px;
+  }
+
+  .header-subtitle {
+    font-size: 15px;
+    align-items: center;
+    color: #909193;
+    margin-left: 20px;
+    max-width: 340px;
+  }
+
+  .hero-feature-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 34px 18px 34px 18px;
+    box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3), 4px 12px 26px 20px rgba(156, 178, 197, 0.1);
+
+    &.hack-margin {
+      margin-top: 30px;
+    }
+
+    &.hack-margin-1 {
+      margin-top: 30px;
+    }
+  }
+}
+
+
+@media screen and (max-width: 996px) and (min-width: 577px) {
+  .hack-margin-md-screen {
+    margin-top: 120px !important;
+  }
+
+  .bg-button {
+    justify-content: center;
+  }
+  
+  .header-title {
+    font-size: 36px !important;
+    line-height: 52px;
+    max-width: 500px;
+    margin: auto;
+    text-align: center;
+    margin-top: -50px !important;
+  }
+
+  .btn-small-1 {
+    width: 200px;
+    font-size: 14px;
+  }
+
+  .btn-small-2 {
+    width: 200px;
+    font-weight: 400;
+    padding-left: 12px;
+    padding-right: 12px;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+  }
+
+  .border-cstm {
+    margin: auto;
+    width: 460px;
+  }
+
+  .header-subtitle {
+    margin-left: 20px;
+    width: 450px;
+  }
+
+  .hero-title-feature {
+    font-size: 20px;
+  }
+
+  .hero-feature-container {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 34px 18px 34px 18px;
+    box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3), 4px 12px 26px 20px rgba(156, 178, 197, 0.1);
+
+    &.hack-margin {
+      margin-top: -100px;
+    }
+
+    &.hack-margin-1 {
+      margin-top: 0px;
+    }
+  }
+
+}

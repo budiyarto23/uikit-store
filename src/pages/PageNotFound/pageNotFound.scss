@@ -1,0 +1,46 @@
+.img-page-not-found {
+    width: 300px !important;
+    height: 210px !important;
+    margin-top: 120px !important;
+}
+
+.title-not-found {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 30px;
+    line-height: 53px;
+    color: #18191f;
+    margin-top: -24px;
+}
+
+.subtitle-not-found {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 26px;
+    color: #3F3F3F;
+    margin-bottom: 30px;
+}
+
+@media (max-width: 576px) {
+    .mobile-view {
+        height: 100vh !important;
+    }
+    
+    .img-page-not-found {
+        width: 200px !important;
+        height: 170px !important;
+    }
+    
+    .title-not-found {
+        font-size: 24px;
+        line-height: 24px;
+        margin-bottom: 12px;
+    }
+    
+    .subtitle-not-found {
+        font-size: 16px;
+    }
+}

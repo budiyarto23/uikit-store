@@ -1,0 +1,64 @@
+.payment-title {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 32px;
+  color: #18191F;
+  margin-bottom: 30px;
+}
+
+.payment-subtitle {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  // font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+  color: #3F3F3F;
+  max-width: 360px;
+  margin-bottom: 40px;
+}
+
+.frame-payment-confirm {
+  background: #FFF;
+  border-radius: 10px;
+  border: 1px solid #EEE !important;
+  padding-top: 40px !important;
+  padding-bottom: 54px !important;
+  margin-top: 50px;
+}
+
+.frame-confirm-section {
+  padding-left: 70px;
+  padding-right: 70px;
+}
+
+.note-payment-confirm {
+  font-family: "Heebo", sans-serif;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  color: #57575a;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+  .frame-confirm-section {
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-bottom: 40px !important;
+  }
+
+  .hack-margin-responsive {
+    padding-top: 5px !important;
+  }
+
+  .payment-subtitle {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-size: 16px;
+    line-height: 20px;
+    max-width: 300px;
+  }
+}

@@ -1,0 +1,69 @@
+.register-decoration {
+    height: 370px;
+    background-color: #2296FF;
+    position: relative;
+    z-index: -2;
+}
+
+.logo-reg {
+    position: absolute;
+    margin-top: -320px;
+}
+
+.frame-register {
+    background: #FFF;
+    border-radius: 10px;
+    border: 1px solid #EEE !important;
+    padding-top: 40px !important;
+    padding-bottom: 54px !important;
+    margin-bottom: 50px;
+}
+
+.title-register {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    text-align: center;
+    color: #18191F;
+    margin-bottom: 10px;
+}
+
+.subtitle-register {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 20px;
+    text-align: center;
+    color: #57575A;
+    // max-width: 300px;
+}
+
+.frame-form {
+    margin: 24px 50px 24px 50px;
+    margin-top: 40px;
+}
+
+.forgot-password {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #909193;
+    margin-top: -10px !important;
+}
+
+@media (max-width: 576px) {
+    .frame-form {
+        margin: 24px 20px 24px 20px;
+        margin-top: 40px;
+    }
+
+    .subtitle-register {
+        max-width: 300px !important;
+        line-height: 24px;
+    }
+}

@@ -1,0 +1,138 @@
+.pricing-title {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 36px;
+    line-height: 45px;
+    color: #18191F;
+    margin-bottom: 25px;
+    max-width: 500px;
+}
+
+.pricing-subtitle {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 22px;
+    color: #3F3F3F;
+    margin-bottom: 70px;
+}
+
+.frame-pricing {
+    margin-bottom: 30px;
+    padding: 30px 20px 40px 20px;
+    border-radius: 10px;
+    border: 1px solid #EEE;
+    background-color: #FFF;
+
+    &.premium {
+        background-color: #2296FF !important;
+    }
+}
+
+.badges-pricing {
+    box-sizing: border-box;
+    display: inline-block;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    padding: .45rem .70rem .30rem;
+    line-height: inherit;
+    font-family: "Heebo", sans-serif;
+    font-weight: 600 !important;
+    width: 100px;
+
+    &.free {
+        background: rgba(222, 251, 234, 1);
+        color: rgba(37, 196, 105, 1);
+        width: 120px;
+    }
+
+    &.premium {
+        background: rgba(234, 234, 234, 0.295);
+        color: #FFF;
+        width: 120px;
+    }
+
+    &.buyout-option {
+        background: rgba(233, 245, 255, 1);
+        color: #2296FF;
+        width: 180px;
+    }
+}
+
+.title-pricing {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 22px;
+    line-height: 30px;
+    color: #18191F;
+    margin-top: 25px;
+
+    &.premium {
+        color: #FFF !important;
+    }
+}
+
+.subtitle-pricing {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 18px;
+    line-height: 22px;
+    color: #18191F;
+    margin-top: 12px;
+    margin-bottom: 22px;
+
+    &.premium {
+        color: #FFF !important;
+    }
+}
+
+.frame-feature-items:not(:first-child) {
+    margin-top: 20px !important;
+}
+
+.option-feature-icon {
+    width: 18px;
+    height: 18px;
+}
+
+.option-feature-name {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 20px;
+    color: #3F3F3F;
+    margin-left: 12px;
+
+    &.premium {
+        color: #FFF !important;
+    }
+}
+
+
+@media (max-width: 576px) {
+    .pricing-title {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 15px;
+        max-width: 600px;
+    }
+
+    .pricing-subtitle {
+        font-size: 18px;
+        line-height: 22px;
+        color: #3F3F3F;
+        max-width: 300px;
+        margin: auto;
+        margin-bottom: 40px !important;
+    }
+
+}
+
+@media screen and (max-width: 996px) and (min-width: 577px) {}
