@@ -6,7 +6,8 @@ import {
   // ADD_KIT_SUCCESS,
   MODAL_OPEN,
   MODAL_CLOSE,
-  LOGOUT_SUCCESS
+  LOGOUT_SUCCESS,
+  GET_KITS
 } from "./types";
 
 export const closeModal = () => (dispatch) => {
@@ -46,13 +47,14 @@ export const loginUserAPI = (data) => (dispatch) => {
       .auth()
       .signInWithEmailAndPassword(data.email, data.password)
       .then((res) => {
-        console.log("login berhasil ", res);
+        // console.log("isi datanya ", res);
         const dataUser = {
           email: res.user.email,
           uid: res.user.uid,
           emailVerified: res.user.emailVerified,
           refreshToken: res.user.refreshToken,
         };
+        // console.log("login berhasil ", dataUser);
         dispatch({ type: CHANGE_ISLOADING, value: false });
         dispatch({ type: CHANGE_ISLOGIN, value: true });
         dispatch({ type: CHANGE_USER, value: dataUser });
@@ -95,9 +97,10 @@ export const addNewKit = (data) => (dispatch) => {
 
     Promise.all(promises)
       .then((fileDownloadUrls) => {
-        const idLocalStorage = localStorage.getItem("userId");
+        const idLocalStorage = JSON.parse(localStorage.getItem("userId"));
+        console.log(idLocalStorage);
         database
-          .ref("uicollcetions/" + idLocalStorage)
+          .ref(`ui-collections/${idLocalStorage}`)
           .push({
             date: data.date,
             status: data.status,
@@ -128,3 +131,23 @@ export const addNewKit = (data) => (dispatch) => {
     reject(false);
   });
 };
+
+export const getUiKits = (userId) => (dispatch) => {
+  const kitsUrl = database.ref(`ui-collections/${userId}`);
+  return new Promise((resolve, reject) => {
+    kitsUrl.on('value', function(snapshot) {
+      // console.log("isi data ", snapshot.val())
+      const data =[];
+      // eslint-disable-next-line
+      Object.keys(snapshot.val()).map((key => {
+        data.push({
+          id: key,
+          data: snapshot.val()[key]
+        })
+      }))
+      dispatch({ type: GET_KITS, value: data });
+      console.log("isi data ", data)
+      resolve(snapshot.val())
+    })
+  })
+}

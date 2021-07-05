@@ -6,6 +6,7 @@ import InputFile from "components/Form/InputFile/InputFile";
 import Button from "components/Button";
 import Modal from "components/Modal/Modal";
 import Header from "pages/LandingPage/Header/Header";
+import Footer from "pages/LandingPage/Footer/footer";
 
 import ConfirmIcon from "assets/icons/confirm-payment-success-ic.svg";
 
@@ -31,7 +32,7 @@ export default function PaymentConfirm() {
     <div style={{ background: "#FFFBF8", height: "auto" }}>
       <Header />
       <div className="container-fluid hack-margin-responsive pb-5">
-        <div className="row justify-content-center">
+        <div className="row justify-content-center" style={{ marginBottom: 150 }}>
           <div
             className="col col-xl-5 col-lg-5 col-md-7 col-sm-12"
           >
@@ -87,6 +88,7 @@ export default function PaymentConfirm() {
             </div>
           </div>
         </div>
+        <Footer />
       </div>
     </div>
   );

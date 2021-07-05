@@ -9,7 +9,6 @@ import "firebase/storage";
     databaseURL: "https://portfolio-project-e2099-default-rtdb.asia-southeast1.firebasedatabase.app",
     projectId: "portfolio-project-e2099",
     storageBucket: "portfolio-project-e2099.appspot.com",
-    // storageBucket: "gs://portfolio-project-e2099.appspot.com",
     messagingSenderId: "816873428080",
     appId: "1:816873428080:web:200b3bf2da777ff12250b5"
   };

@@ -5,7 +5,8 @@ import {
   ADD_KIT_SUCCESS,
   MODAL_OPEN,
   MODAL_CLOSE,
-  LOGOUT_SUCCESS
+  LOGOUT_SUCCESS,
+  GET_KITS,
 } from "../action/types";
 
 const initialState = {
@@ -13,6 +14,7 @@ const initialState = {
   isLogin: false,
   user: {},
   modalOpen: false,
+  kitsCollection: [],
 };
 
 const reducer = (state = initialState, action) => {
@@ -46,9 +48,14 @@ const reducer = (state = initialState, action) => {
       return {
         ...state,
         modalOpen: action.value,
-      }
-      case LOGOUT_SUCCESS:
-        return state
+      };
+    case LOGOUT_SUCCESS:
+      return state;
+    case GET_KITS:
+      return {
+        ...state,
+        kitsCollection: action.value,
+      };
     default:
       return state;
   }

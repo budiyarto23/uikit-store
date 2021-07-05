@@ -1,19 +1,29 @@
 import React, { useState, useEffect } from "react";
 import { useHistory } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./uiCollection.scss";
 import AdminHeader from "pages/Admin/AdminHeader/index";
 import FormText from "components/Form/FormText/FormText";
 import Button from "components/Button";
 import PageNotFound from "pages/PageNotFound";
+import { getUiKits } from "config/redux/action";
 
 function UICollection({ data }) {
-  // const maxLengthDesc = 50;
+  const maxLengthDesc = 50;
   const [search, setSearch] = useState("");
+  const kitsData = useSelector(state => state.kitsCollection)
+  const dispatch = useDispatch();
+
+  
+  const renderUiKits = () => {
+    const userId = JSON.parse(localStorage.getItem("userId"));
+    dispatch(getUiKits(userId));  
+  }
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    // localStorage.getItem("userId");
+    renderUiKits();
   }, []);
 
   const handlerSeaarch = (event) => {
@@ -89,7 +99,7 @@ function UICollection({ data }) {
               <th scope="col">ACTION</th>
             </tr>
           </thead>
-          {/* {data.map((item, index) => (
+          {kitsData.map((item, index) => (
             <tbody>
               <tr>
                 <th
@@ -100,14 +110,14 @@ function UICollection({ data }) {
                 >
                   {index + 1}
                 </th>
-                <td>{item.name}</td>
+                <td>{item.productName}</td>
                 <td className="max-description">
-                  {item.description.length > maxLengthDesc
-                    ? `${item.description.substring(0, maxLengthDesc)}...`
-                    : item.description}
+                  {item.data.productDescription.length > maxLengthDesc
+                    ? `${item.data.productDescription.substring(0, maxLengthDesc)}...`
+                    : item.data.productDescription}
                 </td>
                 <td>{item.id}</td>
-                <td>{item.idrPrice}</td>
+                <td>{item.data.productName}</td>
                 <td>
                   <span className="status-badges available">AVAILABLE</span>
                 </td>
@@ -149,7 +159,7 @@ function UICollection({ data }) {
                 </td>
               </tr>
             </tbody>
-          ))} */}
+          ))}
         </table>
       </div>
     </div>
