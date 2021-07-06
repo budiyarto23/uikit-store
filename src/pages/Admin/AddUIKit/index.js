@@ -38,7 +38,6 @@ function AddUIKit() {
   const [usdBuyout, setUSDBuyout] = useState("");
   const [discount, setDiscount] = useState("");
   const [images, setImages] = useState([]);
-  console.log(images);
 
   const handlerStatus = (event) => {
     setStatus(event.target.value);
@@ -139,14 +138,13 @@ function AddUIKit() {
     // setImages(Array([]));
   };
 
-  const userId = localStorage.getItem("userId");
+  const userId = JSON.parse(localStorage.getItem("userId"));
 
   const handleAddKit = async () => {
-    const userIdStorage = JSON.parse(localStorage.getItem("userId"));
-    console.log(userIdStorage);
+    // const userIdStorage = JSON.parse(localStorage.getItem("userId"));
     const res = await dispatch(
       addNewKit({
-        userIdStorage,
+        // userIdStorage,
         date,
         status,
         linkDownload,

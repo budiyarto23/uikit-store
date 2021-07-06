@@ -38,7 +38,7 @@ export default function Card(props) {
                 ? `${props.productDescription.substring(0, maxLengthDesc)}...`
                 : props.productDescription}
             </p>
-            {/* <div className="divider-horizontal"></div> */}
+            <div className="divider-horizontal"></div>
             <div className="d-flex flex-row align-items-center mb-2">
               {props.price === 0 ? (
                 <span className="badges badges--free">GRATIS</span>

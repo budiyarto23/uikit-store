@@ -90,17 +90,18 @@ export const addNewKit = (data) => (dispatch) => {
     dispatch({ type: CHANGE_ISLOADING, value: true });
     const promises = data.images.map((file) => {
       const metadata = { contentType: "image/jpeg" };
-      const uidLocalStorage = localStorage.getItem("userId");
-      const ref = storage.ref().child(`kit-image/${uidLocalStorage}/${file.name}`);
+      // const uidLocalStorage = localStorage.getItem("userId");
+      // const ref = storage.ref().child(`kit-image/${uidLocalStorage}/${file.name}`);
+      const ref = storage.ref().child(`kit-image/${file.name}`);
       return ref.put(file, metadata).then(() => ref.getDownloadURL());
     });
 
     Promise.all(promises)
       .then((fileDownloadUrls) => {
-        const idLocalStorage = JSON.parse(localStorage.getItem("userId"));
-        console.log(idLocalStorage);
+        // const idLocalStorage = JSON.parse(localStorage.getItem("userId"));
         database
-          .ref(`ui-collections/${idLocalStorage}`)
+          // .ref(`ui-collections/${idLocalStorage}`)
+          .ref(`ui-collections`)
           .push({
             date: data.date,
             status: data.status,
@@ -132,22 +133,44 @@ export const addNewKit = (data) => (dispatch) => {
   });
 };
 
-export const getUiKits = (userId) => (dispatch) => {
-  const kitsUrl = database.ref(`ui-collections/${userId}`);
+// export const getUiKits = (userId) => (dispatch) => {
+//   const kitsUrl = database.ref(`ui-collections/${userId}`);
+//   return new Promise((resolve, reject) => {
+//     kitsUrl.on('value', function(snapshot) {
+//       const data =[];
+//       // eslint-disable-next-line
+//       Object.keys(snapshot.val()).map((key => {
+//         data.push({
+//           id: key,
+//           data: snapshot.val()[key]
+//         })
+//       }))
+//       dispatch({ type: GET_KITS, value: data });
+//       console.log("isi data ", data)
+//       resolve(snapshot.val())
+//     })
+//     reject(false);
+//   })
+// }
+
+export const getUiKits = () => (dispatch) => {
+  dispatch({ type: CHANGE_ISLOADING, value: true });
+  const kitsUrl = database.ref(`ui-collections`);
   return new Promise((resolve, reject) => {
     kitsUrl.on('value', function(snapshot) {
-      // console.log("isi data ", snapshot.val())
       const data =[];
       // eslint-disable-next-line
       Object.keys(snapshot.val()).map((key => {
         data.push({
-          id: key,
           data: snapshot.val()[key]
         })
       }))
       dispatch({ type: GET_KITS, value: data });
+      dispatch({ type: CHANGE_ISLOADING, value: false });
       console.log("isi data ", data)
       resolve(snapshot.val())
     })
+    reject(false);
+    dispatch({ type: CHANGE_ISLOADING, value: true });
   })
 }

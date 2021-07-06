@@ -17,13 +17,15 @@ function UICollection({ data }) {
 
   
   const renderUiKits = () => {
-    const userId = JSON.parse(localStorage.getItem("userId"));
-    dispatch(getUiKits(userId));  
+    // const userId = JSON.parse(localStorage.getItem("userId"));
+    // dispatch(getUiKits(userId));  
+    dispatch(getUiKits());
   }
 
   useEffect(() => {
     window.scrollTo(0, 0);
     renderUiKits();
+    // eslint-disable-next-line
   }, []);
 
   const handlerSeaarch = (event) => {
@@ -43,7 +45,7 @@ function UICollection({ data }) {
   return (
     <>
     {getUid ? (
-    <div className="container-fluid p-0" style={{ backgroundColor: "#FFFBF8" }}>
+    <div className="container-fluid p-0" style={{ backgroundColor: "#F3F4F6" }}>
       <AdminHeader />
       <div className="container mt-5">
         <div className="title-collection">UI Kits Collection</div>
@@ -110,7 +112,7 @@ function UICollection({ data }) {
                 >
                   {index + 1}
                 </th>
-                <td>{item.productName}</td>
+                <td>{item.data.productName}</td>
                 <td className="max-description">
                   {item.data.productDescription.length > maxLengthDesc
                     ? `${item.data.productDescription.substring(0, maxLengthDesc)}...`
