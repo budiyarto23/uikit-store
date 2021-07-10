@@ -2,6 +2,7 @@ import React, { useState, useCallback, useEffect } from "react";
 import "./detail.scss";
 import { useParams } from "react-router-dom";
 import ImageViewer from "react-simple-image-viewer";
+import { useSelector, useDispatch } from "react-redux";
 
 import Header from "pages/LandingPage/Header/Header";
 import CheckOn from "assets/icons/check-available.svg";
@@ -10,8 +11,15 @@ import Point from "assets/icons/point.svg";
 import formatNumber from "utils/formatNumber";
 import usdFormat from "utils/formatUSD";
 import Footer from "pages/LandingPage/Footer/footer";
+import { getUiKits } from "config/redux/action";
+import DetailSkeleton from "./DetailSkeleton";
 
-export default function Detail({ data }) {
+export default function Detail() {
+  const { loading, kitsData } = useSelector((state) => ({
+    loading: state.utils.isLoading,
+    kitsData: state.kits.kitsCollection,
+  }));
+  const dispatch = useDispatch();
   const [currentImage, setCurrentImage] = useState(0);
   const [isViewerOpen, setIsViewerOpen] = useState(false);
   const { id } = useParams();
@@ -28,19 +36,22 @@ export default function Detail({ data }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    dispatch(getUiKits());
+    // eslint-disable-next-line
   }, []);
 
   return (
     <div className="container-fluid p-0" style={{ background: "#FFFBF8" }}>
       <Header />
-      {data
+      { loading && <DetailSkeleton/> }
+      { !loading && kitsData
         .filter((card) => card.id === id)
         .map((cards, index) => (
           <div className="container" key={index}>
             <div className="container-detail mt-5">
               <div className="column-8">
-                <div className="detail-title">{cards.name}</div>
-                <div className="detail-description">{cards.description}</div>
+                <div className="detail-title">{cards.data.productName}</div>
+                <div className="detail-description">{cards.data.productDescription}</div>
                 <ul className="nav nav-pills">
                   <li className="nav-item detail-pill pr-2">
                     <a
@@ -74,7 +85,7 @@ export default function Detail({ data }) {
                     role="tabpanel"
                     aria-labelledby="profile-tab"
                   >
-                    {cards.idrPrice !== 0 ? (
+                    {cards.data.idrPrice !== 0 ? (
                       <div className="row">
                         <div className="col-sm-12 col-md-12 col-lg-4 col-xl-4">
                           <div className="d-flex flex-row align-items-center frame-feature">
@@ -262,7 +273,7 @@ export default function Detail({ data }) {
                     aria-labelledby="ostrich-tab"
                   >
                     <div className="row">
-                      {cards.benefits.map((benefit, index) => (
+                      {Object.keys(cards.data.benefits).map((benefit, index) => (
                         <div
                           className="col-sm-12 col-md-6 col-lg-4 col-xl-4"
                           key={index}
@@ -287,14 +298,14 @@ export default function Detail({ data }) {
                   <div className="d-flex flex-row align-items-center">
                     {cards.idrPrice !== 0 ? (
                       <div className="detail-price-rupiah">
-                        {formatNumber(cards.idrPrice)}
+                        {formatNumber(cards.data.idrPrice)}
                       </div>
                     ) : (
                       <div className="detail-price-free">Free</div>
                     )}
-                    {cards.idrPrice !== 0 ? (
+                    {cards.data.idrPrice !== 0 ? (
                       <div className="detail-price-dollar">{`/ ${usdFormat(
-                        cards.usdPrice
+                        cards.data.usdPrice
                       )}`}</div>
                     ) : (
                       <p className="d-none">Free</p>
@@ -310,7 +321,7 @@ export default function Detail({ data }) {
             </div>
 
             <div className="row mt-4 mb-5">
-              {cards.detailImage.map((src, index) => (
+              {cards.data.images.map((src, index) => (
                 <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3">
                   <div className="card-detail card-featured-detail mb-2">
                     <figure className="img-wrapper-detail">
@@ -328,7 +339,7 @@ export default function Detail({ data }) {
 
               {isViewerOpen && (
                 <ImageViewer
-                  src={cards.detailImage}
+                  src={cards.data.images}
                   currentIndex={currentImage}
                   onClose={closeImageViewer}
                   backgroundStyle={{
@@ -339,7 +350,8 @@ export default function Detail({ data }) {
               )}
             </div>
           </div>
-        ))}
+        )) }
+
         <Footer />
     </div>
   );

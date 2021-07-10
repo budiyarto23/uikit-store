@@ -57,14 +57,14 @@
 
     .cover-img {
         object-fit: cover;
-        height: 340px;
+        height: 420px;
         width: 100%;
 
     }
 
     &.card-featured-detail:hover {
         overflow: hidden;
-        max-height: 360px;
+        // height: 420px !important;
         cursor: pointer;
 
         .img-wrapper-detail {
@@ -73,7 +73,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            transform: scale(1.1);
+            transform: scale(1.05);
             transition: 0.25s transform ease-in-out;
             opacity: 0.9;
         }

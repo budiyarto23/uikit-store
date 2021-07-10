@@ -9,29 +9,32 @@ import { getUiKits } from "config/redux/action";
 
 import "./uikits.scss";
 
-export default function UIKits({ data }) {
+export default function UIKits() {
   // const kitsData = useSelector(state => state.kitsCollection);
   const { loading, kitsData } = useSelector((state) => ({
-    loading: state.isLoading,
-    kitsData: state.kitsCollection,
+    loading: state.utils.isLoading,
+    // loading: state.loading,
+    kitsData: state.kits.kitsCollection,
   }));
   const dispatch = useDispatch();
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getUiKits());
+    console.log("loading di dalam useEffect", loading);
     // eslint-disable-next-line
   }, []);
+  console.log("loading di luar useEffect", loading);
 
   const showAllDesign = kitsData.map((card, index) => (
     <Card
       thumbnailImage={card.data.images[0]}
       productName={card.data.productName}
       productDescription={card.data.productDescription}
-      key={index.data.key}
+      key={index.id}
       price={card.data.idrPrice}
       usdPrice={card.data.usdPrice}
-      id={card.data.key}
+      id={card.id}
     />
   ));
 

@@ -24,7 +24,7 @@ export default function Card(props) {
           </div>
           <div className="card-info-product">
             <Link
-              to={`/detailkits/${props.id}`}
+              to={`/detail/${props.id}`}
               style={{ textDecoration: "none" }}
             >
               <h2 className="card-title-product">

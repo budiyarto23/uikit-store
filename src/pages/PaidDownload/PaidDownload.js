@@ -1,30 +1,27 @@
 import React, { useState, useEffect } from "react";
 import "./paidDownload.scss";
 import { useParams } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 
-import Modal from "components/Modal/Modal";
+import { getUiKits } from "config/redux/action";
+// import Modal from "components/Modal/Modal";
 import Button from "components/Button";
-import FormText from "components/Form/FormText/FormText";
 // import InfoIcon from "assets/icons/info-icons.svg";
 import BankBCA from "assets/images/bca.svg";
-import BankBRI from "assets/images/bri.svg";
-import OVO from "assets/images/ovo.svg";
-import Gopay from "assets/images/gopay.svg";
-import Dana from "assets/images/dana.svg";
 import PayPal from "assets/images/paypal.svg";
-import CheckoutIcon from "assets/icons/checkout-success-ic.svg";
-import FreeDownloadIcon from "assets/icons/download-ic.svg";
 import usdFormat from "utils/formatUSD";
 import idrFormat from "utils/formatNumber";
+import PaidDownloadSkeleton from "pages/PaidDownload/PaidSkeleton";
 
-export default function PaidDownload({ data }) {
+export default function PaidDownload() {
+  const { loading, kitsData } = useSelector((state) => ({
+    loading: state.utils.isLoading,
+    kitsData: state.kits.kitsCollection,
+  }));
+  const dispatch = useDispatch();
   const { id } = useParams();
-  const [fullName, setFullName] = useState("");
-  const [email, setEmail] = useState("");
-  const [show, setShow] = useState(false);
-  const [shows, setShows] = useState(false);
-  const [paymentMethodSelected, setFormData] = useState("Not selected");
   const [on, setOnState] = useState(false);
+  const [unique, setUnique] = useState(0);
   // const goPath = useHistory();
 
   // const routeUIKits = () => {
@@ -34,395 +31,264 @@ export default function PaidDownload({ data }) {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    dispatch(getUiKits());
+    setUnique(Math.floor(Math.random() * 1000 + 10));
+    // eslint-disable-next-line
   }, []);
-
-  const handlerName = (event) => {
-    setFullName(event.target.value);
-  };
-
-  const handlerEmail = (event) => {
-    setEmail(event.target.value);
-  };
-
-  const paymentOptionLocal = [
-    {
-      name: "Bank BCA",
-      logo: BankBCA,
-    },
-    {
-      name: "Bank BRI",
-      logo: BankBRI,
-    },
-    {
-      name: "OVO",
-      logo: OVO,
-    },
-    {
-      name: "Gopay",
-      logo: Gopay,
-    },
-    {
-      name: "DANA",
-      logo: Dana,
-    },
-    {
-      name: "PayPal",
-      logo: PayPal,
-    },
-  ];
 
   const toggleBuyout = () => setOnState((oi) => !oi);
 
   return (
     <div
       className="container-fluid"
-      style={{ background: "#FFFBF8", height: "auto", paddingTop: 60, }}
+      style={{
+        background: "#FFFBF8",
+        height: "auto",
+        paddingTop: 60,
+        paddingBottom: 120,
+      }}
     >
-      {data
+      <p className="paid-main-title text-center">Checkout</p>
+      <p className="paid-main-subtitle text-center mx-auto">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
+      </p>
+
+      {kitsData
         .filter((item) => item.id === id)
         .map((val, index) => (
-          <div key={index}>
-            <div className="row justify-content-center">
-              <div className="col col-xl-5 col-lg-5 col-md-7 col-sm-12">
-                <p className="paid-title text-left">Checkout</p>
-                <p className="paid-subtitle text-left">Checkout dengan aman</p>
-                <div className="d-flex flex-column frame-paid-download">
-                  <div className="bg-title-paid d-flex flex-column justify-content-center">
-                    <div className="frame-title-paid">Your Identity</div>
-                  </div>
-                  <div className="d-flex flex-column frame-paid-form">
-                    <FormText
-                      name="firstName"
-                      className="paid-form"
-                      type="text"
-                      value={fullName}
-                      placeholder="Full Name"
-                      onChange={handlerName}
-                    />
-                    <FormText
-                      name="firstName"
-                      className="paid-form"
-                      type="email"
-                      value={email}
-                      placeholder="Email"
-                      onChange={handlerEmail}
-                      errorResponse="hjsdhjs"
-                    />
-                    <div className="note-paid-download">
-                      Pastikan email aktif, karena akan menerima link untuk
-                      download design
+          <>
+            {val.data.idrPrice !== "12000" ? (
+              <div className="row justify-content-center" key={index}>
+                {loading && <PaidDownloadSkeleton />}
+                {!loading && 
+                <>
+                <div className="col-sm-12 col-md-6 col-lg-5 col-xl-5">
+                  <div className="paid-download-container-left">
+                    <div className="paid-preview-img">
+                      <img
+                        className="item-preview-img"
+                        src={val.data.images[0]}
+                        alt="tstst"
+                      />
+                    </div>
+                    <div className="paid-title-name">
+                      {val.data.productName}
+                    </div>
+                    <div className="paid-description-name">
+                      {val.data.productDescription}
+                    </div>
+                    <div className="d-flex flex-row mt-3">
+                      <p className="total-value-payment">
+                        {idrFormat(val.data.idrPrice)} -
+                      </p>
+                      <p
+                        className="total-value-payment"
+                        style={{ marginLeft: 6 }}
+                      >
+                        {usdFormat(val.data.usdPrice)}
+                      </p>
+                    </div>
+                    <div className="paid-container-buyout">
+                      <div className="title-buyout">Buy Out Option</div>
+                      <div className="description-buyout">
+                        This UI Kits will be removed from the store and will no
+                        longer be available for purchase.
+                      </div>
+                      <div className="d-flex flex-row">
+                        <span className="buyout-price-idr">
+                          {idrFormat(val.data.idrBuyout)} -
+                        </span>
+                        <span className="buyout-price-idr">
+                          {usdFormat(val.data.usdBuyout)}
+                        </span>
+                      </div>
+                      <Button
+                        className={
+                          on
+                            ? "btn btn-outline-buyout hack-btn-buyout added"
+                            : "btn btn-outline-buyout hack-btn-buyout not-added"
+                        }
+                        on={on}
+                        onClick={toggleBuyout}
+                      >
+                        {on === false ? "Add" : "Added"}
+                      </Button>
                     </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <div className="row justify-content-center">
-              <div
-                className="col col-xl-5 col-lg-5 col-md-7 col-sm-12"
-                style={{ paddingTop: "30px" }}
-              >
-                <div className="d-flex flex-column frame-paid-download-1">
-                  <div className="bg-title-paid d-flex flex-column justify-content-center">
-                    <div className="frame-title-paid">Produk</div>
-                  </div>
-                  <div className="d-flex flex-column frame-paid-form">
-                    <div className="" style={{ marginTop: "-10px" }}>
-                      <div className="badges-product-category">
-                        {val.category}
+                <div className="col-sm-12 col-md-6 col-lg-4 col-xl-4">
+                  <div className="paid-download-container-left">
+                    <div className="master-title-payment">Order Summary</div>
+                    <div className="d-flex flex-row justify-content-between">
+                      <div className="title-payment">Price</div>
+                      <div className="d-flex flex-row">
+                        <p className="value-payment">
+                          {idrFormat(val.data.idrPrice)} -
+                        </p>
+                        <p className="value-payment" style={{ marginLeft: 6 }}>
+                          {usdFormat(val.data.usdPrice)}
+                        </p>
                       </div>
                     </div>
-                    <div className="product-title-paid">{val.name}</div>
-                    <div className="product-subtitle-paid">
-                      {val.description}
-                    </div>
-                  </div>
-                  <div className="d-flex flex-column mt-5 price-frame">
-                    <div className="d-flex flex-column frame-standart-price">
-                      <div className="title-price">Price</div>
-                      <div className="d-flex flex-row mt-1">
-                        {val.idrPrice !== 0 ? (
-                          <span className="standart-price-idr">
-                            {idrFormat(val.idrPrice)}
-                          </span>
-                        ) : (
-                          <span className="price-not-paid">Free</span>
-                        )}
-                        {val.usdPrice !== 0 ? (
-                          <span className="standart-price-usd">{`/ ${usdFormat(
-                            val.usdPrice
-                          )}`}</span>
-                        ) : (
-                          <span className="d-none">Free</span>
-                        )}
-                      </div>
-                      <a
-                        type="link"
-                        // target="_blank"
-                        // rel="noreferrer"
-                        href={`/detail/${id}`}
-                        className="see-detail-paid"
-                      >
-                        See Detail
-                      </a>
-                    </div>
-                    <div className="d-flex flex-column frame-buyout">
-                      {val.idrPrice !== 0 ? (
-                        <div>
-                          <div className="price-divider-paid"></div>
-                          <div className="buyout-option-title">
-                            Buyout Option
-                          </div>
-                          <div className="buyout-option-decsription">
-                            This UI Kits will be removed from the store and will
-                            no longer be available for purchase.
-                          </div>
-                          <div className="d-flex flex-row">
-                            <span className="buyout-price-idr">
-                              {idrFormat(val.buyoutIdr)}
-                            </span>
-                            <span className="buyout-price-idr">
-                              {` / ${usdFormat(val.buyoutUsd)}`}
-                            </span>
-                          </div>
-                          <Button
-                            className={
-                              on
-                                ? "btn btn-outline-buyout hack-btn-buyout added"
-                                : "btn btn-outline-buyout hack-btn-buyout not-added"
-                            }
-                            on={on}
-                            onClick={toggleBuyout}
-                          >
-                            {on === false ? "Add" : "Added"}
-                          </Button>
-                        </div>
-                      ) : (
-                        <div className="d-none">Hidden element</div>
-                      )}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {val.idrPrice !== 0 ? (
-              <div className="row justify-content-center">
-                <div
-                  className="col col-xl-5 col-lg-5 col-md-7 col-sm-12"
-                  style={{ paddingTop: "30px" }}
-                >
-                  <div className="d-flex flex-column frame-paid-download">
-                    <div className="bg-title-paid d-flex flex-column justify-content-center">
-                      <div className="frame-title-paid">Payment Method</div>
-                    </div>
-                    <div className="d-flex flex-column frame-paid-payment">
-                      <div
-                        className="d-flex flex-row align-items-center"
-                        style={{ marginTop: "10px" }}
-                      >
-                        <div className="d-flex flex-column">
-                          <div className="note-paid-payment-info">
-                            Choose PayPal if your location not in Indonesia.
-                          </div>
-                        </div>
-                      </div>
-
-                      {paymentOptionLocal.map((val, index) => (
-                        <div
-                          key={index}
-                          className={paymentMethodSelected === val.name ? "d-flex flex-row align-items-center justify-content-between frame-payment-option actived" : "d-flex flex-row align-items-center justify-content-between frame-payment-option"}
-                        >
-                          <div className="form-check" style={{ marginLeft: 6 }}>
-                            <input
-                              className="form-check-input"
-                              type="radio"
-                              name="flexRadioDefault"
-                              id={`flexRadioDefault${val.name}`}
-                              checked={paymentMethodSelected === val.name}
-                              value={val.name}
-                              onClick={() => setFormData(val.name)}
-                            />
-                            <label
-                              className={paymentMethodSelected === val.name ? "form-check-label payment-label text-actived" : "form-check-label payment-label"}
-                              htmlFor={`flexRadioDefault1${val.name}`}
-                            >
-                              {val.name}
-                            </label>
-                          </div>
-                          <img
-                            src={val.logo}
-                            alt="bank-bca"
-                            className="bca-icon"
-                            style={{ height: 22, width: 90 }}
-                          />
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ) : (
-              <span className="d-none">Never Mind</span>
-            )}
-
-            <div className="row justify-content-center">
-              <div
-                className="col col-xl-5 col-lg-5 col-md-7 col-sm-12"
-                style={{ paddingTop: 30, marginBottom: 90 }}
-              >
-                {val.idrPrice !== 0 ? (
-                  <div>
-                    <div className="d-flex flex-column frame-paid-download-1">
-                      <div className="bg-title-paid d-flex flex-column justify-content-center">
-                        <div className="frame-title-paid">Payment</div>
-                      </div>
-                      <div
-                        className="d-flex flex-column frame-paid-form"
-                        style={{ marginTop: "20px" }}
-                      >
-                        <div className="d-flex flex-row">
-                          <div className="title-payment">Price</div>
-                          <p className="value-payment">
-                            {idrFormat(val.idrPrice)}
-                          </p>
-                          <p
-                            className="value-payment"
-                            style={{ marginLeft: 6 }}
-                          >{` / ${usdFormat(val.usdPrice)}`}</p>
-                        </div>
-                        <div className="d-flex flex-row">
-                          <div className="title-payment">Buyout Option</div>
-                          {val.buyoutIdr !== 0 && on ? (
+                    <div className="d-flex flex-row justify-content-between">
+                      <div className="title-payment">Buyout Option</div>
+                      <div className="d-flex flex-row">
+                        {on ? (
+                          <>
                             <p className="value-payment">
-                              {idrFormat(val.buyoutIdr)}
+                              {idrFormat(val.data.idrBuyout)} -
                             </p>
-                          ) : (
-                            <p className="value-payment">-</p>
-                          )}
-                          {val.buyoutIdr !== 0 && on ? (
                             <p
                               className="value-payment"
                               style={{ marginLeft: 6 }}
-                            >{` / ${usdFormat(val.buyoutUsd)}`}</p>
-                          ) : (
-                            <p className="d-none">Free</p>
-                          )}
-                        </div>
-                        <div className="d-flex flex-row">
-                          <div className="title-payment">Discount</div>
-                          <p className="value-payment">-</p>
-                        </div>
-                        <div className="d-flex flex-row">
-                          <div className="title-payment">Payment Method</div>
-                          {paymentMethodSelected === "Not selected" ? (
-                            <p className="value-payment-not-selected">
-                              {paymentMethodSelected}
+                            >
+                              {usdFormat(val.data.usdBuyout)}
                             </p>
-                          ) : (
-                            <p className="value-payment" style={{ width: 90 }}>
-                              {paymentMethodSelected}
-                            </p>
-                          )}
-                        </div>
-                        <div className="d-flex flex-row">
-                          <div className="title-payment">Total Amount</div>
-                          <p className="total-value-payment">
-                            {on === false
-                              ? idrFormat(val.idrPrice)
-                              : idrFormat(val.idrPrice + val.buyoutIdr)}
-                          </p>
-                          <p
-                            className="total-value-payment"
-                            style={{ marginLeft: 6 }}
-                          >
-                            {on === false
-                              ? ` / ${usdFormat(val.usdPrice)}`
-                              : ` / ${usdFormat(val.usdPrice + val.buyoutUsd)}`}
-                          </p>
-                        </div>
-                      </div>
-                      <div
-                        className="d-flex flex-column mt-4 price-frame"
-                        style={{ padding: "0px 20px 30px 20px" }}
-                      >
-                        <div className="note-before-checkout">
-                          Setelah melakukan pembayaran, silahkan lakukan
-                          konfirmasi pembayaran dengan cara mengirim bukti
-                          transfer.
-                        </div>
-                        <div className="frame-before-checkout">
-                          <Button
-                            type="button"
-                            className="btn btn-primary buy-now-button"
-                            onClick={() => setShow(true)}
-                            isLoading={false}
-                          >
-                            Buy Now
-                          </Button>
-                        </div>
+                          </>
+                        ) : (
+                          <p className="value-payment">0</p>
+                        )}
                       </div>
                     </div>
-                  </div>
-                ) : (
-                  <div>
-                    <div className="d-flex flex-column frame-paid-download-1">
-                      <div className="bg-title-paid d-flex flex-column justify-content-center">
-                        <div className="frame-title-paid">Payment</div>
-                      </div>
-                      <div
-                        className="d-flex flex-column frame-paid-form"
-                        style={{ marginTop: "20px" }}
-                      >
-                        <p className="title-free-note">It's All Free for You</p>
-                        <p className="subtitle-free-note mx-auto">You can support us with buy premium UI Kits or hire us. Thanks a lot.</p>
-                      </div>
-                      <div
-                        className="d-flex flex-column mt-4 price-frame"
-                        style={{ padding: "0px 20px 30px 20px" }}
-                      >
-                        <div className="frame-before-checkout mt-4">
-                          <Button
-                          type="button"
-                          className="btn btn-primary buy-now-button"
-                          onClick={() => setShows(true)}
-                          isLoading={false}
+
+                    <div className="d-flex flex-row justify-content-between">
+                      <div className="title-payment">Unique Code</div>
+                      <p className="value-payment">{idrFormat(unique)}</p>
+                    </div>
+                    <div className="d-flex flex-row justify-content-between">
+                      <div className="title-payment">Total Amount</div>
+                      <div className="d-flex flex-row">
+                        <p className="value-payment-bold">
+                          {on === false
+                            ? idrFormat(parseInt(val.data.idrPrice) + unique)
+                            : idrFormat(
+                                parseInt(val.data.idrPrice) +
+                                  parseInt(val.data.idrBuyout) + unique
+                              )}
+                        </p>
+                        <p
+                          className="value-payment-bold"
+                          style={{ marginLeft: 6 }}
                         >
-                          Free Download
-                        </Button>
+                          {on === false
+                            ? ` / ${usdFormat(val.data.usdPrice)}`
+                            : ` / ${usdFormat(
+                                parseInt(val.data.usdPrice) +
+                                  parseInt(val.data.usdBuyout)
+                              )}`}
+                        </p>
+                      </div>
+                    </div>
+                    <div className="master-title-payment mt-4">
+                      Payment Method
+                    </div>
+                    <div className="d-flex flex-row mt-3">
+                      <div className="box-bank-logo">
+                        <img src={BankBCA} alt="dks" className="bank-logo" />
+                      </div>
+                      <div className="d-flex flex-column ml-4">
+                        <div className="bank-account-name">
+                          A/n Ahmad Budiyarto
+                        </div>
+                        <div className="bank-account-number">
+                          493483483843487
+                        </div>
+                        <div className="payment-method-note">
+                          Local payment - Indonesian only
                         </div>
                       </div>
                     </div>
+                    <div className="d-flex flex-row mt-4">
+                      <div className="box-bank-logo">
+                        <img src={PayPal} alt="dks" className="bank-logo" />
+                      </div>
+                      <div className="d-flex flex-column ml-4">
+                        <div className="bank-account-name">
+                          ahmadbudiyarto @gmail.com
+                        </div>
+                        <div className="payment-method-note payment-method-note-mobile">
+                          International payment - around the world
+                        </div>
+                      </div>
+                    </div>
+                    <div className="container-btn-paid mt-3">
+                      <Button
+                        type="button"
+                        className="btn btn-primary buy-now-button-1"
+                        // onClick={() => setShow(true)}
+                        // isLoading={false}
+                      >
+                        Confirm via WhatsApp
+                      </Button>
+                      <Button
+                        type="button"
+                        className="btn btn-outline buy-now-button-2"
+                        // onClick={() => setShow(true)}
+                        // isLoading={false}
+                      >
+                        Confirm via Email
+                      </Button>
+                    </div>
+                    <div className="paid-container-note">
+                      <div className="title-buyout mt-2">Buy Out Option</div>
+                      <div className="description-buyout mb-2">
+                        This UI Kits will be removed from the store and will no
+                        longer be available for purchase.
+                      </div>
+                    </div>
                   </div>
-                )}
+                </div>
+                </>
+                }
               </div>
-            </div>
-
-            {/* Open modal paid download */}
-
-            {val.idrPrice !== 0 ? (
-              <Modal
-                // type="modal-confirm"
-                icon={CheckoutIcon}
-                title="Berhasil Membuat Pesanan"
-                description="Silahkan cek email Anda untuk detail pesanan dan cara melakukan permbayaran"
-                // buttonCancel="NO"
-                buttonAccept="CANCEL"
-                onClose={() => setShow(false)}
-                // onDestination={routeUIKits}
-                show={show}
-              />
             ) : (
-              <Modal
-                icon={FreeDownloadIcon}
-                title="Link Download Berhasil Dikirim"
-                description="Silahkan cek email Anda dan kunjungi link yang diberikan untuk mendownload design"
-                buttonName="OK"
-                onClose={() => setShows(false)}
-                show={shows}
-              />
+              <div className="row justify-content-center">
+                <div className="col-sm-12 col-md-6 col-lg-5 col-xl-5">
+                  <div className="paid-download-container-left">
+                    <div className="paid-preview-img">
+                      <img
+                        className="item-preview-img"
+                        src={val.data.images[0]}
+                        alt="tstst"
+                      />
+                    </div>
+                    <div className="paid-title-name">
+                      {val.data.productName}
+                    </div>
+                    <div className="paid-description-name">
+                      {val.data.productDescription}
+                    </div>
+                    <div className="d-flex flex-row mt-3">
+                      <p className="total-value-payment">Free</p>
+                    </div>
+                    <Button
+                      type="button"
+                      className="btn btn-primary buy-now-button mt-4"
+                      //   onClick={() => setShow(true)}
+                      //   isLoading={false}
+                    >
+                      Confirm via WhatsApp
+                    </Button>
+                    <Button
+                      type="button"
+                      className="btn btn-outline buy-now-button-free mt-4"
+                      //   onClick={() => setShow(true)}
+                      //   isLoading={false}
+                    >
+                      Confirm via Email
+                    </Button>
+                    <div className="paid-container-note">
+                      <div className="title-buyout mt-2">Buy Out Option</div>
+                      <div className="description-buyout mb-2">
+                        This UI Kits will be removed from the store and will no
+                        longer be available for purchase.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             )}
-          </div>
+          </>
         ))}
     </div>
   );

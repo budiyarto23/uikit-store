@@ -6,7 +6,7 @@
     "@testing-library/jest-dom": "^5.13.0",
     "@testing-library/react": "^11.2.7",
     "@testing-library/user-event": "^12.8.3",
-    "axios": "^0.21.1",
+    "email-js": "^2.0.2",
     "firebase": "^8.6.5",
     "node-sass": "^5.0.0",
     "react": "^17.0.2",
@@ -19,7 +19,6 @@
     "react-transition-group": "^4.4.2",
     "redux": "^4.1.0",
     "redux-thunk": "^2.3.0",
-    "uuid": "^8.3.2",
     "web-vitals": "^1.1.2"
   },
   "scripts": {

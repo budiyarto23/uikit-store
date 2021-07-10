@@ -1,0 +1,20 @@
+.container-detail-skeleton {
+    border: 1px solid #EEE;
+    border-radius: 6px;
+    padding: 30px !important;
+    background-color: #FFF;
+}
+
+.preview-image-skeleton {
+    width: calc(50% - 15px);
+    margin-bottom: 30px;
+    border: 1px solid #EEE;
+    border-radius: 6px;
+    background: #FFF;
+    padding: 10px !important;
+    line-height: 0 !important;
+}
+
+.item-image-skeleton {
+    border-radius: 8px;
+}
