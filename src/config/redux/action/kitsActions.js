@@ -1,10 +1,5 @@
 import { database, storage } from "../../firebase";
-import {
-  CHANGE_ISLOADING,
-  GET_KITS,
-  MODAL_OPEN
-} from "./types";
-
+import { CHANGE_ISLOADING, GET_KITS, MODAL_OPEN, DOWNLOAD_KITS, CUSTOM_KITS } from "./types";
 
 export const addNewKit = (data) => (dispatch) => {
   return new Promise((resolve, reject) => {
@@ -32,10 +27,10 @@ export const addNewKit = (data) => (dispatch) => {
             idrBuyout: data.idrBuyout,
             usdPrice: data.usdPrice,
             usdBuyout: data.usdBuyout,
-            discount: data.discount
+            discount: data.discount,
           })
           .then((res) => {
-            console.log("this success response", + res);
+            console.log("this success response", +res);
             dispatch({ type: CHANGE_ISLOADING, value: false });
             dispatch({ type: MODAL_OPEN, value: true });
           })
@@ -74,20 +69,115 @@ export const getUiKits = () => (dispatch) => {
   dispatch({ type: CHANGE_ISLOADING, value: true });
   const kitsUrl = database.ref(`ui-collections`);
   return new Promise((resolve, reject) => {
-    kitsUrl.on('value', function(snapshot) {
-      const data =[];
+    kitsUrl.on("value", function (snapshot) {
+      const data = [];
       // eslint-disable-next-line
-      Object.keys(snapshot.val()).map((key => {
+      Object.keys(snapshot.val()).map((key) => {
         data.push({
           id: key,
-          data: snapshot.val()[key]
-        })
-      }))
+          data: snapshot.val()[key],
+        });
+      });
       dispatch({ type: GET_KITS, value: data });
       dispatch({ type: CHANGE_ISLOADING, value: false });
-      resolve(snapshot.val())
-    })
+      resolve(snapshot.val());
+    });
     // dispatch({ type: SKELETON_ON, value: false });
     reject(false);
-  })
-}
+  });
+};
+
+export const postPaidDownload = (data) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    dispatch({ type: CHANGE_ISLOADING, value: true });
+    database
+      .ref(`ui-download`)
+      .push({
+        date: data.date,
+        unique: data.unique,
+        thisKit: data.thisKit,
+        totalAmountIDR: data.totalAmountIDR,
+        totalAmountUSD: data.totalAmountUSD,
+        status: data.status,
+        on: data.on,
+      })
+      .then((res) => {
+        console.log("this success download", + res);
+        // dispatch({ type: DOWNLOAD_KITS, value: false });
+        dispatch({ type: CHANGE_ISLOADING, value: false });
+        resolve(true);
+      })
+      .catch((err) => {
+        console.log("this error download", err);
+        dispatch({ type: CHANGE_ISLOADING, value: false });
+        reject(false);
+      });
+  });
+};
+
+
+export const getDownloadKits = () => (dispatch) => {
+  dispatch({ type: CHANGE_ISLOADING, value: true });
+  const kitsUrl = database.ref(`ui-download`);
+  return new Promise((resolve, reject) => {
+    kitsUrl.on("value", function (snapshot) {
+      const data = [];
+      // eslint-disable-next-line
+      Object.keys(snapshot.val()).map((key) => {
+        data.push({
+          id: key,
+          data: snapshot.val()[key],
+        });
+      });
+      dispatch({ type: DOWNLOAD_KITS, value: data });
+      dispatch({ type: CHANGE_ISLOADING, value: false });
+      resolve(snapshot.val());
+    });
+    reject(false);
+  });
+};
+
+
+export const postCustomKit = (data) => (dispatch) => {
+  return new Promise((resolve, reject) => {
+    dispatch({ type: CHANGE_ISLOADING, value: true });
+    database
+      .ref(`ui-custom`)
+      .push({
+        date: data.date,
+        unique: data.unique,
+        thisKit: data.thisKit,
+        status: data.status,
+      })
+      .then(() => {
+        dispatch({ type: CHANGE_ISLOADING, value: false });
+        resolve(true);
+      })
+      .catch(() => {
+        dispatch({ type: CHANGE_ISLOADING, value: false });
+        reject(false);
+      });
+  });
+};
+
+
+export const getCustomKits = () => (dispatch) => {
+  dispatch({ type: CHANGE_ISLOADING, value: true });
+  const kitsUrl = database.ref(`ui-custom`);
+  return new Promise((resolve, reject) => {
+    kitsUrl.on("value", function (snapshot) {
+      const data = [];
+      // eslint-disable-next-line
+      Object.keys(snapshot.val()).map((key) => {
+        data.push({
+          id: key,
+          data: snapshot.val()[key],
+        });
+      });
+      dispatch({ type: CUSTOM_KITS, value: data });
+      dispatch({ type: CHANGE_ISLOADING, value: false });
+      resolve(snapshot.val());
+    });
+    reject(false);
+  });
+};

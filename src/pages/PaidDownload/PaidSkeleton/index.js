@@ -5,7 +5,7 @@ import "./paidSkeleton.scss";
 
 export default function index() {
   return (
-    <>
+    <div className="row justify-content-center">
       <div className="col-sm-12 col-md-6 col-lg-5 col-xl-5">
         <div className="paid-download-container-left">
           <Skeleton width={"100%"} height={300} />
@@ -73,6 +73,6 @@ export default function index() {
             </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }

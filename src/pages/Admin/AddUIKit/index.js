@@ -141,10 +141,8 @@ function AddUIKit() {
   const userId = JSON.parse(localStorage.getItem("userId"));
 
   const handleAddKit = async () => {
-    // const userIdStorage = JSON.parse(localStorage.getItem("userId"));
     const res = await dispatch(
       addNewKit({
-        // userIdStorage,
         date,
         status,
         linkDownload,

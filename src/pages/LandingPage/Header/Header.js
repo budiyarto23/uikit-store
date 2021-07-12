@@ -60,7 +60,7 @@ export default function Header() {
                 UI Kits
               </Link>
             </li>
-            <li
+            {/* <li
               className={
                 splitLocation[1] === "payment-confirm"
                   ? "nav-item nav-link active"
@@ -70,7 +70,7 @@ export default function Header() {
               <Link to="/payment-confirm" style={{ textDecoration: "none" }}>
                 Payment Confirm
               </Link>
-            </li>
+            </li> */}
             <li
               className={
                 splitLocation[1] === "pricing-option"

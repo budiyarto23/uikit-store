@@ -11,7 +11,7 @@ import { loginUserAPI } from "config/redux/action";
 export default function Login() {
   // consume from redux
   const dispatch = useDispatch();
-  const loading = useSelector(state => state.isLoading);
+  const loading = useSelector(state => state.utils.isLoading);
 
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -61,7 +61,7 @@ export default function Login() {
           className="row justify-content-center positio-absolute"
           style={{ marginTop: "-200px" }}
         >
-          <div className="col col-sm-12 col-md-8 col-lg-6 col-xl-6">
+          <div className="col col-sm-12 col-md-8 col-lg-5 col-xl-5">
             <div className="d-flex flex-column frame-register">
               <div className="title-register">Welcome Back</div>
               <div className="subtitle-register mx-auto">

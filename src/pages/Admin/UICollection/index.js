@@ -9,18 +9,19 @@ import Button from "components/Button";
 import PageNotFound from "pages/PageNotFound";
 import { getUiKits } from "config/redux/action";
 
-function UICollection({ data }) {
+function UICollection() {
   const maxLengthDesc = 50;
   const [search, setSearch] = useState("");
-  const kitsData = useSelector(state => state.kitsCollection)
+  const { loading, kitsData } = useSelector((state) => ({
+    loading: state.utils.isLoading,
+    kitsData: state.kits.kitsCollection,
+  }));
   const dispatch = useDispatch();
 
-  
   const renderUiKits = () => {
-    // const userId = JSON.parse(localStorage.getItem("userId"));
-    // dispatch(getUiKits(userId));  
     dispatch(getUiKits());
-  }
+    // eslint-disable-next-line
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -39,135 +40,164 @@ function UICollection({ data }) {
     pathHistory.push(path);
   };
 
-  
-  const getUid = localStorage.getItem("userId");
+  const getUid = JSON.parse(localStorage.getItem("userId"));
+  console.log(getUid);
 
   return (
     <>
-    {getUid ? (
-    <div className="container-fluid p-0" style={{ backgroundColor: "#F3F4F6" }}>
-      <AdminHeader />
-      <div className="container mt-5">
-        <div className="title-collection">UI Kits Collection</div>
-        <div className="total-collection">Total: 1.342</div>
+      {getUid ? (
         <div
-          className="d-flex flex-row justify-content-between mt-4"
-          style={{ height: 46 }}
+          className="container-fluid p-0"
+          style={{ backgroundColor: "#F3F4F6", minHeight: "110vh" }}
         >
-          <div className="d-flex flex-row">
-            <div className="frame-search">
-              <FormText
-                name="Search"
-                className=""
-                type="text"
-                value={search}
-                placeholder="Search here"
-                onChange={handlerSeaarch}
-                style={{ width: 500 }}
-              />
-            </div>
-            <div className="frame-filter">
-              <select
-                className="form-select form-collection"
-                aria-label="Default select example"
-              >
-                <option selected>Category</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
-            </div>
-          </div>
-          <Button
-            type="button"
-            className="btn btn-primary"
-            onClick={routeUIKits}
-          >
-            Add New UI Kits
-          </Button>
-        </div>
-
-        {/* table here */}
-
-        <table class="table rounded bg-white mt-3 mb-5">
-          <thead>
-            <tr>
-              <th scope="col">NO</th>
-              <th scope="col">NAME</th>
-              <th scope="col">CATEGORY</th>
-              <th scope="col">PRICE</th>
-              <th scope="col">DOWNLOADED</th>
-              <th scope="col">STATUS</th>
-              <th scope="col">ACTION</th>
-            </tr>
-          </thead>
-          {kitsData.map((item, index) => (
-            <tbody>
-              <tr>
-                <th
-                  scope="row"
-                  key={index}
-                  className="ml-5"
-                  style={{ paddingLeft: 14 }}
-                >
-                  {index + 1}
-                </th>
-                <td>{item.data.productName}</td>
-                <td className="max-description">
-                  {item.data.productDescription.length > maxLengthDesc
-                    ? `${item.data.productDescription.substring(0, maxLengthDesc)}...`
-                    : item.data.productDescription}
-                </td>
-                <td>{item.id}</td>
-                <td>{item.data.productName}</td>
-                <td>
-                  <span className="status-badges available">AVAILABLE</span>
-                </td>
-                <td>
-                  <div className="dropdown">
-                    <button
-                      className="btn btn-outline-light btn-sml dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton1"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Option
-                    </button>
-                    <ul
-                      className="dropdown-menu uicollection"
-                      aria-labelledby="dropdownMenuButton1"
-                    >
-                      <li>
-                        <a
-                          className="dropdown-item"
-                          href={`/admin/preview/${item.id}`}
-                        >
-                          Detail
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="/">
-                          Edit
-                        </a>
-                      </li>
-                      <li>
-                        <a className="dropdown-item" href="/">
-                          Delete
-                        </a>
-                      </li>
-                    </ul>
+          <AdminHeader />
+          <div className="container mt-5">
+            <div className="title-collection">UI Kits Collection</div>
+            <div className="total-collection">Total: 1.342</div>
+            <div
+              className="d-flex flex-row justify-content-between mt-4"
+              style={{ height: 46 }}
+            >
+              <div className="d-flex flex-row">
+                <div className="frame-search">
+                  <FormText
+                    name="Search"
+                    className=""
+                    type="text"
+                    value={search}
+                    placeholder="Search here"
+                    onChange={handlerSeaarch}
+                    style={{ width: 500 }}
+                  />
+                </div>
+                <div className="frame-filter">
+                  <div className="form-item">
+                    <div className="select-wrap">
+                      <select
+                        id="select"
+                        className="form-item__element form-item__element--select select-category"
+                        required
+                        // value={category}
+                        // onChange={handlerSelectCategory}
+                      >
+                        <option disabled selected value="">
+                          Select Category
+                        </option>
+                        <option value="Web UI">Web UI</option>
+                        <option value="Mobile UI">Mobile UI</option>
+                        <option value="Design System">Design System</option>
+                      </select>
+                    </div>
                   </div>
-                </td>
-              </tr>
-            </tbody>
-          ))}
-        </table>
-      </div>
-    </div>
-    ) : (
-      <PageNotFound />
-    )}
+                </div>
+              </div>
+              <Button
+                type="button"
+                className="btn btn-primary"
+                onClick={routeUIKits}
+              >
+                Add New UI Kits
+              </Button>
+            </div>
+
+            {/* table here  */}
+
+            <table class="table rounded bg-white mt-3 mb-5">
+              <thead>
+                <tr>
+                  <th scope="col">NO</th>
+                  <th scope="col">NAME</th>
+                  <th scope="col">CATEGORY</th>
+                  <th scope="col">PRICE</th>
+                  <th scope="col">DOWNLOADED</th>
+                  <th scope="col">STATUS</th>
+                  <th scope="col">ACTION</th>
+                </tr>
+              </thead>
+              {loading && (
+                <tbody>
+                  <td colSpan="7" className="text-center">
+                    <div className="d-flex justify-content-center mt-5 mb-5">
+                      <div className="spinner-grow text-primary" role="status">
+                        <span className="visually-hidden">Loading...</span>
+                      </div>
+                    </div>
+                  </td>
+                </tbody>
+              )}
+              {!loading &&
+                kitsData.map((item, index) => (
+                  <tbody>
+                    <tr>
+                      <th
+                        scope="row"
+                        key={index}
+                        className="ml-5"
+                        style={{ paddingLeft: 14 }}
+                      >
+                        {index + 1}
+                      </th>
+                      <td>{item.data.productName}</td>
+                      <td className="max-description">
+                        {item.data.productDescription.length > maxLengthDesc
+                          ? `${item.data.productDescription.substring(
+                              0,
+                              maxLengthDesc
+                            )}...`
+                          : item.data.productDescription}
+                      </td>
+                      <td>{item.id}</td>
+                      <td>{item.data.productName}</td>
+                      <td>
+                        <span className="status-badges available">
+                          AVAILABLE
+                        </span>
+                      </td>
+                      <td>
+                        <div className="dropdown">
+                          <button
+                            className="btn btn-outline-light btn-sml dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            Option
+                          </button>
+                          <ul
+                            className="dropdown-menu uicollection"
+                            aria-labelledby="dropdownMenuButton1"
+                          >
+                            <li>
+                              <a
+                                className="dropdown-item"
+                                href={`/admin/preview/${item.id}`}
+                              >
+                                Detail
+                              </a>
+                            </li>
+                            <li>
+                              <a className="dropdown-item" href="/">
+                                Edit
+                              </a>
+                            </li>
+                            <li>
+                              <a className="dropdown-item" href="/">
+                                Delete
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </tr>
+                  </tbody>
+                ))}
+            </table>
+          </div>
+        </div>
+      ) : (
+        <PageNotFound />
+      )}
     </>
   );
 }

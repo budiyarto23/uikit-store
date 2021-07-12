@@ -1,0 +1,14 @@
+.btn-logout {
+    min-height: 32px !important;
+    color: #57575A;
+    border: 1px solid #DDD;
+    border-radius: 60px !important;
+    &:hover {
+    border: 1px solid #FFF;
+    background-color: #DC3500;
+    color: #FFF;
+    }
+    &:focus {
+        border: 1px solid #DDD !important;
+    }
+}

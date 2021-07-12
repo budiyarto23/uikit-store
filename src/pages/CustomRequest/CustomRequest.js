@@ -1,28 +1,46 @@
-import React, { useEffect } from "react";
-import { useParams } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useParams, useHistory } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./customRequest.scss";
 import Button from "components/Button";
-// import Modal from "components/Modal/Modal";
-// import RequestIcon from "assets/icons/request-custom-ic.svg";
 import idrFormat from "utils/formatNumber";
 import usdFormat from "utils/formatUSD";
-import { getUiKits } from "config/redux/action";
+import CustomRequestSkeleton from "pages/CustomRequest/CustomSkeleton";
+import { getUiKits, postCustomKit } from "config/redux/action";
 
 export default function CustomRequest() {
-  const { kitsData } = useSelector((state) => ({
-    // loading: state.utils.isLoading,
+  const { loading, kitsData } = useSelector((state) => ({
+    loading: state.utils.isLoading,
     kitsData: state.kits.kitsCollection,
   }));
   const dispatch = useDispatch();
+  const history = useHistory();
   const { id } = useParams();
+  const date = new Date().getTime();
+  const status = "PENDING"
+  const [unique, setUnique] = useState(0);
+  const thisKit = kitsData.filter((item) => item.id === id);
 
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getUiKits());
+    setUnique(Math.floor(Math.random() * 1000 + 10));
     // eslint-disable-next-line
   }, []);
+
+  const addCustomKit = async () => {
+    await dispatch(
+      postCustomKit({
+        date,
+        thisKit,
+        unique,
+        status,
+      })
+    )
+      .then(() => history.push("/"))
+      .catch((err) => err);
+  };
 
   return (
     <div
@@ -38,7 +56,8 @@ export default function CustomRequest() {
         <p className="paid-main-subtitle text-center mx-auto">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
         </p>
-        {kitsData
+        {loading && <CustomRequestSkeleton />}
+        {!loading && kitsData
           .filter((item) => item.id === id)
           .map((val, index) => (
             <div className="row justify-content-center" key={index}>
@@ -75,7 +94,7 @@ export default function CustomRequest() {
                   <Button
                     type="button"
                     className="btn btn-primary buy-now-button mt-4"
-                    //   onClick={() => setShow(true)}
+                      onClick={addCustomKit}
                     //   isLoading={false}
                   >
                     Send Request Via WhatsApp
@@ -83,7 +102,7 @@ export default function CustomRequest() {
                   <Button
                     type="button"
                     className="btn btn-outline buy-now-button-free mt-4"
-                    //   onClick={() => setShow(true)}
+                      onClick={addCustomKit}
                     //   isLoading={false}
                   >
                     Send Request Via Email

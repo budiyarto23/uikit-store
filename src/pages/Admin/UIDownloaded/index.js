@@ -1,21 +1,36 @@
-import React, { useState } from "react";
-// import { useHistory } from "react-router-dom";
+import React, { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 
 import "./uiDownloaded.scss";
 import AdminHeader from "pages/Admin/AdminHeader/index";
 import FormText from "components/Form/FormText/FormText";
+import { getDownloadKits } from "config/redux/action";
+import idrFormat from "utils/formatNumber";
+import usdFormat from "utils/formatUSD";
 
-export default function UIDownloaded({ data }) {
-
-  const maxLengthDesc = 25;
+export default function UIDownloaded() {
+  const { loading, kitsDownload } = useSelector((state) => ({
+    loading: state.utils.isLoading,
+    kitsDownload: state.kits.kitsDownload,
+  }));
+  const dispatch = useDispatch();
   const [search, setSearch] = useState("");
 
   const handlerSeaarch = (event) => {
     setSearch(event.target.value);
   };
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch(getDownloadKits());
+    // eslint-disable-next-line
+  }, []);
+
   return (
-    <div className="container-fluid p-0" style={{ backgroundColor: "#FFFBF8" }}>
+    <div
+      className="container-fluid p-0"
+      style={{ backgroundColor: "#F3F4F6", minHeight: "110vh" }}
+    >
       <AdminHeader />
       <div className="container mt-5">
         <div className="title-collection">Download History</div>
@@ -37,26 +52,43 @@ export default function UIDownloaded({ data }) {
               />
             </div>
             <div className="frame-filter">
-              <select
-                className="form-select form-collection"
-                aria-label="Default select example"
-              >
-                <option selected>Filter Category</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
+              <div className="form-item">
+                <div className="select-wrap">
+                  <select
+                    id="select"
+                    className="form-item__element form-item__element--select select-category"
+                    required
+                    // value={category}
+                    // onChange={handlerSelectCategory}
+                  >
+                    <option disabled selected value="">
+                      Filter Category
+                    </option>
+                    <option value="Web UI">Web UI</option>
+                    <option value="Mobile UI">Mobile UI</option>
+                    <option value="Design System">Design System</option>
+                  </select>
+                </div>
+              </div>
             </div>
             <div className="frame-filter">
-              <select
-                className="form-select form-collection"
-                aria-label="Default select example"
-              >
-                <option selected>Filter Status</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-              </select>
+              <div className="form-item">
+                <div className="select-wrap">
+                  <select
+                    id="select"
+                    className="form-item__element form-item__element--select select-category"
+                    required
+                    // value={category}
+                    // onChange={handlerSelectCategory}
+                  >
+                    <option disabled selected value="">
+                      Filter Status
+                    </option>
+                    <option value="Confirm">Confirm</option>
+                    <option value="Pending">Pending</option>
+                  </select>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -67,77 +99,96 @@ export default function UIDownloaded({ data }) {
           <thead>
             <tr>
               <th scope="col">NO</th>
-              <th scope="col">INVOICE</th>
-              <th scope="col">NAME</th>
               <th scope="col">PRODUCT NAME</th>
+              <th scope="col">CATEGORY</th>
               <th scope="col">PRICE</th>
-              <th scope="col">DATE</th>
+              <th scope="col">UNIQUE CODE - DATE</th>
+              <th scope="col">TOTAL AMOUNT</th>
               <th scope="col">STATUS</th>
-              <th scope="col">CONFIRM</th>
+              <th scope="col">OPTION</th>
             </tr>
           </thead>
-          {data.map((item, index) => (
+
+          {loading && (
             <tbody>
-              <tr>
-                <th
-                  scope="row"
-                  key={index}
-                  className="ml-5"
-                  style={{ paddingLeft: 14 }}
-                >
-                  {index + 1}
-                </th>
-                <td>{item.name}</td>
-                <td className="max-description">
-                  {item.description.length > maxLengthDesc
-                    ? `${item.description.substring(0, maxLengthDesc)}...`
-                    : item.description}
-                </td>
-                <td>{item.id}</td>
-                <td>{item.idrPrice}</td>
-                <td>{item.usdPrice}</td>
-                <td>
-                  <span className="status-badges available">AVAILABLE</span>
-                </td>
-                <td>
-                  <div class="dropdown">
-                    <button
-                      class="btn btn-outline-light btn-sml dropdown-toggle"
-                      type="button"
-                      id="dropdownMenuButton1"
-                      data-bs-toggle="dropdown"
-                      aria-expanded="false"
-                    >
-                      Option
-                    </button>
-                    <ul
-                      class="dropdown-menu uicollection"
-                      aria-labelledby="dropdownMenuButton1"
-                    >
-                      <li>
-                        <a
-                          class="dropdown-item"
-                          href={`/preview/downloaded/${item.id}`}
-                        >
-                          Detail
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="/">
-                          Edit
-                        </a>
-                      </li>
-                      <li>
-                        <a class="dropdown-item" href="/">
-                          Delete
-                        </a>
-                      </li>
-                    </ul>
+              <td colSpan="8" className="text-center">
+                <div className="d-flex justify-content-center mt-5 mb-5">
+                  <div className="spinner-grow text-primary" role="status">
+                    <span className="visually-hidden">Loading...</span>
                   </div>
-                </td>
-              </tr>
+                </div>
+              </td>
             </tbody>
-          ))}
+          )}
+          {!loading &&
+            kitsDownload.map((item, index) => (
+              <tbody key={index}>
+                <tr>
+                  <th
+                    scope="row"
+                    key={index}
+                    className="ml-5"
+                    style={{ paddingLeft: 14 }}
+                  >
+                    {index + 1}
+                  </th>
+                  {item.data.thisKit.map((benefit, index) => (
+                    <>
+                      <td key={index}>{benefit.data.productName}</td>
+                      <td className="max-description">
+                        {benefit.data.category}
+                      </td>
+                      <td>{`${idrFormat(benefit.data.idrPrice)} - ${usdFormat(
+                        benefit.data.usdPrice
+                      )}`}</td>
+                      <td>{`${item.data.unique} - ${benefit.data.date}`}</td>
+                      <td>{`${item.data.totalAmountIDR} - ${item.data.totalAmountUSD}`}</td>
+                      <td>
+                        <span className="status-badges available">
+                          {item.data.status}
+                        </span>
+                      </td>
+                      <td>
+                        <div class="dropdown">
+                          <button
+                            class="btn btn-outline-light btn-sml dropdown-toggle"
+                            type="button"
+                            id="dropdownMenuButton1"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            Option
+                          </button>
+                          <ul
+                            class="dropdown-menu uicollection"
+                            aria-labelledby="dropdownMenuButton1"
+                          >
+                            <li>
+                              <a
+                                class="dropdown-item"
+                                href={`/preview/downloaded/${item.id}`}
+                              >
+                                Detail
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="/">
+                                Edit
+                              </a>
+                            </li>
+                            <li>
+                              <a class="dropdown-item" href="/">
+                                Delete
+                              </a>
+                            </li>
+                          </ul>
+                        </div>
+                      </td>
+                    </>
+                  ))}
+                </tr>
+              </tbody>
+            ))}
         </table>
       </div>
     </div>

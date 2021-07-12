@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { useLocation, useHistory } from "react-router-dom";
 import { useDispatch } from "react-redux";
 
+import "./adminHeader.scss";
 import Logo from "assets/icons/logo.svg";
 import Button from "components/Button";
 import { logOut } from "config/redux/action";
@@ -15,8 +16,7 @@ export default function Header() {
   const userLogOut = () => {
     const res = dispatch(logOut()).catch((err) => err);
     if(res){
-      // localStorage.clear();
-      history.push(`/admin/login-page`);
+      history.push("/admin/login-page");
     } else {
       console.log("logout gagal")
     }
@@ -87,7 +87,7 @@ export default function Header() {
               </li>
             </ul>
           </div>
-          <Button type="button" onClick={userLogOut} className="btn btn-outline-light btn-sml">
+          <Button type="button" onClick={userLogOut} className="btn btn-outline-pr btn-logout">
             Logout
           </Button>
         </div>

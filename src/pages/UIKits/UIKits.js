@@ -81,7 +81,7 @@ export default function UIKits() {
     ));
 
   return (
-    <div className="container-fluid p-0" style={{ backgroundColor: "#FFFBF8" }}>
+    <div className="container-fluid p-0" style={{ backgroundColor: "#F3F4F6" }}>
       <Header />
 
       <div className="container">

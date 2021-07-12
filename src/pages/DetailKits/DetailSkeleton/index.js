@@ -35,7 +35,7 @@ const DetailSkeleton = () => {
         {Array(2)
           .fill()
           .map((item, index) => (
-            <li className="preview-image-skeleton mt-4" key={index}>
+            <li className="preview-image-skeleton mt-5" key={index}>
               <Skeleton height={300} className="item-image-skeleton" />
             </li>
           ))}

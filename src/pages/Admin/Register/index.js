@@ -10,7 +10,7 @@ import { registerUserAPI } from "config/redux/action";
 
 function Register() {
   // consume from redux
-  const loading = useSelector(state => state.isLoading);
+  const loading = useSelector((state) => state.utils.isLoading);
   const dispatch = useDispatch();
 
   const history = useHistory();
@@ -26,14 +26,13 @@ function Register() {
   };
 
   const handleRegister = async () => {
-    const res = await dispatch(registerUserAPI({email, password})).catch(err => err);
-    if(res){
-      console.log("register berhasil")
-      // history.push('/admin-home-page')
-    } else {
-      console.log("register gagal")
-    }
-  } 
+    await dispatch(registerUserAPI({ email, password }))
+      .then((res) => {
+        localStorage.setItem("userId", JSON.stringify(res.uid));
+        history.push("/admin-home-page");
+      })
+      .catch((err) => err);
+  };
 
   const routeToLoginPage = () => {
     let path = `/admin/login-page`;
@@ -79,10 +78,19 @@ function Register() {
                   placeholder="Password"
                   onChange={handlerPassword}
                 />
-                <Button type="button" className="btn btn-primary mt-3" isLoading={loading} onClick={handleRegister}>
+                <Button
+                  type="button"
+                  className="btn btn-primary mt-3"
+                  isLoading={loading}
+                  onClick={handleRegister}
+                >
                   Register
                 </Button>
-                <Button type="button" className="btn btn-light mt-4" onClick={routeToLoginPage}>
+                <Button
+                  type="button"
+                  className="btn btn-light mt-4"
+                  onClick={routeToLoginPage}
+                >
                   Login
                 </Button>
               </div>

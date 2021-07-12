@@ -7,6 +7,8 @@ import {
   LOGOUT_SUCCESS,
 } from "./types";
 
+import { Redirect } from "react-router-dom";
+
 export const closeModal = () => (dispatch) => {
   dispatch({ type: MODAL_CLOSE, value: false })
 }
@@ -19,8 +21,16 @@ export const registerUserAPI = (data) => (dispatch) => {
       .createUserWithEmailAndPassword(data.email, data.password)
       .then((res) => {
         console.log("success. ", res);
+        const dataUser = {
+          email: res.user.email,
+          uid: res.user.uid,
+          emailVerified: res.user.emailVerified,
+          refreshToken: res.user.refreshToken,
+        };
+        dispatch({ type: CHANGE_ISLOGIN, value: true });
+        dispatch({ type: CHANGE_USER, value: dataUser });
         dispatch({ type: CHANGE_ISLOADING, value: false });
-        resolve(true);
+        resolve(dataUser);
       })
       .catch(function (error) {
         var errorCode = error.code;
@@ -54,6 +64,7 @@ export const loginUserAPI = (data) => (dispatch) => {
         dispatch({ type: CHANGE_ISLOGIN, value: true });
         dispatch({ type: CHANGE_USER, value: dataUser });
         resolve(dataUser);
+        <Redirect to="/admin-home-page" />
       })
       .catch(function (error) {
         var errorCode = error.code;
