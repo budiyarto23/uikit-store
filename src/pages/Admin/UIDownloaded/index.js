@@ -15,6 +15,7 @@ export default function UIDownloaded() {
   }));
   const dispatch = useDispatch();
   const [search, setSearch] = useState("");
+  const totalDownload = kitsDownload.length;
 
   const handlerSeaarch = (event) => {
     setSearch(event.target.value);
@@ -34,7 +35,7 @@ export default function UIDownloaded() {
       <AdminHeader />
       <div className="container mt-5">
         <div className="title-collection">Download History</div>
-        <div className="total-collection">Total: 1.342</div>
+        <div className="total-collection">Total: {totalDownload}</div>
         <div
           className="d-flex flex-row justify-content-between mt-4"
           style={{ height: 46 }}
@@ -58,8 +59,8 @@ export default function UIDownloaded() {
                     id="select"
                     className="form-item__element form-item__element--select select-category"
                     required
-                    // value={category}
-                    // onChange={handlerSelectCategory}
+                  // value={category}
+                  // onChange={handlerSelectCategory}
                   >
                     <option disabled selected value="">
                       Filter Category
@@ -78,8 +79,8 @@ export default function UIDownloaded() {
                     id="select"
                     className="form-item__element form-item__element--select select-category"
                     required
-                    // value={category}
-                    // onChange={handlerSelectCategory}
+                  // value={category}
+                  // onChange={handlerSelectCategory}
                   >
                     <option disabled selected value="">
                       Filter Status
@@ -110,13 +111,14 @@ export default function UIDownloaded() {
           </thead>
 
           {loading && (
-            <tbody>
+            <tbody style={{ height: 320 }}>
               <td colSpan="8" className="text-center">
-                <div className="d-flex justify-content-center mt-5 mb-5">
+                <div className="d-flex justify-content-center mb-4">
                   <div className="spinner-grow text-primary" role="status">
                     <span className="visually-hidden">Loading...</span>
                   </div>
                 </div>
+                <div className="text-center loading-text">Wait a moment.</div>
               </td>
             </tbody>
           )}

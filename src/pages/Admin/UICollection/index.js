@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 
 import "./uiCollection.scss";
@@ -17,6 +17,7 @@ function UICollection() {
     kitsData: state.kits.kitsCollection,
   }));
   const dispatch = useDispatch();
+  const totalCollection = kitsData.length;
 
   const renderUiKits = () => {
     dispatch(getUiKits());
@@ -40,6 +41,7 @@ function UICollection() {
     pathHistory.push(path);
   };
 
+
   const getUid = JSON.parse(localStorage.getItem("userId"));
   console.log(getUid);
 
@@ -53,7 +55,7 @@ function UICollection() {
           <AdminHeader />
           <div className="container mt-5">
             <div className="title-collection">UI Kits Collection</div>
-            <div className="total-collection">Total: 1.342</div>
+            <div className="total-collection">Total: {totalCollection}</div>
             <div
               className="d-flex flex-row justify-content-between mt-4"
               style={{ height: 46 }}
@@ -115,13 +117,14 @@ function UICollection() {
                 </tr>
               </thead>
               {loading && (
-                <tbody>
+                <tbody style={{ height: 320 }}>
                   <td colSpan="7" className="text-center">
-                    <div className="d-flex justify-content-center mt-5 mb-5">
+                    <div className="d-flex justify-content-center mb-4">
                       <div className="spinner-grow text-primary" role="status">
                         <span className="visually-hidden">Loading...</span>
                       </div>
                     </div>
+                    <div className="text-center loading-text">Wait a moment.</div>
                   </td>
                 </tbody>
               )}
@@ -177,9 +180,9 @@ function UICollection() {
                               </a>
                             </li>
                             <li>
-                              <a className="dropdown-item" href="/">
-                                Edit
-                              </a>
+                              <button className="dropdown-item">
+                              <Link to={`/admin/update-kit/${item.id}`} style={{ color: "#000", textDecoration: "none" }}>Update</Link>
+                              </button>
                             </li>
                             <li>
                               <a className="dropdown-item" href="/">

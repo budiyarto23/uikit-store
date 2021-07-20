@@ -41,7 +41,7 @@ export default function Detail() {
   }, []);
 
   return (
-    <div className="container-fluid p-0" style={{ background: "#FFFBF8" }}>
+    <div className="container-fluid p-0 background-detail-kit">
       <Header />
       {loading && <DetailSkeleton />}
       {!loading &&
@@ -230,7 +230,7 @@ export default function Detail() {
                                 alt="icon-check-on"
                                 className="feature-icon"
                               />
-                              <div className="feature-name">
+                              <div className="feature-name feature-off">
                                 Responsive Design
                               </div>
                             </div>
@@ -242,7 +242,7 @@ export default function Detail() {
                                 alt="icon-check-on"
                                 className="feature-icon"
                               />
-                              <div className="feature-name">
+                              <div className="feature-name feature-off">
                                 Free Design Update
                               </div>
                             </div>
@@ -252,7 +252,7 @@ export default function Detail() {
                                 alt="icon-check-on"
                                 className="feature-icon"
                               />
-                              <div className="feature-name">
+                              <div className="feature-name feature-off">
                                 Base to Component
                               </div>
                             </div>
@@ -262,7 +262,7 @@ export default function Detail() {
                                 alt="icon-check-on"
                                 className="feature-icon"
                               />
-                              <div className="feature-name">Commercial Use</div>
+                              <div className="feature-name feature-off">Commercial Use</div>
                             </div>
                           </div>
                         </div>
@@ -309,7 +309,7 @@ export default function Detail() {
                         <div className="detail-price-free">Free</div>
                       )}
                       {cards.data.idrPrice !== 0 ? (
-                        <div className="detail-price-dollar">{`/ ${usdFormat(
+                        <div className="detail-price-dollar">{`- ${usdFormat(
                           cards.data.usdPrice
                         )}`}</div>
                       ) : (
@@ -328,6 +328,7 @@ export default function Detail() {
                       <div className="m-2"></div>
                       <a
                         className="btn btn-outline hack-md-btn hack-sm-btn"
+                        id="btn-hover"
                         href={`/${id}/custom-request`}
                         target="_blank"
                         rel="noreferrer"
@@ -339,10 +340,10 @@ export default function Detail() {
                 </div>
               </div>
 
-              <div className="row mb-5">
+              <div className="row mt-5 mb-5">
                 {cards.data.images.map((src, index) => (
-                  <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3 mt-5">
-                    <div className="card-detail card-featured-detail mb-2">
+                  <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4">
+                    <div className="card-detail card-featured-detail">
                       <figure className="img-wrapper-detail">
                         <img
                           src={src}

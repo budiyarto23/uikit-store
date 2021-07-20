@@ -1,3 +1,12 @@
+@import "../../assets/scss/mainSytles/colors";
+@import "../../assets/scss/mainSytles/fonts";
+
+
+.bg-not-found {
+    height: 100vh;
+    background: $background-color;
+}
+
 .img-page-not-found {
     width: 300px !important;
     height: 210px !important;

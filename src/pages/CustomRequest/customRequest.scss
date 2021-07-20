@@ -1,3 +1,14 @@
+@import "../../assets/scss/mainSytles/colors";
+@import "../../assets/scss/mainSytles/fonts";
+
+
+.bg-custom-request {
+  background: $background-color;
+  height: auto;
+  padding-bottom: 80px;
+  padding-top: 60px;
+}
+
 .request-title {
     font-family: "Heebo", sans-serif;
     font-style: normal;

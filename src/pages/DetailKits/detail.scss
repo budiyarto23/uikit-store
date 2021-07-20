@@ -1,3 +1,10 @@
+@import "../../assets/scss/mainSytles/colors";
+@import "../../assets/scss/mainSytles/fonts";
+
+.background-detail-kit {
+    background: $background-color !important;
+}
+
 .detail-container {
     border: 1px solid #EEE;
     background-color: #FFF;
@@ -5,7 +12,7 @@
 }
 
 .detail-title {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
@@ -21,15 +28,16 @@
     border-radius: 10px;
     border: 1px solid #EEE;
     padding: 30px 24px 30px 24px;
+    box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3) !important;
 }
 
 .hack-sm-btn {
     width: 100%;
     line-height: 30px !important;
-    border: 1.5px solid #2296FF !important;
+    border: 1.5px solid $primary-color !important;
 
     &:last-child {
-        color: #0486F6 !important;
+        color: $primary-color !important;
     }
 }
 
@@ -45,8 +53,9 @@
 
 .card-detail {
 
-    border: 2px solid #FFF !important;
+    border: 4px solid #FFF !important;
     border-radius: 10px !important;
+    box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3) !important;
 
     .img-wrapper-detail {
         height: 100%;
@@ -64,7 +73,7 @@
 
     &.card-featured-detail:hover {
         overflow: hidden;
-        // height: 420px !important;
+        border-radius: 14px !important;
         cursor: pointer;
 
         .img-wrapper-detail {
@@ -73,24 +82,24 @@
             left: 0;
             right: 0;
             bottom: 0;
-            transform: scale(1.05);
-            transition: 0.25s transform ease-in-out;
+            // transform: scale(1.05);
+            // transition: 0.25s transform ease-in-out;
             opacity: 0.9;
         }
     }
 }
 
 .total-page {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 13px;
     line-height: 40px;
-    color: #FEB019;
+    color: $primary-color;
 }
 
 .detail-description {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -110,23 +119,27 @@
 }
 
 .nav-pills .detail-pill .nav-link {
-    background-color: #FEB019;
+    background-color: $primary-color;
     color: #FFF !important;
     border-radius: 100px;
     height: 34px;
     line-height: 18px !important;
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     margin-right: 14px;
 }
 
 .feature-name {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 14px;
     line-height: 40px;
     color: #3F3F3F;
     margin-left: 12px;
+}
+
+.feature-off {
+    color: #9A9999 !important;
 }
 
 .price-container {
@@ -138,43 +151,44 @@
 }
 
 .detail-price-label {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     color: #3F3F3F;
-    margin-bottom: 2px;
+    margin-bottom: 10px;
+    padding-top: -10px !important;
 }
 
 .detail-price-free {
-    font-family: "Heebo", sans-serif;
-    font-style: normal;
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 28px;
-    color: #25C469;
-    margin-bottom: 14px;
-}
-
-.detail-price-rupiah {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 28px;
-    color: #FEB019;
+    color: $red-color;
+    margin-bottom: 14px;
+}
+
+.detail-price-rupiah {
+    font-family: $font-family;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 28px;
+    color: $font-main-color;
     margin-right: 12px;
     margin-bottom: 14px;
 }
 
 .detail-price-dollar {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
-    font-weight: 600;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 24px;
     line-height: 28px;
-    color: #FEB019;
+    color: $font-main-color;
     margin-right: 12px;
     margin-bottom: 14px;
 }
@@ -191,16 +205,36 @@
 
     .hack-sm-btn {
 
-        // width: 50%;
-        // margin: 8px 0px 13px 0px !important;
         &:last-child {
-            color: #0486F6 !important;
+            color: $primary-color !important;
         }
     }
 
     .column-8 {
         width: 100%;
         min-height: 100px;
+    }
+
+    .detail-price-rupiah {
+        font-family: $font-family;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        color: $font-main-color;
+        margin-right: 12px;
+        margin-bottom: 14px;
+    }
+
+    .detail-price-dollar {
+        font-family: $font-family;
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 28px;
+        color: $font-main-color;
+        margin-right: 12px;
+        margin-bottom: 14px;
     }
 
     .column-4 {
@@ -210,16 +244,44 @@
     }
 
     .card-detail {
-
-        .cover-img {
-            height: 260px !important;
-
+        border: 4px solid #FFF !important;
+        border-radius: 10px !important;
+        box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3) !important;
+    
+        .img-wrapper-detail {
+            height: 100%;
+            margin-bottom: 0;
+            border-radius: 10px;
+            overflow: hidden;
         }
-
+    
+        .cover-img {
+            object-fit: cover;
+            height: 300px;
+            width: 100%;
+    
+        }
+    
         &.card-featured-detail:hover {
-            max-height: 260px !important;
+            overflow: hidden;
+            cursor: pointer;
+    
+            .img-wrapper-detail {
+                margin: 0;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                // transform: scale(1.05);
+                // transition: 0.25s transform ease-in-out;
+                opacity: 0.9;
+            }
         }
     }
+}
+
+#btn-hover:hover {
+    background: lighten($primary-color, 44%);
 }
 
 
@@ -250,11 +312,7 @@
         // margin: 8px 0px 13px 0px !important;
         &.hack-sm-btn {
             &:last-child {
-                color: #0486F6 !important;
-
-                &:hover {
-                    background-color: #2296FF !important;
-                }
+                color: $primary-color !important;
             }
         }
 
@@ -274,14 +332,14 @@
 
         .cover-img {
             object-fit: cover;
-            height: 450px !important;
+            height: 460px !important;
             width: 100%;
 
         }
 
         &.card-featured-detail:hover {
             overflow: hidden;
-            max-height: 450px !important;
+            max-height: 460px !important;
             cursor: pointer;
 
             .img-wrapper-detail {
@@ -290,10 +348,12 @@
                 left: 0;
                 right: 0;
                 bottom: 0;
-                transform: scale(1.1);
-                transition: 0.25s transform ease-in-out;
+                // transform: scale(1.1);
+                // transition: 0.25s transform ease-in-out;
                 opacity: 0.9;
             }
         }
+
+
     }
 }

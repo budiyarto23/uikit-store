@@ -1,7 +1,9 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import "assets/scss/style.scss";
+// global scss
 
 import LandingPage from "pages/LandingPage/index";
+import HireUs from "pages/HireUs";
 import UIKits from "pages/UIKits/UIKits";
 import CustomRequest from "pages/CustomRequest/CustomRequest";
 import PaidDownload from "pages/PaidDownload/PaidDownload";
@@ -31,14 +33,15 @@ console.log(userAuth);
   return (
     <Router>
       <Switch>
-      <Route exact path="/" component={LandingPage}></Route>
+      <Route exact path="/" component={LandingPage} />
       <Route path="/uikits" component={UIKits} />
+      <Route path="/hire-us" component={HireUs} />
       <Route path="/detail/:id" component={Detail} />
       <Route path="/:id/custom-request" component={CustomRequest} />
-      <Route path="/custom-design" component={CustomDesign}></Route>
+      <Route path="/custom-design" component={CustomDesign} />
       <Route path="/:id/paid-download" component={PaidDownload} />
-      <Route path="/payment-confirm" component={PaymentConfirm}></Route>
-      <Route path="/pricing-option" component={PricingOption}></Route>
+      <Route path="/payment-confirm" component={PaymentConfirm} />
+      <Route path="/pricing-option" component={PricingOption} />
 
       {/* Route Admin here */}
 
@@ -53,6 +56,7 @@ console.log(userAuth);
       <Route path="/preview/custom/:id" component={CustomDetail} />
       <Route path="/admin-custom-request" component={UICustomRequest} />
       <Route component={PageNotFound} />
+      {/* <Route exact path="/" component={HomePageHomePageHomePage} /> */}
       </Switch>
     </Router>
   );

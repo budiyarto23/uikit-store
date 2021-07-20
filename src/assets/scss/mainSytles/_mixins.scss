@@ -1,0 +1,28 @@
+@import "./colors";
+
+@mixin badge {
+    box-sizing: border-box;
+    display: inline-block;
+    background: #EEE;
+    color: #444;
+    border-radius: 4px;
+    text-align: center;
+    font-size: 18px;
+    font-weight: 600;
+    margin-left: 10px;
+    padding: 0.45rem 0.7rem 0.3rem;
+    line-height: inherit;
+    font-family: "Heebo", sans-serif;
+    font-weight: 600 !important;
+}
+
+@mixin main-tile {
+    font-family: "Heebo", sans-serif;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 42px;
+    line-height: 64px;
+    color: #18191F;
+    margin-top: 90px;
+    max-width: 500px;
+}

@@ -10,10 +10,8 @@ import { getUiKits } from "config/redux/action";
 import "./uikits.scss";
 
 export default function UIKits() {
-  // const kitsData = useSelector(state => state.kitsCollection);
   const { loading, kitsData } = useSelector((state) => ({
     loading: state.utils.isLoading,
-    // loading: state.loading,
     kitsData: state.kits.kitsCollection,
   }));
   const dispatch = useDispatch();
@@ -21,10 +19,8 @@ export default function UIKits() {
   useEffect(() => {
     window.scrollTo(0, 0);
     dispatch(getUiKits());
-    console.log("loading di dalam useEffect", loading);
     // eslint-disable-next-line
   }, []);
-  console.log("loading di luar useEffect", loading);
 
   const showAllDesign = kitsData.map((card, index) => (
     <Card
@@ -81,7 +77,7 @@ export default function UIKits() {
     ));
 
   return (
-    <div className="container-fluid p-0" style={{ backgroundColor: "#F3F4F6" }}>
+    <div className="container-fluid p-0 kits-bg">
       <Header />
 
       <div className="container">

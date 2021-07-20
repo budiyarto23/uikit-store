@@ -3,7 +3,7 @@ import "./pageNotFound.scss";
 import { useHistory } from "react-router-dom";
 // library & package
 import Button from "components/Button";
-import ImgPageNotFound from "assets/images/page-not-found.svg";
+import ImgPageNotFound from "assets/images/page-not-found.svg.svg";
 // assets
 
 export default function PageNotFound() {
@@ -14,7 +14,7 @@ export default function PageNotFound() {
   // };
 
   return (
-    <div className="mobile-view" style={{ background: "#FFFBF8", height: "100vh" }}>
+    <div className="mobile-view bg-not-found">
       <div className="container-fluid hack-margin-responsive">
         <div className="row justify-content-center">
           <div className="col col-xl-5 col-lg-5 col-md-7 col-sm-12">

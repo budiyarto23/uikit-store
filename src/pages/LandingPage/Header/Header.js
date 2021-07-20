@@ -15,7 +15,6 @@ export default function Header() {
   return (
     <nav
       className="navbar navbar-light navbar-expand-lg nav-custom"
-      style={{ backgroundColor: "#FFF" }}
     >
       <div className="container">
         <a className="navbar-brand" href="/">

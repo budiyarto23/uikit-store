@@ -1,341 +1,26 @@
-// .frame-paid-download {
-//   background: #fff;
-//   border-radius: 10px;
-//   border: 1px solid #eee;
-//   padding-bottom: 54px !important;
-// }
+@import "../../assets/scss/mainSytles/colors";
+@import "../../assets/scss/mainSytles/fonts";
 
-// .frame-paid-download-1 {
-//   background: #fff;
-//   border-radius: 10px;
-//   border: 1px solid #eee;
-// }
+.bg-paid-download {
+    background: $background-color;
+    height: auto;
+    padding-top: 60px;
+    padding-bottom: 120px;
+}
 
-// .note-paid-download {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 14px;
-//   line-height: 20px;
-//   color: #57575a;
-//   margin-top: -10px;
-// }
-
-// .paid-title {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 28px;
-//   line-height: 32px;
-//   color: #18191f;
-//   margin-bottom: 6px;
-// }
-
-// .paid-subtitle {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 18px;
-//   line-height: 26px;
-//   color: #57575a;
-// }
-
-// .bg-title-paid {
-//   background-color: #fff;
-//   border-radius: 10px 10px 0px 0px;
-//   padding: 0px 20px 0px 20px;
-//   height: 60px;
-//   border-bottom: 1px solid #eee;
-// }
-
-// .frame-title-paid {
-//   width: auto;
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 20px;
-//   line-height: 30px;
-//   color: #3f3f3f;
-// }
-
-// .divider-title-paid {
-//   height: 0.5px !important;
-//   width: 100%;
-//   background-color: #eee;
-// }
-
-// .see-detail-paid {
-//   padding: 10px 14px 0px 0px;
-//   font-family: "Heebo", sans-serif;
-//   font-size: 16px;
-//   // padding-bottom: 12px;
-// }
-
-// .frame-standart-price {
-//   margin: 16px 16px 0px 16px;
-//   min-width: 140px;
-//   max-width: 300px;
-// }
-
-// .title-price {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 15px;
-//   line-height: 26px;
-//   color: #57575a;
-// }
-
-// .standart-price-idr {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 20px;
-//   // line-height: 18px;
-//   color: #feb019;
-// }
-
-// .standart-price-usd {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 20px;
-//   // line-height: 14px;
-//   color: #feb019;
-//   margin-left: 4px;
-// }
-
-// .price-divider-paid {
-//   height: 0.5px;
-//   width: auto;
-//   background-color: #eee;
-//   margin-bottom: 14px;
-// }
-
-// .price-not-paid {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 600;
-//   font-size: 20px;
-//   text-align: center;
-//   color: #25c469;
-//   margin-bottom: -8px;
-// }
-
-// .frame-buyout {
-//   margin: 16px;
-// }
-
-// .buyout-option-title {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 16px;
-//   line-height: 26px;
-//   color: #18191f;
-//   // margin-top: 12px;
-// }
-
-// .buyout-option-decsription {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 14px;
-//   line-height: 18px;
-//   color: #3f3f3f;
-//   margin-top: 4px;
-//   max-width: 400px;
-// }
-
-// .title-free-note {
-//   font-family: "Heebo", sans-serif;
-//   font-weight: 600;
-//   font-size: 20px;
-//   color: #18191f;
-//   text-align: center;
-//   margin-top: 12px !important;
-//   margin-bottom: 6px !important;
-// }
-
-// .subtitle-free-note {
-//   font-family: "Heebo", sans-serif;
-//   font-weight: 400;
-//   font-size: 16px;
-//   color: #3f3f3f;
-//   text-align: center;
-//   margin-bottom: 26px !important;
-//   max-width: 400px !important;
-// }
-
-// .hack-btn-buyout.added {
-//   background-color: #2296ff !important;
-//   color: #fff;
-//   transition: ease 1s;
-
-//   &:hover {
-//     color: #fff !important;
-//   }
-// }
-
-// .frame-paid-form {
-//   margin: 30px 20px -20px 20px;
-// }
-
-// .product-title-paid {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 18px;
-//   line-height: 32px;
-//   color: #18191f;
-// }
-
-// .product-subtitle-paid {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 16px;
-//   line-height: 22px;
-//   color: #3f3f3f;
-//   margin-top: 6px;
-// }
-
-// .divider-price {
-//   height: 1px;
-//   width: auto;
-//   background: #eee;
-//   margin: 15px 0 10px 0;
-// }
-
-// .title-price-paid {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 16px;
-//   line-height: 26px;
-//   color: #57575a;
-// }
-
-// .price-paid {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: bold;
-//   font-size: 24px;
-//   line-height: 30px;
-//   color: #2296ff;
-//   margin-top: -10px;
-//   margin-bottom: -14px;
-// }
-
-// .frame-paid-payment {
-//   margin: 10px 20px -20px 20px;
-// }
-
-// .product-title-payment {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 18px;
-//   line-height: 32px;
-//   color: #18191f;
-// }
-
-// .note-paid-payment {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 18px;
-//   line-height: 20px;
-//   color: #57575a !important;
-//   margin-right: 12px;
-// }
-
-// .note-paid-payment-info {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 500;
-//   font-size: 16px;
-//   line-height: 16px;
-//   color: #57575a;
-//   margin-right: 12px;
-//   margin-top: 8px;
-// }
-
-// .frame-payment-option {
-//   margin-top: 16px;
-//   border: 1.2px solid #eee;
-//   background-color: #fbfbfd;
-//   height: 54px;
-//   padding: 0 14px 0 14px;
-//   border-radius: 4px;
-
-//   &.actived {
-//     border: 2px solid #2296ff !important;
-//   }
-// }
-
-// .payment-label {
-//   font-family: "Heebo", sans-serif;
-//   font-size: 18px;
-//   color: #57575a;
-//   font-weight: 500;
-//   padding-left: 12px;
-
-//   &.text-actived {
-//     color: #2296ff;
-//   }
-// }
-
-// input[type="radio"] {
-//   border: 3px solid #cbcbcb;
-//   width: 20px;
-//   height: 20px;
-// }
-
-// .title-payment {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 16px;
-//   line-height: 26px;
-//   width: 190px;
-//   color: #18191f;
-//   margin-right: 40px;
-// }
-
-// .value-payment-not-selected {
-//   font-family: "Heebo", sans-serif;
-//   font-style: italic;
-//   font-weight: 400;
-//   font-size: 16px;
-//   line-height: 26px;
-//   color: #7e7e7e;
-// }
-
-// .note-before-checkout {
-//   font-family: "Heebo", sans-serif;
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 14px;
-//   line-height: 20px;
-//   color: #57575a;
-//   margin-top: 18px;
-//   margin-bottom: 18px;
-// }
-
-// new style
 .paid-download-container-left {
-    background: #fff !important;
-    border: 1px solid #eeeeee;
+    background: #FFF !important;
+    border: 1px solid #EEE;
     box-sizing: border-box;
     border-radius: 10px;
     padding: 24px;
+    box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3);
 }
 
 .buy-now-button-1 {
     width: 100%;
-    margin-right: 7px;
-    margin-top: 20px;
+    // margin-right: 7px;
+    margin-top: 50px;
 }
 
 .buy-now-button {
@@ -344,25 +29,25 @@
 
 .buy-now-button-2 {
     width: 100%;
-    margin-left: 7px;
-    color: #2296ff;
-    border: 1px solid #2296ff;
+    // margin-left: 7px;
+    color: $primary-color;
+    border: 1px solid $primary-color;
     margin-top: 20px;
 
     &:hover {
-        color: #2296ff;
-        background-color: #e9f4ff !important;
+        color: $primary-color;
+        background-color: lighten($primary-color, 44%);
     }
 }
 
 .buy-now-button-free {
     width: 100%;
-    color: #2296FF;
-    border: 1px solid #2296FF;
+    color: $primary-color;
+    border: 1px solid $primary-color;
 
     &:hover {
-        color: #2296FF;
-        background-color: #E9F4FF !important;
+        color: $primary-color;
+        background-color: lighten($primary-color, 44%);
     }
 }
 
@@ -373,9 +58,9 @@
 
 .paid-preview-img .item-preview-img {
     width: 100% !important;
-    height: 100% !important;
+    height: 400px !important;
     object-fit: cover !important;
-    border-radius: 6px !important;
+    border-radius: 10px !important;
 }
 
 .paid-preview-img:hover {
@@ -384,14 +69,14 @@
     border-radius: 6px;
     opacity: 0.9;
 
-    img.item-preview-img {
-        transform: scale(1.1);
-        transition: 0.5s transform ease-in-out;
-    }
+    // img.item-preview-img {
+    //     transform: scale(1.1);
+    //     transition: 0.5s transform ease-in-out;
+    // }
 }
 
 .added {
-    background-color: #2296FF;
+    background-color: $primary-color;
     color: #FFF !important;
     &.added:hover {
         color: #FFF !important;
@@ -399,31 +84,31 @@
 }
 
 .total-value-payment {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 600;
     font-size: 28px;
     line-height: 40px;
-    color: #2296FF;
+    color: $font-main-color;
 }
 
 .paid-title-name {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 24px;
     line-height: 30px;
-    color: #18191f;
+    color: $font-main-color;
     margin-top: 30px;
 }
 
 .buyout-price-idr {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 16px;
-    color: #18191f;
+    color: $font-main-color;
     margin-top: 20px;
     margin-bottom: 10px;
 
@@ -433,39 +118,39 @@
 }
 
 .title-payment {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 26px;
     width: 190px;
-    color: #18191F;
+    color: $font-main-color;
     margin-right: 40px;
 }
 
 .value-payment {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
-    color: #18191f;
+    color: $font-main-color;
 }
 
 .value-payment-bold {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 26px;
-    color: #2296ff;
+    color: $primary-color;
 }
 
 .hack-btn-buyout {
-    color: #2296ff;
+    color: $primary-color;
     font-weight: 500;
-    font-family: "Heebo", sans-serif;
-    border: 1px solid #2296ff !important;
+    font-family: $font-family;
+    border: 1px solid $primary-color !important;
     font-size: 14px;
     min-height: 36px !important;
     margin-top: 16px;
@@ -473,12 +158,13 @@
     margin-bottom: 12px;
 
     &:hover {
-        color: #2296ff !important;
+        color: $primary-color !important;
+        background: lighten($primary-color, 44%);
     }
 }
 
 .paid-description-name {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -488,29 +174,27 @@
 }
 
 .paid-container-buyout {
-    // width: 96%;
     margin-top: 10px;
-    margin-bottom: 14px !important;
     padding: 15px 20px 15px 20px;
-    background: #f4faff;
-    border: 1px solid #c4e3ff;
+    background: lighten($primary-color, 49%);
+    border: 1px solid lighten($primary-color, 36%);
     box-sizing: border-box;
     border-radius: 10px;
 }
 
 .title-buyout {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 26px;
-    color: #18191F;
+    color: $font-main-color;
     margin-bottom: 10px;
     margin-top: 6px;
 }
 
 .description-buyout {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
@@ -520,7 +204,7 @@
 }
 
 .master-title-payment {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 20px;
@@ -532,31 +216,33 @@
 
 .box-bank-logo {
     background: #ffffff;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06),
-        0px 0px 1px rgba(0, 0, 0, 0.04);
-    border-radius: 10px;
+    // box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.04), 0px 0px 2px rgba(0, 0, 0, 0.06),
+    //     0px 0px 1px rgba(0, 0, 0, 0.04);
+    border-radius: 8px;
     max-width: 120px;
-    max-height: 90px;
+    height: 80px;
     padding: 14px;
     margin-right: 30px;
+    border: 2px solid #EEE;
 }
 
 .bank-logo {
-    height: 60px;
-    width: 80px;
+    height: 40px;
+    width: 90px;
+    margin-top: 5px !important;
 }
 
 .bank-account-name {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
     line-height: 30px;
-    color: #18191F;
+    color: $font-main-color;
 }
 
 .bank-account-number {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -565,7 +251,7 @@
 }
 
 .payment-method-note {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 12px;
@@ -575,32 +261,32 @@
 
 .paid-container-note {
     margin-top: 40px;
-    margin-bottom: 14px !important;
     padding: 15px 20px 15px 20px;
     background: #fbfbfb;
     border: 1px solid #e8e8e8;
     box-sizing: border-box;
     border-radius: 10px;
+    width: 100% !important;
 }
 
 .paid-main-title {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: bold;
     font-size: 40px;
     margin-bottom: 5px;
-    color: #18191f;
+    color: $font-main-color;
 }
 
 .paid-main-subtitle {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 30px;
     color: #57575a;
     margin-bottom: 40px;
-    max-width: 400px;
+    max-width: 460px;
 }
 
 
@@ -650,6 +336,7 @@
     .bank-logo {
         height: 45px;
         width: 60px;
+        margin-top: -3px !important;
     }
 
     .bank-account-name {
@@ -690,7 +377,7 @@
     .title-buyout {
         font-size: 16px;
         line-height: 20px;
-        color: #18191F;
+        color: $font-main-color;
         margin-bottom: 10px;
         margin-top: 6px;
     }
@@ -703,7 +390,7 @@
     }
 
     .title-payment {
-        font-family: "Heebo", sans-serif;
+        font-family: $font-family;
         font-style: normal;
         font-weight: normal;
         font-size: 14px;
@@ -719,12 +406,12 @@
     }
 
     .value-payment {
-        font-family: "Heebo", sans-serif;
+        font-family: $font-family;
         font-style: normal;
         font-weight: 500;
         font-size: 14px;
         line-height: 20px;
-        color: #18191f;
+        color: $font-main-color;
     }
 
     .total-value-payment {
@@ -740,12 +427,12 @@
     }
 
     .paid-main-title {
-        font-family: "Heebo", sans-serif;
+        font-family: $font-family;
         font-style: normal;
         font-weight: bold;
         font-size: 30px;
         margin-bottom: 5px;
-        color: #18191F;
+        color: $font-main-color;
     }
 
     .paid-main-subtitle {
@@ -762,12 +449,19 @@
         margin-top: 24px;
     }
 
+    .paid-preview-img .item-preview-img {
+        width: 100% !important;
+        height: 250px !important;
+        object-fit: cover !important;
+        border-radius: 10px !important;
+    }
+
 
 }
 
 @media screen and (max-width: 996px) and (min-width: 577px) {
     .title-payment {
-        font-family: "Heebo", sans-serif;
+        font-family: $font-family;
         font-style: normal;
         font-weight: normal;
         font-size: 16px;
@@ -783,21 +477,21 @@
     }
 
     .value-payment {
-        font-family: "Heebo", sans-serif;
+        font-family: $font-family;
         font-style: normal;
         font-weight: 500;
         font-size: 16px;
         line-height: 20px;
-        color: #18191f;
+        color: $font-main-color;
     }
 
     .total-value-payment {
-        font-family: "Heebo", sans-serif;
+        font-family: $font-family;
         font-style: normal;
         font-weight: 600;
-        font-size: 18px;
+        font-size: 22px;
         line-height: 22px;
-        color: #feb019;
+        color: $font-main-color;
     }
 
     .value-payment-not-selected {

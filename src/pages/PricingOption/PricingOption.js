@@ -1,78 +1,71 @@
 import React from "react";
 
 import Header from "pages/LandingPage/Header/Header";
-import CheckOn from "assets/icons/check-available.svg";
 import CheckOff from "assets/icons/check-not-available.svg";
 import CheckWhite from "assets/icons/check-white.svg";
 import "./pricingOption.scss";
+import Footer from "pages/LandingPage/Footer/footer";
 
 export default function PricingOption() {
   return (
-    <div style={{ background: "#FFFBF8", height: "auto" }}>
+    <div className="bg-pricing-option">
       <Header />
       <div className="container" style={{ paddingTop: 50, paddingBottom: 60 }}>
         <p className="pricing-title text-center mx-auto">
-          Pilihan Harga yang Bisa Anda Sesuaikan
+        Pricing Options You Can Adjust
         </p>
         <p className="pricing-subtitle text-center">
-          Pilhilah jenis harga yang sesuai dengan kebutuhan Anda
+        You can choose the price you needs
         </p>
         <div className="row">
+
           <div className="col-xs-12 col-md-12 col-lg-4 col-xl-4">
-            <div className="frame-pricing">
+            <div className="frame-pricing free">
               <div className="d-flex flex-column">
                 <span className="badges-pricing free">FREEMIUM</span>
-                <div className="title-pricing">Exactly free</div>
-                <div className="subtitle-pricing">
-                  Download UI Kits gratis sesuai keinginan Anda
+                <div className="title-pricing --on">Exactly Free</div>
+                <div className="subtitle-pricing --on">
+                Download free UI kits for individual purpose
                 </div>
-                <div className="d-flex flex-row align-items-center frame-feature-items mt-4">
+                <div className="d-flex flex-row align-items-center frame-feature-items mt-2">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Master File</div>
-                </div>
-                <div className="d-flex flex-row align-items-center frame-feature-items">
-                  <img
-                    src={CheckOn}
-                    alt="icon-check-on"
-                    className="option-feature-icon"
-                  />
-                  <div className="option-feature-name">Ready to Use</div>
+                  <div className="option-feature-name --on">Master File</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Developer Friendy</div>
+                  <div className="option-feature-name --on">Ready to Use</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Customizable</div>
+                  <div className="option-feature-name --on">Developer Friendy</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Pixel Perfect</div>
+                  <div className="option-feature-name --on">Customizable</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOff}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Responsive Design</div>
+                  <div className="option-feature-name --on">Pixel Perfect</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
@@ -80,7 +73,7 @@ export default function PricingOption() {
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Free Design Update</div>
+                  <div className="option-feature-name --off">Responsive Design</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
@@ -88,7 +81,7 @@ export default function PricingOption() {
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Base to Component</div>
+                  <div className="option-feature-name --off">Free Design Update</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
@@ -96,7 +89,15 @@ export default function PricingOption() {
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">
+                  <div className="option-feature-name --off">Base to Component</div>
+                </div>
+                <div className="d-flex flex-row align-items-center frame-feature-items">
+                  <img
+                    src={CheckOff}
+                    alt="icon-check-on"
+                    className="option-feature-icon"
+                  />
+                  <div className="option-feature-name --off">
                     Free for Commercial Use
                   </div>
                 </div>
@@ -105,12 +106,15 @@ export default function PricingOption() {
           </div>
           
           <div className="col-xs-12 col-md-12 col-lg-4 col-xl-4">
-            <div className="frame-pricing premium">
+            <div className="frame-pricing premium position-relative">
+              <div className="frame-recommended">
+                <div className="recommended">RECOMMENDED</div>
+              </div>
               <div className="d-flex flex-column">
                 <span className="badges-pricing premium">PREMIUM</span>
-                <div className="title-pricing premium">Exactly free</div>
+                <div className="title-pricing premium">Get Premium UI Kits</div>
                 <div className="subtitle-pricing premium">
-                  Download UI Kits gratis sesuai keinginan Anda
+                Download premium Kits with many amazing features
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items mt-4">
                   <img
@@ -191,84 +195,84 @@ export default function PricingOption() {
           </div>
           
           <div className="col-xs-12 col-md-12 col-lg-4 col-xl-4">
-            <div className="frame-pricing">
+            <div className="frame-pricing buyout-pricing">
               <div className="d-flex flex-column">
                 <span className="badges-pricing buyout-option">BUYOUT OPTION</span>
-                <div className="title-pricing">Exactly free</div>
+                <div className="title-pricing">Get Exclusive Design</div>
                 <div className="subtitle-pricing">
-                  Download UI Kits gratis sesuai keinginan Anda
+                  You will be the first or last to have the design. The design will be removed
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items mt-4">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Master File</div>
+                  <div className="option-feature-name --on">Master File</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Ready to Use</div>
+                  <div className="option-feature-name --on">Ready to Use</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Developer Friendy</div>
+                  <div className="option-feature-name --on">Developer Friendy</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Customizable</div>
+                  <div className="option-feature-name --on">Customizable</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Pixel Perfect</div>
+                  <div className="option-feature-name --on">Pixel Perfect</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Responsive Design</div>
+                  <div className="option-feature-name --on">Responsive Design</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Free Design Update</div>
+                  <div className="option-feature-name --on">Free Design Update</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">Base to Component</div>
+                  <div className="option-feature-name --on">Base to Component</div>
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items">
                   <img
-                    src={CheckOn}
+                    src={CheckWhite}
                     alt="icon-check-on"
                     className="option-feature-icon"
                   />
-                  <div className="option-feature-name">
+                  <div className="option-feature-name --on">
                     Free for Commercial Use
                   </div>
                 </div>
@@ -277,6 +281,8 @@ export default function PricingOption() {
           </div>
         </div>
       </div>
+
+      <Footer />
     </div>
   );
 }

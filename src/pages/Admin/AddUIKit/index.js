@@ -9,7 +9,6 @@ import Button from "components/Button";
 import Modal from "components/Modal/Modal";
 import PageNotFound from "pages/PageNotFound";
 import { addNewKit, closeModal } from "config/redux/action";
-// import InputFile from "components/Form/InputFile/InputFile";
 // component
 
 import ConfirmIcon from "assets/icons/confirm-payment-success-ic.svg";
@@ -18,11 +17,14 @@ import ConfirmIcon from "assets/icons/confirm-payment-success-ic.svg";
 function AddUIKit() {
   // consume from redux
   const { loading, modalOpen } = useSelector((state) => ({
-    loading: state.isLoading,
-    // userId: state.user.uid,
-    modalOpen: state.modalOpen,
+    loading: state.utils.isLoading,
+    modalOpen: state.utils.modalOpen,
   }));
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   const history = useHistory();
   const date = new Date().getTime();
@@ -115,27 +117,11 @@ function AddUIKit() {
 
   const modalHide = () => {
     dispatch(closeModal());
+    history.push("/admin-home-page");
   };
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
 
   const inputAgain = () => {
     window.location.reload();
-    // dispatch(closeModal());
-    // setProductName("");
-    // setProductDescription("");
-    // setCategory("");
-    // setLinkDownload("");
-    // setBenefits([{ benefit: "" }]);
-    // setStatus("");
-    // setIDRPrice("");
-    // setIDRBuyout("");
-    // setUSDPrice("");
-    // setUSDBuyout("");
-    // setDiscount("");
-    // setImages(Array([]));
   };
 
   const userId = JSON.parse(localStorage.getItem("userId"));
@@ -164,7 +150,7 @@ function AddUIKit() {
   };
 
   return (
-    <div className="container-fluid" style={{ background: "#FFFBF8" }}>
+    <div className="container-fluid" style={{ background: "#F3F4F6" }}>
       {userId ? (
         <div className="row justify-content-center">
           <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
@@ -314,20 +300,6 @@ function AddUIKit() {
                     />
                   </div>
                 </div>
-
-                {/* <div className="input-group position-relative" style={{ marginBottom: 16 }}>
-                  <span className="input-group-btn form-control">
-                    <label
-                      className="btn btn-light btn-file custom-btn-file"
-                      for="multiple_input_group"
-                    >
-                      <div className="input required">
-                        <input id="multiple_input_group" type="file" accept="image/*" multiple onChange={handleImageChange} />
-                      </div>
-                      Browse Image
-                    </label>
-                  </span>
-                </div> */}
 
                 <FormText
                   name="idrPrice"

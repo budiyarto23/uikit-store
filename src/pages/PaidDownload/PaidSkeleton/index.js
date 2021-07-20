@@ -52,25 +52,16 @@ export default function index() {
             />
             <Skeleton width={"50%"} />
           </div>
+          <Skeleton
+            width={"100%"}
+            height={40}
+            className="mt-5"
+            style={{ marginTop: 20, marginBottom: 14 }}
+          />
+          <Skeleton width={"100%"} height={40} className="mt-2" />
           <div>
-            <Skeleton
-              width={"47%"}
-              height={40}
-              className="mt-5"
-              style={{ marginRight: 20 }}
-            />
-            <Skeleton
-              width={"47%"}
-              height={40}
-              className="mt-2"
-            />
+            <Skeleton height={100} className="mt-5" />
           </div>
-          <div>
-            <Skeleton
-              height={100}
-              className="mt-5"
-            />
-            </div>
         </div>
       </div>
     </div>

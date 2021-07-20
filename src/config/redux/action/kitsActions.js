@@ -1,5 +1,11 @@
 import { database, storage } from "../../firebase";
-import { CHANGE_ISLOADING, GET_KITS, MODAL_OPEN, DOWNLOAD_KITS, CUSTOM_KITS } from "./types";
+import {
+  CHANGE_ISLOADING,
+  GET_KITS,
+  MODAL_OPEN,
+  DOWNLOAD_KITS,
+  CUSTOM_KITS,
+} from "./types";
 
 export const addNewKit = (data) => (dispatch) => {
   return new Promise((resolve, reject) => {
@@ -45,26 +51,6 @@ export const addNewKit = (data) => (dispatch) => {
   });
 };
 
-// export const getUiKits = (userId) => (dispatch) => {
-//   const kitsUrl = database.ref(`ui-collections/${userId}`);
-//   return new Promise((resolve, reject) => {
-//     kitsUrl.on('value', function(snapshot) {
-//       const data =[];
-//       // eslint-disable-next-line
-//       Object.keys(snapshot.val()).map((key => {
-//         data.push({
-//           id: key,
-//           data: snapshot.val()[key]
-//         })
-//       }))
-//       dispatch({ type: GET_KITS, value: data });
-//       console.log("isi data ", data)
-//       resolve(snapshot.val())
-//     })
-//     reject(false);
-//   })
-// }
-
 export const getUiKits = () => (dispatch) => {
   dispatch({ type: CHANGE_ISLOADING, value: true });
   const kitsUrl = database.ref(`ui-collections`);
@@ -102,7 +88,7 @@ export const postPaidDownload = (data) => (dispatch) => {
         on: data.on,
       })
       .then((res) => {
-        console.log("this success download", + res);
+        console.log("this success download", +res);
         // dispatch({ type: DOWNLOAD_KITS, value: false });
         dispatch({ type: CHANGE_ISLOADING, value: false });
         resolve(true);
@@ -114,7 +100,6 @@ export const postPaidDownload = (data) => (dispatch) => {
       });
   });
 };
-
 
 export const getDownloadKits = () => (dispatch) => {
   dispatch({ type: CHANGE_ISLOADING, value: true });
@@ -137,7 +122,6 @@ export const getDownloadKits = () => (dispatch) => {
   });
 };
 
-
 export const postCustomKit = (data) => (dispatch) => {
   return new Promise((resolve, reject) => {
     dispatch({ type: CHANGE_ISLOADING, value: true });
@@ -159,7 +143,6 @@ export const postCustomKit = (data) => (dispatch) => {
       });
   });
 };
-
 
 export const getCustomKits = () => (dispatch) => {
   dispatch({ type: CHANGE_ISLOADING, value: true });

@@ -1,21 +1,19 @@
-// #navbar {
-//   position: fixed;
-//   top: 0;
-//   width: 100%;
-//   display: block;
-//   transition: top 0.3s;
-//   z-index: +10;
-// }
+@import "../../../assets/scss/mainSytles/colors";
+@import "../../../assets/scss/mainSytles/fonts";
+
 
 .nav-custom {
-  min-height: 80px !important;
-  border-bottom: 1px solid #EEE;
+  background: #FBFCFF;
+  min-height: 90px !important;
+  border-bottom: 1.5px solid #EEE;
+  // box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3);
 }
 
 .navs-menu li a {
-  font-family: "Heebo", sans-serif !important;
+  font-family: $font-family !important;
   color: #18191F !important;
-  font-size: 16px !important;
+  font-size: 18px !important;
+  font-weight: 500;
 }
 
 .effect-hov {
@@ -24,7 +22,7 @@
 
 .effect-hov:hover {
   background-color: #ebf5ff !important;
-  color: #2296FF !important;
+  color: $primary-color !important;
 }
 
 .navbar-expand-lg .navbar-nav .nav-link:not(:last-child) {
@@ -37,7 +35,7 @@
 }
 
 .navbar-light .navbar-nav .nav-link.active a {
-  color: #2296FF !important;
+  color: $primary-color !important;
   font-weight: 500;
 }
 

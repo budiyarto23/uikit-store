@@ -43,18 +43,11 @@ export default function CustomRequest() {
   };
 
   return (
-    <div
-      style={{
-        background: "#FFFBF8",
-        height: "auto",
-        paddingBottom: 80,
-        paddingTop: 60,
-      }}
-    >
+    <div className="bg-custom-request">
       <div className="container-fluid">
         <p className="paid-main-title text-center">Custom Request</p>
         <p className="paid-main-subtitle text-center mx-auto">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
+        We will help you to build the best design. Support us to keep forward and help many people
         </p>
         {loading && <CustomRequestSkeleton />}
         {!loading && kitsData
@@ -107,14 +100,13 @@ export default function CustomRequest() {
                   >
                     Send Request Via Email
                   </Button>
-                  <div className="paid-container-note">
-                    <div className="title-buyout mt-2">Buy Out Option</div>
-                    <div className="description-buyout mb-2">
-                      This UI Kits will be removed from the store and will no
-                      longer be available for purchase.
+                  {/* <div className="paid-container-note"> */}
+                  <div className="title-buyout mt-5">Notes</div>
+                    <div className="description-buyout mb-2" style={{ lineHeight: 2 }}>
+                        - Admin operational at 08 AM - 09 PM WIB (GMT +7) <br/> - Your request will follow up within 12 hours
                     </div>
                   </div>
-                </div>
+                {/* </div> */}
               </div>
             </div>
           ))}

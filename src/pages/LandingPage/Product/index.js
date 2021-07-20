@@ -2,9 +2,9 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 
 import "./product.scss";
-import ProductWebsite from "assets/images/product-web.svg";
-import ProductMobile from "assets/images/product-mobile.svg";
-import ProductKit from "assets/images/product-kit.svg";
+import ProductWebsite from "assets/images/product-web.png";
+import ProductMobile from "assets/images/product-mobile.png";
+import ProductKit from "assets/images/product-kit.png";
 import Button from "components/Button";
 
 export default function Product() {
@@ -16,24 +16,25 @@ export default function Product() {
   };
   return (
     <div className="container custom-bg-product mb-5">
-      <p className="text-center title-product mt-5 mb-5">
-        Pilih Design Sesuai Kebutuhan Anda
+      <p className="title-product mt-5">
+      Available <span className="variant-text">UI Kits</span> Categories
       </p>
+      <p className="description-product">Lorem ispum this is description bebiebh</p>
         <div className="row product-responsive">
           <div className="col col-sm-12 col-md-6 col-lg-4 col-xl-4 product-margin-responsive">
             <div className="cards cards-responsive">
               <div className="card-item">
                 <div className="card-image">
-                  <img src={ProductWebsite} className="" alt="alternate" />
+                  <img src={ProductKit} className="" alt="alternate" />
                 </div>
                 <div className="card-info">
-                  <h2 className="card-title">Website Kits</h2>
+                  <h2 className="card-title">Mobile Kits</h2>
                   <p className="card-text">
-                  Berbagai jenis website design, mulai dari Portfolio, Company Profile, eCommerce dan lain sebagainya.
+                  Create a mobile app design with various styles, and custom with your styles
                   </p>
                   <Button
                     type="button"
-                    className="btn btn-primary mt-3 product-bttn"
+                    className="btn btn-light btn-dsgn-system mt-3 product-bttn"
                     onClick={routeToUIKits}
                   >
                     Browse Now
@@ -46,16 +47,16 @@ export default function Product() {
             <div className="cards cards-responsive">
               <div className="card-item">
                 <div className="card-image">
-                  <img src={ProductMobile} className="" alt="alternate" />
+                  <img src={ProductWebsite} className="" alt="alternate" />
                 </div>
                 <div className="card-info">
-                  <h2 className="card-title">Mobile Kits</h2>
+                  <h2 className="card-title">Website Kits</h2>
                   <p className="card-text">
-                  Tersedia berbagai component yang siap untuk digunakan, dan tentunya sudah memnuhi standar UX Design.
+                  Create a beautiful website with a trendy style, available for any categories
                   </p>
                   <Button
                     type="button"
-                    className="btn btn-primary mt-3 product-bttn"
+                    className="btn btn-light btn-web mt-3 product-bttn"
                     onClick={routeToUIKits}
                   >
                     Browse Now
@@ -68,16 +69,16 @@ export default function Product() {
             <div className="cards cards-responsive">
               <div className="card-item">
                 <div className="card-image">
-                  <img src={ProductKit} className="" alt="alternate" />
+                  <img src={ProductMobile} className="" alt="alternate" />
                 </div>
                 <div className="card-info">
                   <h2 className="card-title">Design System</h2>
                   <p className="card-text">
-                  Tersedia berbagai component yang siap untuk digunakan, dan tentunya sudah memnuhi standar UX Design.
+                  There are various UI Kits components all ready to use, and already with amazing UX
                   </p>
                   <Button
                     type="button"
-                    className="btn btn-primary mt-3 product-bttn"
+                    className="btn btn-secondary btn-mobile mt-3 product-bttn"
                     onClick={routeToUIKits}
                   >
                     Browse Now

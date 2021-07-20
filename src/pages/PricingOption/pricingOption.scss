@@ -1,34 +1,66 @@
+@import "../../assets/scss/mainSytles/colors";
+@import "../../assets/scss/mainSytles/fonts";
+@import "../../assets/scss/mainSytles/mixins";
+
+
+.bg-pricing-option {
+    background: $background-color;
+}
+
 .pricing-title {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 600;
     font-size: 36px;
     line-height: 45px;
-    color: #18191F;
+    color: $font-main-color;
     margin-bottom: 25px;
-    max-width: 500px;
+    max-width: 700px;
 }
 
 .pricing-subtitle {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
     line-height: 22px;
-    color: #3F3F3F;
+    color: $font-description-color;
     margin-bottom: 70px;
 }
 
 .frame-pricing {
     margin-bottom: 30px;
-    padding: 30px 20px 40px 20px;
+    padding: 50px 30px 40px 40px;
     border-radius: 10px;
-    border: 1px solid #EEE;
     background-color: #FFF;
 
-    &.premium {
-        background-color: #2296FF !important;
+    &.free {
+        background-color: $violet-color !important;
     }
+
+    &.premium {
+        background-color: $blue-color !important;
+    }
+
+    &.buyout-pricing {
+        background-color: $secondary-color !important;
+    }
+
+}
+
+.frame-recommended {
+    position: absolute;
+    top: 0 !important;
+    right: 0 !important;
+    background: $primary-color;
+    border-radius: 0px 10px 0px 10px;
+    padding: 10px 16px;
+}
+
+.recommended {
+    color: #FFF;
+    font-family: $font-family;
+    font-weight: 500;
 }
 
 .badges-pricing {
@@ -40,13 +72,13 @@
     font-weight: 600;
     padding: .45rem .70rem .30rem;
     line-height: inherit;
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-weight: 600 !important;
     width: 100px;
 
     &.free {
-        background: rgba(222, 251, 234, 1);
-        color: rgba(37, 196, 105, 1);
+        background: rgba(234, 234, 234, 0.295);
+        color: #FFF;
         width: 120px;
     }
 
@@ -57,19 +89,19 @@
     }
 
     &.buyout-option {
-        background: rgba(233, 245, 255, 1);
-        color: #2296FF;
+        background: rgba(234, 234, 234, 0.295);
+        color: #FFF;
         width: 180px;
     }
 }
 
 .title-pricing {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
     line-height: 30px;
-    color: #18191F;
+    color: #FFF;
     margin-top: 25px;
 
     &.premium {
@@ -78,12 +110,12 @@
 }
 
 .subtitle-pricing {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 18px;
-    line-height: 22px;
-    color: #18191F;
+    line-height: 26px;
+    color: #FFF;
     margin-top: 12px;
     margin-bottom: 22px;
 
@@ -93,7 +125,7 @@
 }
 
 .frame-feature-items:not(:first-child) {
-    margin-top: 20px !important;
+    margin-top: 24px !important;
 }
 
 .option-feature-icon {
@@ -102,21 +134,34 @@
 }
 
 .option-feature-name {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
-    color: #3F3F3F;
-    margin-left: 12px;
+    color: #FFF;
+    margin-left: 18px;
 
     &.premium {
         color: #FFF !important;
+    }
+    &.--off {
+        color: #D1B4FF;
+    }
+    &.--on {
+        color: #FFF;
     }
 }
 
 
 @media (max-width: 576px) {
+    .frame-pricing {
+        margin-bottom: 30px;
+        padding: 40px 30px 40px 25px;
+        border-radius: 10px;
+        background-color: #FFF;
+    }
+
     .pricing-title {
         font-size: 32px;
         line-height: 40px;
@@ -127,7 +172,7 @@
     .pricing-subtitle {
         font-size: 18px;
         line-height: 22px;
-        color: #3F3F3F;
+        color: $font-description-color;
         max-width: 300px;
         margin: auto;
         margin-bottom: 40px !important;

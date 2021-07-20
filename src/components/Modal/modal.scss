@@ -1,3 +1,7 @@
+@import "../../assets/scss/mainSytles/colors";
+@import "../../assets/scss/mainSytles/fonts";
+
+
 .modal {
     position: fixed;
     left: 0;
@@ -54,8 +58,8 @@
 
 .modal-body {
     padding: 10px;
-    border-top: 1px solid #eee;
-    border-bottom: 1px solid #eee;
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
 }
 
 
@@ -63,7 +67,7 @@
 .modal-container {
     max-width: 500px;
     height: 410px;
-    background: #FFFFFF;
+    background: #FFF;
     border-radius: 10px !important;
     padding: 40px 70px 20px 70px;
 }
@@ -75,22 +79,22 @@
 }
 
 .modal-title {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
-    color: #18191F;
+    color: $font-main-color;
     margin-bottom: 14px;
 }
 
 .modal-description {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 26px;
-    color: #57575A;
+    color: $font-description-color;
     width: 380px;
     text-align: center;
     margin-bottom: 40px;
@@ -99,7 +103,7 @@
 .btn-modal-secondary {
     min-width: 140px !important;
     max-width: 170px !important;
-    color: #0084F5 !important;
+    color: $primary-color !important;
     margin-right: 8px !important;
 }
 
@@ -137,7 +141,7 @@
     .modal-description {
         font-size: 16px;
         line-height: 26px;
-        color: #57575A;
+        color: $font-description-color;
         max-width: 330px;
         text-align: center;
         margin-bottom: 40px;
@@ -174,7 +178,6 @@
     .modal-description {
         font-size: 16px;
         line-height: 26px;
-        color: #57575A;
         max-width: 390px;
         text-align: center;
         margin-bottom: 40px;

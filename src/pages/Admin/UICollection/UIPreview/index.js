@@ -12,7 +12,7 @@ import Point from "assets/icons/point.svg";
 import formatNumber from "utils/formatNumber";
 import usdFormat from "utils/formatUSD";
 
-export default function UIPreview({ data }) {
+export default function UIPreview() {
   const { loading, kitsData } = useSelector((state) => ({
     loading: state.utils.isLoading,
     kitsData: state.kits.kitsCollection,
@@ -40,7 +40,7 @@ export default function UIPreview({ data }) {
   }, []);
 
   return (
-    <div className="container-fluid p-0" style={{ background: "#F3F4F6" }}>
+    <div className="container-fluid" style={{ background: "#F3F4F6", minHeight: "100vh" }}>
       {loading && (
         <div style={{ paddingTop: 40 }}>
           <DetailSkeleton />

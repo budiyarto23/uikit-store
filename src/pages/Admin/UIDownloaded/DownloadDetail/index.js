@@ -51,13 +51,21 @@ export default function AddUIKit() {
   return (
     <div
       className="container-fluid"
-      style={{ background: "#F3F4F6", minHeight: "110vh" }}
+      style={{ background: "#F3F4F6", minHeight: "100vh" }}
     >
       {loading && (
         <div className="row justify-content-center">
-          <div className="d-flex justify-content-center mt-5 mb-5" style={{ marginTop: "850px" }}>
-            <div className="spinner-grow text-primary" role="status">
-              <span className="visually-hidden">Loading...</span>
+          <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
+            <div className="main-frame mt-5 mb-5" style={{ height: 626 }}>
+              <div
+                className="d-flex justify-content-center mt-5 mb-4"
+                style={{ paddingTop: 180 }}
+              >
+                <div className="spinner-grow text-primary" role="status">
+                  <span className="visually-hidden">Loading...</span>
+                </div>
+              </div>
+              <div className="text-center loading-text">Wait a moment.</div>
             </div>
           </div>
         </div>

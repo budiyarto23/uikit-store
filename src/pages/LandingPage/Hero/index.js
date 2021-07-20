@@ -3,9 +3,9 @@ import { useHistory } from "react-router-dom";
 
 import "./hero.scss";
 import Button from "components/Button";
-import DevFriendly from "assets/icons/dev-friendly-ic.svg";
-import ReadyToUse from "assets/icons/ready-use-ic.svg";
-import EasyCustomize from "assets/icons/easy-to-customize-ic.svg";
+import DevFriendly from "assets/icons/dev-friendly.svg";
+import ReadyToUse from "assets/icons/ready-to-use.svg";
+import EasyCustomize from "assets/icons/easy-to-customize.svg";
 
 export default function Hero() {
   const pathHistory = useHistory();
@@ -26,7 +26,7 @@ export default function Hero() {
         <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
           <div className="d-flex flex-column justify-content-center mt-2">
             <p className="header-title">
-              Download Ratusan Template Design Gratis!!!
+            Free <span className="variant-text">Download UI Kits</span> For Your Any Purpose
             </p>
             <div className="d-flex flex-row bg-button">
               <Button
@@ -35,7 +35,7 @@ export default function Hero() {
               >
                 See Available UI Kits
               </Button>
-              <a
+              {/* <a
                 type="link"
                 target="_blank"
                 rel="noreferrer"
@@ -43,13 +43,12 @@ export default function Hero() {
                 className="btn btn-outline-primary btn-small-2"
               >
                 Custom Design
-              </a>
+              </a> */}
             </div>
             <div className="d-flex flex-row align-items-center border-cstm">
               <div className="note-divider"></div>
               <div className="header-subtitle">
-                Download gratis berbagai template design untuk kebutuhan pribadi
-                ataupun bisnis Anda
+              Download intuitive user interface templates for personal or business needs.
               </div>
             </div>
           </div>
@@ -68,16 +67,16 @@ export default function Hero() {
                 <img src={DevFriendly} alt="tst" className="icon-feature" />
                 <div className="hero-title-feature-1">Developer Friendly</div>
                 <div className="hero-subtitle-feature-1">
-                  Don’t make developer mad! Keep the design make sense.
+                  Don’t make developer mad! Keep the design make sense
                 </div>
               </div>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
               <div className="d-flex flex-column hero-feature-container hack-margin">
-                <img src={EasyCustomize} alt="tst" className="icon-feature" />
+                <img src={ReadyToUse} alt="tst" className="icon-feature" />
                 <div className="hero-title-feature-1">Easy to Customize</div>
                 <div className="hero-subtitle-feature-1">
-                  Custom design sesuka hati dan tanpa ribet.
+                  Easy to custom the design with the style you want
                 </div>
               </div>
             </div>
@@ -86,11 +85,10 @@ export default function Hero() {
                 className="d-flex flex-column hero-feature-container"
                 style={{ marginTop: "30px" }}
               >
-                <img src={ReadyToUse} alt="tst" className="icon-feature" />
+                <img src={EasyCustomize} alt="tst" className="icon-feature" />
                 <div className="hero-title-feature-1">Ready to Use</div>
                 <div className="hero-subtitle-feature-1">
-                  Design bisa langsung digunakan, untuk pribadi maupun
-                  kepentingan bisnis.
+                All designs already to use for personal or business needs
                 </div>
               </div>
             </div>

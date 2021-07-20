@@ -1,3 +1,10 @@
+@import "../../assets/scss/mainSytles/colors";
+@import "../../assets/scss/mainSytles/fonts";
+
+.kits-bg {
+  background: $background-color;
+}
+
 .nav-pills .pills-1 .nav-link:not(.active) {
     background-color: #E9E9E9;
     color: #656565 !important;
@@ -25,22 +32,22 @@
   }
 
   .nav-pills .pills-1 .nav-link {
-    background-color: #FEB019;
+    background-color: $primary-color;
     color: #FFF;
     font-family: "Heebo", sans-serif;
     font-size: 16px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 150px !important;
     text-align: center !important;
   }
   
   .nav-pills .pills-2 .nav-link {
-    background-color: #FEB019;
+    background-color: $primary-color;
     color: #FFF;
     font-family: "Heebo", sans-serif;
     font-size: 16px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 150px !important;
     text-align: center !important;
@@ -49,11 +56,11 @@
   }
   
   .nav-pills .pills-3 .nav-link {
-    background-color: #FEB019;
+    background-color: $primary-color;
     color: #FFF;
     font-family: "Heebo", sans-serif;
     font-size: 16px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 150px !important;
     text-align: center !important;
@@ -61,11 +68,11 @@
   }
 
   .nav-pills .pills-4 .nav-link {
-    background-color: #FEB019;
+    background-color: $primary-color;
     color: #FFF;
     font-family: "Heebo", sans-serif;
     font-size: 16px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 150px !important;
     text-align: center !important;
@@ -118,7 +125,7 @@
 
   .nav-pills .pills-1 .nav-link {
     font-size: 13px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 85px !important;
     height: 36px;
@@ -129,7 +136,7 @@
   
   .nav-pills .pills-2 .nav-link {
     font-size: 13px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 100px !important;
     height: 36px;
@@ -141,7 +148,7 @@
   
   .nav-pills .pills-3 .nav-link {
     font-size: 13px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 110px !important;
     height: 36px;
@@ -153,7 +160,7 @@
 
   .nav-pills .pills-4 .nav-link {
     font-size: 13px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 110px !important;
     height: 36px;
@@ -197,22 +204,22 @@
   
   /* active (faded) */
   .nav-pills .pills-1 .nav-link {
-    background-color: #FEB019;
+    background-color: $primary-color;
     color: #FFF;
     font-family: "Heebo", sans-serif;
     font-size: 16px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 150px !important;
     text-align: center !important;
   }
   
   .nav-pills .pills-2 .nav-link {
-    background-color: #FEB019;
+    background-color: $primary-color;
     color: #FFF;
     font-family: "Heebo", sans-serif;
     font-size: 16px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 150px !important;
     text-align: center !important;
@@ -221,22 +228,22 @@
   }
   
   .nav-pills .pills-3 .nav-link {
-    background-color: #FEB019;
+    background-color: $primary-color;
     color: #FFF;
     font-family: "Heebo", sans-serif;
     font-size: 16px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 150px !important;
     text-align: center !important;
   }
 
   .nav-pills .pills-4 .nav-link {
-    background-color: #FEB019;
+    background-color: $primary-color;
     color: #FFF;
     font-family: "Heebo", sans-serif;
     font-size: 16px;
-    border: 1.5px solid #FEB019;
+    border: 1.5px solid $primary-color;
     border-radius: 100px;
     width: 150px !important;
     text-align: center !important;

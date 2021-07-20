@@ -15,18 +15,10 @@ const DetailSkeleton = () => {
           />
           <Skeleton width={"40%"} />
         </h1>
-        <h1 className="">
-          <Skeleton
-            width={"40%"}
-            className="pr-5"
-            style={{ marginRight: 30 }}
-          />
-          <Skeleton width={"30%"} />
-        </h1>
         <div className="d-flex flex-column">
           <Skeleton height={20} width={"45%"} className="mt-4" />
-          <Skeleton height={20} width={"35%"} className="mt-2" />
-          <Skeleton height={20} width={"30%"} className="mt-2" />
+          <Skeleton height={20} width={"45%"} className="mt-2" />
+          <Skeleton height={20} width={"45%"} className="mt-2" />
           <Skeleton height={30} width={"25%"} className="mt-4" />
         </div>
       </div>
@@ -35,8 +27,8 @@ const DetailSkeleton = () => {
         {Array(2)
           .fill()
           .map((item, index) => (
-            <li className="preview-image-skeleton mt-5" key={index}>
-              <Skeleton height={300} className="item-image-skeleton" />
+            <li className="preview-image-skeleton mt-5 height-dekstop height-md height-sm" key={index}>
+              <Skeleton height={"100%"} className="item-image-skeleton" />
             </li>
           ))}
       </ul>

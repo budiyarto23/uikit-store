@@ -5,7 +5,7 @@ import { useSelector, useDispatch } from "react-redux";
 
 import { getUiKits, postPaidDownload } from "config/redux/action";
 import Button from "components/Button";
-import BankBCA from "assets/images/bca.svg";
+import BankBCA from "assets/images/bank-bca.svg";
 import PayPal from "assets/images/paypal.svg";
 import usdFormat from "utils/formatUSD";
 import idrFormat from "utils/formatNumber";
@@ -27,12 +27,6 @@ export default function PaidDownload() {
   const status = "PENDING";
   const thisKit = kitsData.filter((item) => item.id === id);
 
-  // const goPath = useHistory();
-
-  // const routeUIKits = () => {
-  //   let path = "/admin/add-kit";
-  //   goPath.push(path);
-  // };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -61,17 +55,10 @@ export default function PaidDownload() {
 
   return (
     <div
-      className="container-fluid"
-      style={{
-        background: "#FFFBF8",
-        height: "auto",
-        paddingTop: 60,
-        paddingBottom: 120,
-      }}
-    >
-      <p className="paid-main-title text-center">Checkout</p>
+      className="container-fluid bg-paid-download">
+      <p className="paid-main-title text-center">Checkout, Easy!!!</p>
       <p className="paid-main-subtitle text-center mx-auto">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit ut aliquam
+      Enjoy the cool features and support us to keep forward and help many people
       </p>
       {loading && <PaidDownloadSkeleton />}
       {!loading &&
@@ -110,8 +97,7 @@ export default function PaidDownload() {
                       <div className="paid-container-buyout">
                         <div className="title-buyout">Buy Out Option</div>
                         <div className="description-buyout">
-                          This UI Kits will be removed from the store and will
-                          no longer be available for purchase.
+                          You will be the first or last to have the design. The UI kits will be removed and no longer available on the store.
                         </div>
                         <div className="d-flex flex-row">
                           <span className="buyout-price-idr">
@@ -237,7 +223,7 @@ export default function PaidDownload() {
                           </div>
                         </div>
                       </div>
-                      <div className="container-btn-paid mt-3">
+                      {/* <div className="container-btn-paid mt-3"> */}
                         <Button
                           type="button"
                           className="btn btn-primary buy-now-button-1"
@@ -254,14 +240,11 @@ export default function PaidDownload() {
                         >
                           Confirm via Email
                         </Button>
-                      </div>
-                      <div className="paid-container-note">
-                        <div className="title-buyout mt-2">Buy Out Option</div>
-                        <div className="description-buyout mb-2">
-                          This UI Kits will be removed from the store and will
-                          no longer be available for purchase.
+                      {/* </div> */}
+                        <div className="title-buyout mt-5">Notes</div>
+                        <div className="description-buyout mb-2" style={{ lineHeight: 2 }}>
+                        - You just choose one payment nominal, IDR or USD. <br/> - Admin operational at 08 AM - 09 PM WIB (GMT +7)
                         </div>
-                      </div>
                     </div>
                   </div>
                 </div>
