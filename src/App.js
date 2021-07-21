@@ -43,20 +43,18 @@ console.log(userAuth);
       <Route path="/payment-confirm" component={PaymentConfirm} />
       <Route path="/pricing-option" component={PricingOption} />
 
-      {/* Route Admin here */}
+      {/* Route admin here */}
 
-      <Route path="/admin-home-page" component={UICollection}/>
       <ProtectedRoute path="/admin/login-page" component={Login} isAuth={!userAuth} />
       <ProtectedRoute path="/admin/register-page" component={Register} isAuth={!userAuth} />
-      <ProtectedRoute path="/admin-downloaded" component={UIDownloaded} isAuth={userAuth} />
+      <Route path="/admin-home-page" component={UICollection}/>
+      <Route path="/admin-downloaded" component={UIDownloaded}/>
+      <Route path="/admin-custom-request" component={UICustomRequest} />
       <Route path="/admin/add-kit" component={AddUIKit} />
-      {/* <Route path="/admin-downloaded" component={UIDownloaded} /> */}
       <Route path="/admin/preview/:id" component={UIPreview} />
       <Route path="/preview/downloaded/:id" component={DonwloadDetail} />
       <Route path="/preview/custom/:id" component={CustomDetail} />
-      <Route path="/admin-custom-request" component={UICustomRequest} />
       <Route component={PageNotFound} />
-      {/* <Route exact path="/" component={HomePageHomePageHomePage} /> */}
       </Switch>
     </Router>
   );

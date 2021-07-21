@@ -55,7 +55,7 @@ function Register() {
           className="row justify-content-center positio-absolute"
           style={{ marginTop: "-200px" }}
         >
-          <div className="col col-sm-12 col-md-8 col-lg-6 col-xl-6">
+          <div className="col col-sm-12 col-md-8 col-lg-5 col-xl-5">
             <div className="d-flex flex-column frame-register">
               <div className="title-register">Create an Account</div>
               <div className="subtitle-register mx-auto">

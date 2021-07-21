@@ -75,7 +75,7 @@ export default function HireUs() {
                     alt="v"
                   />
                   <div className="d-flex flex-column">
-                    <div className="title-work">Desine</div>
+                    <div className="title-work">Designe</div>
                     <div className="description-work">
                     After defining the problem and research, we start to create a design from wireframe to high fidelity design.
                     </div>

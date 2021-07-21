@@ -52,9 +52,9 @@
 .hero-title-feature {
   font-family: $font-family;
   font-style: normal;
-  font-weight: 500;
-  font-size: 20px;
-  color: #FFF;
+  font-weight: 600;
+  font-size: 28px;
+  color: $font-main-color;
   margin-top: 16px;
 }
 
@@ -67,19 +67,17 @@
   background: #FFF;
   border-radius: 10px;
   padding: 34px 18px 34px 18px;
-  // box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3), 4px 12px 26px 20px rgba(156, 178, 197, 0.1);
-  // box-shadow: 0px 2px 4px #EEEFF4, 0px 2px 3px rgba(217, 219, 225, 0.3);
   box-shadow: 0px 2px 12px #EEEFF4, 0px 2px 3px rgba(217, 219, 225, 0.3);
 
   &.hack-margin {
-    margin-top: -90px;
+    margin-top: -110px;
   }
 }
 
 .hero-title-feature-1 {
   font-family: $font-family;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   font-size: 18px;
   line-height: 28px;
   color: $font-description-color;
@@ -88,10 +86,10 @@
 }
 
 .hero-subtitle-feature-1 {
-  font-family: "Heebo", sans-serif;
+  font-family: $font-family;
   font-style: normal;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 16px;
   line-height: 22px;
   color: $font-description-color;
 }
@@ -147,10 +145,11 @@
   .hero-title-feature {
     font-family: $font-family;
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
-    color: #ffffff;
+    font-weight: 600;
+    font-size: 24px;
+    color: $font-main-color;
     margin-top: 16px;
+    margin-bottom: 10px;
   }
 
   .btn-small-1 {
@@ -166,7 +165,7 @@
     color: $primary-color !important;
   }
 
-  .bg-button {
+  .bg-button-hero {
     justify-content: center;
   }
 
@@ -176,7 +175,7 @@
   }
 
   .header-subtitle {
-    font-size: 15px;
+    font-size: 16px;
     align-items: center;
     color: $font-description-color;
     margin-left: 20px;
@@ -205,8 +204,9 @@
     margin-top: 120px !important;
   }
 
-  .bg-button {
+  .bg-button-hero {
     justify-content: center;
+    margin-top: 30px;
   }
   
   .header-title {
@@ -243,7 +243,7 @@
   }
 
   .hero-title-feature {
-    font-size: 20px;
+    font-size: 24px;
   }
 
   .hero-feature-container {

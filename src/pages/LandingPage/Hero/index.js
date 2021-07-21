@@ -15,11 +15,6 @@ export default function Hero() {
     pathHistory.push(path);
   };
 
-  // const routeCustom = () => {
-  //   let pathCustom = `/custom-design`;
-  //   pathCustomDesign.push(pathCustom);
-  // };
-
   return (
     <div className="container hack-margin-md-screen">
       <div className="row">
@@ -28,7 +23,7 @@ export default function Hero() {
             <p className="header-title">
             Free <span className="variant-text">Download UI Kits</span> For Your Any Purpose
             </p>
-            <div className="d-flex flex-row bg-button">
+            <div className="d-flex flex-row bg-button-hero">
               <Button
                 className="btn btn-primary btn-small-1"
                 onClick={routeUIKits}
@@ -54,13 +49,11 @@ export default function Hero() {
           </div>
         </div>
         <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mt-5">
-          <div className="row justify-content-end pt-5">
+          <div className="row justify-content-end mt-2 pt-5">
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
-              <div className="d-flex flex-column hero-feature-1 justify-content-center">
                 <p className="text-center hero-title-feature">
-                  What feature we have?
+                  Why It's Good For You?
                 </p>
-              </div>
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
               <div className="d-flex flex-column hero-feature-container hack-margin-1">
@@ -73,7 +66,7 @@ export default function Hero() {
             </div>
             <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
               <div className="d-flex flex-column hero-feature-container hack-margin">
-                <img src={ReadyToUse} alt="tst" className="icon-feature" />
+                <img src={EasyCustomize} alt="tst" className="icon-feature" />
                 <div className="hero-title-feature-1">Easy to Customize</div>
                 <div className="hero-subtitle-feature-1">
                   Easy to custom the design with the style you want
@@ -85,7 +78,7 @@ export default function Hero() {
                 className="d-flex flex-column hero-feature-container"
                 style={{ marginTop: "30px" }}
               >
-                <img src={EasyCustomize} alt="tst" className="icon-feature" />
+                <img src={ReadyToUse} alt="tst" className="icon-feature" />
                 <div className="hero-title-feature-1">Ready to Use</div>
                 <div className="hero-subtitle-feature-1">
                 All designs already to use for personal or business needs

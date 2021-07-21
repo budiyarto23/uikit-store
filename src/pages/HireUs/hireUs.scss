@@ -78,8 +78,8 @@
         font-family: $font-family;
         font-style: normal;
         font-weight: bold;
-        font-size: 38px !important;
-        line-height: 52px;
+        font-size: 32px !important;
+        line-height: 44px;
         color: $font-main-color;
         margin-top: 40px;
         text-align: center;
@@ -88,18 +88,18 @@
     .hire-us-description {
         font-family: $font-family;
         font-style: normal;
-        font-weight: 500;
-        font-size: 20px;
+        font-size: 18px;
         color: $font-description-color;
         margin-top: 16px;
         text-align: center;
+        line-height: 24px;
     }
 
     .btn-hire-us {
         width: 160px;
         font-size: 16px;
         height: 54px;
-        margin: 30px 0px 60px 0px;
+        margin: 40px 0px 60px 0px;
     }
 
     .frame-process {
@@ -114,10 +114,14 @@
     }
     
     .description-work {
-        font-size: 14px;
-        line-height: 18px;
+        font-size: 16px;
+        line-height: 22px;
         color: $font-description-color;
     }
+
+    .bg-button {
+        justify-content: center;
+      }
 }
 
 @media screen and (max-width: 996px) and (min-width: 577px) {

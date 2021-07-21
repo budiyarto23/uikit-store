@@ -1,6 +1,10 @@
+@import "../../../assets/scss/mainSytles/colors";
+@import "../../../assets/scss/mainSytles/fonts";
+
+
 .register-decoration {
     height: 370px;
-    background-color: #2296FF;
+    background-color: $primary-color;
     position: relative;
     z-index: -2;
 }
@@ -20,24 +24,24 @@
 }
 
 .title-register {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
     text-align: center;
-    color: #18191F;
+    color: $font-main-color;
     margin-bottom: 10px;
 }
 
 .subtitle-register {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
     line-height: 22px;
     text-align: center;
-    color: #57575A;
+    color: $font-description-color;
     max-width: 300px;
 }
 
@@ -47,7 +51,7 @@
 }
 
 .forgot-password {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
