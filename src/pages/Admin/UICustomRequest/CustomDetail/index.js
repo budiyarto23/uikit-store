@@ -53,12 +53,12 @@ export default function AddUIKit() {
       {loading && (
         <div className="row justify-content-center">
           <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6">
-            <div className="main-frame mt-5 mb-5" style={{ height: 541 }}>
+            <div className="main-frame mt-5 mb-5" style={{ height: 626 }}>
               <div
                 className="d-flex justify-content-center mt-5 mb-4"
                 style={{ paddingTop: 180 }}
               >
-                <div className="spinner-grow text-primary" role="status">
+                <div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
                   <span className="visually-hidden">Loading...</span>
                 </div>
               </div>
@@ -84,9 +84,9 @@ export default function AddUIKit() {
                     </Link>
                     <div className="d-flex flex-row justify-content-between mt-3">
                       <div className="title-addkit">Request Custom Detail</div>
-                      <div className="badge-status-confirm">
+                      {/* <div className="badge-status-confirm">
                         {cards.data.status}
-                      </div>
+                      </div> */}
                     </div>
                     <div className="subtitle-addkit">
                       All information about request custom here.

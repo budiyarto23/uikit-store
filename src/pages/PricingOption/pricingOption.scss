@@ -35,15 +35,18 @@
     background-color: #FFF;
 
     &.free {
-        background-color: $violet-color !important;
+        // background-color: $violet-color !important;
+        background: linear-gradient(158.01deg, #B5A0FE 0%, #9B60FA 99.57%);
     }
 
     &.premium {
-        background-color: $blue-color !important;
+        // background-color: $blue-color !important;
+        background: linear-gradient(157.53deg, #6EBAFF 0.58%, #2296FF 101.48%);
     }
 
     &.buyout-pricing {
-        background-color: $secondary-color !important;
+        // background-color: $secondary-color !important;
+        background: linear-gradient(158.27deg, #1FE9CF 0.79%, #19CFB7 100%);
     }
 
 }
@@ -77,20 +80,26 @@
     width: 100px;
 
     &.free {
-        background: rgba(234, 234, 234, 0.295);
-        color: #FFF;
+        // background: rgba(234, 234, 234, 0.295);
+        // color: #FFF;
+        background: #FFF;
+        color: $violet-color;
         width: 120px;
     }
 
     &.premium {
-        background: rgba(234, 234, 234, 0.295);
-        color: #FFF;
+        // background: rgba(234, 234, 234, 0.295);
+        // color: #FFF;
+        background: #FFF;
+        color: $blue-color;
         width: 120px;
     }
 
     &.buyout-option {
-        background: rgba(234, 234, 234, 0.295);
-        color: #FFF;
+        // background: rgba(234, 234, 234, 0.295);
+        // color: #FFF;
+        background: #FFF;
+        color: $secondary-color;
         width: 180px;
     }
 }

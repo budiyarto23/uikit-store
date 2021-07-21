@@ -1,17 +1,22 @@
+@import "../../../../assets/scss/mainSytles/colors";
+@import "../../../../assets/scss/mainSytles/fonts";
+
+
+
 .main-frame {
     background: #FFF;
-    // border: 1px solid #EEE;
     border-radius: 6px;
     padding: 40px;
     box-shadow: 0px 4px 6px rgba(234, 234, 234, 0.25);
+    margin-top: 80px !important;
 }
 
 .back-btn {
     text-decoration: none;
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-size: 16px;
     font-weight: normal;
-    color: #2296FF;
+    color: $primary-color;
 }
 
 .badge-status {
@@ -26,7 +31,7 @@
     margin-left: 10px;
     padding: .45rem .90rem .50rem;
     line-height: inherit;
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
 }
 
 .frame-inside {
@@ -41,7 +46,9 @@
     height: 120px !important;
     object-fit: cover !important;
     border-radius: 6px !important;
-    border: 1px solid #DDD;
+    transition: 0.50s ease-in-out;
+    // border: 1px solid #DDD;
+    // line-height: 0;
 }
 
 .frame-img:hover {
@@ -49,40 +56,36 @@
     cursor: pointer !important;
     border-radius: 6px;
     opacity: .9;
-
-    img.item-img {
-        transform: scale(1.1);
-        transition: 0.50s transform ease-in-out;
-    }
+    transition: 0.50s ease-in-out;
 }
 
 .unique-number {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
-    color: #18191f;
+    color: $font-main-color;
     margin-left: 20px !important;
 }
 
 .title-1 {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
-    color: #57575A;
+    color: $font-description-color;
     width: 160px;
     margin-left: 20px;
 }
 
 .value-1 {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
-    color: #18191F;
+    color: $font-main-color;
 }
 
 .frame-decision-option {
@@ -97,7 +100,7 @@
 }
 
 .title-section {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: bold;
     font-size: 14px;
@@ -108,56 +111,56 @@
 }
 
 .title-2 {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 20px;
-    color: #57575A;
+    color: $font-description-color;
     width: 200px;
     margin-bottom: 8px;
 }
 
 .value-2 {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     max-width: 350px;
     text-align: right;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
     line-height: 20px;
-    color: #18191F;
+    color: $font-main-color;
     margin-bottom: 8px;
 }
 
 .loading-text {
-    font-family: "Heebo", sans-serif;
+    font-family: $font-family;
     font-weight: 400;
     font-size: 18px;
-    color: #18191F;
+    color: $font-main-color;
 }
 
 .frame-total-amount {
     border-radius: 6px;
-    background: rgba(1, 178, 174, 0.1);
-    border: 1px solid #ACD8FF;
+    background: lighten($primary-color, 44%);
+    border: 1px solid lighten($primary-color, 25%);
     padding: 20px 30px 20px 30px;
 
     .title-total-amount {
-        font-family: "Heebo", sans-serif;
+        font-family: $font-family;
         font-style: normal;
         font-weight: 500;
         font-size: 18px;
         line-height: 20px;
-        color: #57575A;
+        color: $font-description-color;
     }
 
     .value-total-amount {
-        font-family: "Heebo", sans-serif;
+        font-family: $font-family;
         font-style: normal;
         font-weight: bold;
         font-size: 22px;
         line-height: 20px;
-        color: #2296FF;
+        color: $primary-color;
     }
 }

@@ -1,6 +1,10 @@
 @import "../../../assets/scss/mainSytles/colors";
 @import "../../../assets/scss/mainSytles/fonts";
 
+.bg-landing-page {
+  background: $background-color;
+}
+
 .default-margin-from-navbar {
   margin-top: 90px;
 }

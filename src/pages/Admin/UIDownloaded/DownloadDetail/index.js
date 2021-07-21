@@ -61,7 +61,7 @@ export default function AddUIKit() {
                 className="d-flex justify-content-center mt-5 mb-4"
                 style={{ paddingTop: 180 }}
               >
-                <div className="spinner-grow text-primary" role="status">
+                <div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
                   <span className="visually-hidden">Loading...</span>
                 </div>
               </div>
@@ -87,9 +87,9 @@ export default function AddUIKit() {
                     </Link>
                     <div className="d-flex flex-row justify-content-between mt-3">
                       <div className="title-addkit">Download Detail</div>
-                      <div className="badge-status-confirm">
+                      {/* <div className="badge-status-confirm">
                         {cards.data.status}
-                      </div>
+                      </div> */}
                     </div>
                     <div className="subtitle-addkit">
                       All information about product downloade here.
@@ -99,7 +99,7 @@ export default function AddUIKit() {
 
                     <div className="frame-inside mt-4">
                       <div className="d-flex flex-row">
-                        <div className="frame-img ">
+                        <div className="frame-img">
                           <img
                             className="item-img"
                             src={item.data.images[0]}

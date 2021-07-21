@@ -120,7 +120,7 @@ function UICollection() {
                 <tbody style={{ height: 320 }}>
                   <td colSpan="7" className="text-center">
                     <div className="d-flex justify-content-center mb-4">
-                      <div className="spinner-grow text-primary" role="status">
+                      <div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
                         <span className="visually-hidden">Loading...</span>
                       </div>
                     </div>

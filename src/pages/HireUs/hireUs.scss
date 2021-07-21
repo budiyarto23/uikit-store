@@ -72,3 +72,60 @@
     line-height: 24px;
     color: $font-description-color;
 }
+
+@media (max-width: 576px) {
+    .hire-us-title {
+        font-family: $font-family;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 38px !important;
+        line-height: 52px;
+        color: $font-main-color;
+        margin-top: 40px;
+        text-align: center;
+    }
+
+    .hire-us-description {
+        font-family: $font-family;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        color: $font-description-color;
+        margin-top: 16px;
+        text-align: center;
+    }
+
+    .btn-hire-us {
+        width: 160px;
+        font-size: 16px;
+        height: 54px;
+        margin: 30px 0px 60px 0px;
+    }
+
+    .frame-process {
+        margin-bottom: 40px;
+    }
+
+    .title-work {
+        font-size: 18px;
+        line-height: 22px;
+        color: $font-main-color;
+        margin-bottom: 10px;
+    }
+    
+    .description-work {
+        font-size: 14px;
+        line-height: 18px;
+        color: $font-description-color;
+    }
+}
+
+@media screen and (max-width: 996px) and (min-width: 577px) {
+    .bg-button {
+        justify-content: left;
+      }
+
+      .frame-process {
+        margin-bottom: 40px;
+    }
+}

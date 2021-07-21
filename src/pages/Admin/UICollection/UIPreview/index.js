@@ -40,7 +40,7 @@ export default function UIPreview() {
   }, []);
 
   return (
-    <div className="container-fluid" style={{ background: "#F3F4F6", minHeight: "100vh" }}>
+    <div className="container-fluid" style={{ background: "#F3F4F6", minHeight: "100vh", paddingBottom: 40 }}>
       {loading && (
         <div style={{ paddingTop: 40 }}>
           <DetailSkeleton />
@@ -327,7 +327,7 @@ export default function UIPreview() {
                 </div>
               </div>
 
-              <div className="row mb-5">
+              <div className="row">
                 {cards.data.images.map((src, index) => (
                   <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-3 mt-5">
                     <div className="card-detail card-featured-detail mb-2">

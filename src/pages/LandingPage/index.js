@@ -6,6 +6,8 @@ import Popular from "./Popular/popular";
 import Strength from "./Strength/strength";
 import Footer from "./Footer/footer";
 
+import "./Hero/hero.scss";
+
 export default function LandingPage() {
 
   useEffect(() => {
@@ -14,7 +16,7 @@ export default function LandingPage() {
 
   
   return (
-    <div className="" style={{ background: "#FBFCFF" }}>
+    <div className="bg-landing-page">
       <Header />
       <Hero />
       <Product />
