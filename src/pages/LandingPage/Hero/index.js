@@ -43,7 +43,7 @@ export default function Hero() {
             <div className="d-flex flex-row align-items-center border-cstm">
               <div className="note-divider"></div>
               <div className="header-subtitle">
-              Download intuitive user interface templates for personal or business needs.
+              Get intuitive user interface templates for personal and business needs
               </div>
             </div>
           </div>

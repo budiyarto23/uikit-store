@@ -15,17 +15,16 @@ export default function PricingOption() {
         Pricing Options You Can Adjust
         </p>
         <p className="pricing-subtitle text-center">
-        You can choose the price you needs
+        Choose the price you needs
         </p>
-        <div className="row">
-
-          <div className="col-xs-12 col-md-12 col-lg-4 col-xl-4">
+        <div className="row justify-content-center">
+          <div className="col-xs-12 col-md-12 col-lg-3 col-xl-3">
             <div className="frame-pricing free">
               <div className="d-flex flex-column">
                 <span className="badges-pricing free">FREEMIUM</span>
                 <div className="title-pricing --on">Exactly Free</div>
                 <div className="subtitle-pricing --on">
-                Download free UI kits for individual purpose
+                Get free UI kits for individual purpose
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items mt-2">
                   <img
@@ -105,16 +104,16 @@ export default function PricingOption() {
             </div>
           </div>
           
-          <div className="col-xs-12 col-md-12 col-lg-4 col-xl-4">
+          <div className="col-xs-12 col-md-12 col-lg-3 col-xl-3">
             <div className="frame-pricing premium position-relative">
               <div className="frame-recommended">
                 <div className="recommended">RECOMMENDED</div>
               </div>
               <div className="d-flex flex-column">
                 <span className="badges-pricing premium">PREMIUM</span>
-                <div className="title-pricing premium">Get Premium UI Kits</div>
+                <div className="title-pricing premium">Premium UI Kits</div>
                 <div className="subtitle-pricing premium">
-                Download premium Kits with many amazing features
+                Get premium UI kits with many amazing features
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items mt-4">
                   <img
@@ -194,13 +193,13 @@ export default function PricingOption() {
             </div>
           </div>
           
-          <div className="col-xs-12 col-md-12 col-lg-4 col-xl-4">
+          <div className="col-xs-12 col-md-12 col-lg-3 col-xl-3">
             <div className="frame-pricing buyout-pricing">
               <div className="d-flex flex-column">
                 <span className="badges-pricing buyout-option">BUYOUT OPTION</span>
-                <div className="title-pricing">Get Exclusive Design</div>
+                <div className="title-pricing">Exclusive Only For You</div>
                 <div className="subtitle-pricing">
-                  You will be the first or last to have the design. The design will be removed
+                  You will be the first or last to have the design
                 </div>
                 <div className="d-flex flex-row align-items-center frame-feature-items mt-4">
                   <img
@@ -278,8 +277,7 @@ export default function PricingOption() {
                 </div>
               </div>
             </div>
-          </div>
-        
+          </div>        
         </div>
       </div>
 

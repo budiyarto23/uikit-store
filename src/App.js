@@ -7,9 +7,7 @@ import HireUs from "pages/HireUs";
 import UIKits from "pages/UIKits/UIKits";
 import CustomRequest from "pages/CustomRequest/CustomRequest";
 import PaidDownload from "pages/PaidDownload/PaidDownload";
-import PaymentConfirm from "pages/PaymentConfirm/PaymentConfirm";
 import Detail from "pages/DetailKits/Detail";
-import CustomDesign from "pages/CustomDesign/CustomDesign";
 import PricingOption from "pages/PricingOption/PricingOption";
 import Register from "pages/Admin/Register/index";
 import Login from "pages/Admin/Login/index";
@@ -35,13 +33,11 @@ console.log(userAuth);
       <Switch>
       <Route exact path="/" component={LandingPage} />
       <Route path="/uikits" component={UIKits} />
+      <Route path="/pricing-option" component={PricingOption} />
       <Route path="/hire-us" component={HireUs} />
       <Route path="/detail/:id" component={Detail} />
       <Route path="/:id/custom-request" component={CustomRequest} />
-      <Route path="/custom-design" component={CustomDesign} />
       <Route path="/:id/paid-download" component={PaidDownload} />
-      <Route path="/payment-confirm" component={PaymentConfirm} />
-      <Route path="/pricing-option" component={PricingOption} />
 
       {/* Route admin here */}
 

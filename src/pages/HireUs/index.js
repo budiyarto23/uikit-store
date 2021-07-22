@@ -48,7 +48,7 @@ export default function HireUs() {
           
           <div className="col-sm-12 col-md-12 col-lg-5 col-xl-5 mt-5">
             <div className="row pt-5">
-              <p className="work-process">Our Work Process</p>
+              <p className="work-process text-underline"><ins>Our Work Process</ins></p>
 
               <div className="d-flex flex-column">
                 <div className="d-flex flex-row frame-process">
@@ -75,7 +75,7 @@ export default function HireUs() {
                     alt="v"
                   />
                   <div className="d-flex flex-column">
-                    <div className="title-work">Designe</div>
+                    <div className="title-work">Design</div>
                     <div className="description-work">
                     After defining the problem and research, we start to create a design from wireframe to high fidelity design.
                     </div>
@@ -93,7 +93,7 @@ export default function HireUs() {
                   <div className="d-flex flex-column">
                     <div className="title-work">Validate</div>
                     <div className="description-work">
-                    This step it’s very important because it helps us to understand whether their design works for their users. 
+                    This step it’s very important because it helps us to understand whether their design works for the users. 
                     </div>
                   </div>
                 </div>

@@ -6,7 +6,6 @@ export default function Footer() {
   return (
     <div
       className="container-fluid custom-footer"
-      // style={{ backgroundColor: "#FFF", borderTop: "1px solid #EEE" }}
     >
       <div className="container margin-mobile">
         <div className="row">
@@ -27,13 +26,13 @@ export default function Footer() {
             <div className="d-flex flex-column">
               <p className="footer-title">Company</p>
               <p className="footer-points">
-                <a href="/payment-confirm">About Us</a>
+                <a href="/#">About Us</a>
               </p>
               <p className="footer-points">
-                <a href="/payment-confirm">Support</a>
+                <a href="/#">Support</a>
               </p>
               <p className="footer-points">
-                <a href="/payment-confirm">Be A Contributor</a>
+                <a href="/#">Be A Contributor</a>
               </p>
             </div>
           </div>
@@ -55,12 +54,12 @@ export default function Footer() {
                 </a>
               </p>
               <p className="footer-points">
-                <a href="/payment-confirm" target="_blank" rel="noreferrer">
+                <a href="/#" target="_blank" rel="noreferrer">
                   Instagram
                 </a>
               </p>
               <p className="footer-points">
-                <a href="/payment-confirm" target="_blank" rel="noreferrer">
+                <a href="/#" target="_blank" rel="noreferrer">
                   LinkedIn
                 </a>
               </p>
