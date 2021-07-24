@@ -2,6 +2,10 @@
 @import "../../../assets/scss/mainSytles/fonts";
 
 
+.bg-popular {
+  margin-top: 120px;
+}
+
 .nav-pills .pill-1 .nav-link:not(.active) {
   background-color: #E9E9E9;
   color: #656565 !important;
@@ -91,6 +95,10 @@
 // Mobile responsive css
 
 @media (max-width: 576px) {
+  .bg-popular {
+    margin-top: 90px;
+  }
+
   .popular-title {
     font-size: 32px;
     line-height: 44px;
@@ -189,6 +197,10 @@
 
 
 @media screen and (max-width: 996px) and (min-width: 577px) {
+  .bg-popular {
+    margin-top: 100px;
+  }
+
   .nav-pills .pill-1 .nav-link:not(.active) {
     background-color: #E9E9E9;
     color: #656565 !important;

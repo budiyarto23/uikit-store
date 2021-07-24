@@ -23,9 +23,9 @@ export const addNewKit = (data) => (dispatch) => {
           .push({
             date: data.date,
             status: data.status,
-            linkDownload: data.linkDownload,
             productName: data.productName,
             productDescription: data.productDescription,
+            industries: data.industries,
             category: data.category,
             benefits: data.benefits,
             images: fileDownloadUrls,

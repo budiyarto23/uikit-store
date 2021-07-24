@@ -8,9 +8,10 @@ import FormText from "components/Form/FormText/FormText";
 import Button from "components/Button";
 import PageNotFound from "pages/PageNotFound";
 import { getUiKits } from "config/redux/action";
+import idrFormat from "utils/formatNumber";
+import usdFormat from "utils/formatUSD";
 
 function UICollection() {
-  const maxLengthDesc = 50;
   const [search, setSearch] = useState("");
   const { loading, kitsData } = useSelector((state) => ({
     loading: state.utils.isLoading,
@@ -141,19 +142,14 @@ function UICollection() {
                         {index + 1}
                       </th>
                       <td>{item.data.productName}</td>
-                      <td className="max-description">
-                        {item.data.productDescription.length > maxLengthDesc
-                          ? `${item.data.productDescription.substring(
-                              0,
-                              maxLengthDesc
-                            )}...`
-                          : item.data.productDescription}
-                      </td>
-                      <td>{item.id}</td>
-                      <td>{item.data.productName}</td>
+                      <td>{item.data.category}</td>
+                      <td>{`${idrFormat(
+                            item.data.idrPrice
+                          )} - ${usdFormat(item.data.usdPrice)}`}</td>
+                      <td>-</td>
                       <td>
                         <span className="status-badges available">
-                          AVAILABLE
+                         {item.data.status}
                         </span>
                       </td>
                       <td>

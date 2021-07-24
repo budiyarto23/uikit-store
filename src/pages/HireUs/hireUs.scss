@@ -46,8 +46,15 @@
     margin-bottom: 30px;
 }
 
+// .frame-work-process {
+//     display: flex;
+//     flex-direction: row;
+// }
+
 .frame-process {
     margin-bottom: 30px;
+    display: flex;
+    flex-direction: row;
 }
 
 .custom-icon-hire {
@@ -74,6 +81,19 @@
 }
 
 @media (max-width: 576px) {
+    .frame-process {
+        margin-bottom: 40px;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .custom-icon-hire {
+        margin-right: 30px;
+        margin-bottom: 20px;
+        width: 60px;
+        height: 60px;
+    }
+
     .hire-us-title {
         font-family: $font-family;
         font-style: normal;

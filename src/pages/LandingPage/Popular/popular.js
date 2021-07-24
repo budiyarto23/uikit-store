@@ -63,7 +63,7 @@ export default function Popular() {
     ));
 
   return (
-    <div className="container" style={{ marginTop: 100 }}>
+    <div className="container bg-popular">
       <div className="row mt-3">
         <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
           <p className="popular-title">The Most <span className="variant-text">Popular</span> For You</p>

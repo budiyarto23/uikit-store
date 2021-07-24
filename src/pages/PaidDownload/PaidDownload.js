@@ -10,7 +10,6 @@ import PayPal from "assets/images/paypal.svg";
 import usdFormat from "utils/formatUSD";
 import idrFormat from "utils/formatNumber";
 import PaidDownloadSkeleton from "pages/PaidDownload/PaidSkeleton";
-// import FreeDownloadSkeleton from "pages/CustomRequest/CustomSkeleton";
 
 export default function PaidDownload() {
   const { loading, kitsData } = useSelector((state) => ({
@@ -154,7 +153,7 @@ export default function PaidDownload() {
                               </p>
                             </>
                           ) : (
-                            <p className="value-payment">0</p>
+                            <p className="value-payment">-</p>
                           )}
                         </div>
                       </div>

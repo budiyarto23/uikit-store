@@ -35,8 +35,9 @@
     background-color: #FFF;
 
     &.free {
-        // background-color: $violet-color !important;
-        background: linear-gradient(158.01deg, #B5A0FE 0%, #9B60FA 99.57%);
+        background-color: #FFF !important;
+        border: 1px solid #EAEAEA;
+        // background: linear-gradient(158.01deg, #B5A0FE 0%, #9B60FA 99.57%);
     }
 
     &.premium {
@@ -45,8 +46,9 @@
     }
 
     &.buyout-pricing {
-        // background-color: $secondary-color !important;
-        background: linear-gradient(158.27deg, #1FE9CF 0.79%, #19CFB7 100%);
+        background-color: #FFF !important;
+        border: 1px solid #EAEAEA;
+        // background: linear-gradient(158.27deg, #1FE9CF 0.79%, #19CFB7 100%);
     }
 
 }
@@ -67,7 +69,7 @@
     font-weight: 500;
     text-align: center;
     margin-top: 6px;
-    margin-bottom: 6px;
+    margin-bottom: 4px;
 }
 
 .badges-pricing {
@@ -84,20 +86,27 @@
     width: 100px;
 
     &.free {
-        background: #FFF;
-        color: $violet-color;
+        // background: #FFF;
+        // color: $violet-color;
+        // width: 120px;
+        background: $violet-color;
+        color: #FFF;
         width: 120px;
     }
 
     &.premium {
         background: #FFF;
-        color: $blue-color;
+        // color: $blue-color;
+        color: #63B5FF;
         width: 120px;
     }
 
     &.buyout-option {
-        background: #FFF;
-        color: $secondary-color;
+        // background: #FFF;
+        // color: $secondary-color;
+        // width: 180px;
+        background: $secondary-color;
+        color: #FFF;
         width: 180px;
     }
 }
@@ -108,7 +117,7 @@
     font-weight: 500;
     font-size: 22px;
     line-height: 30px;
-    color: #FFF;
+    color: $font-main-color;
     margin-top: 25px;
 
     &.premium {
@@ -122,7 +131,7 @@
     font-weight: normal;
     font-size: 18px;
     line-height: 26px;
-    color: #FFF;
+    color: $font-description-color;
     margin-top: 12px;
     margin-bottom: 22px;
 
@@ -149,15 +158,23 @@
     color: #FFF;
     margin-left: 18px;
 
+    &.free {
+        color: $font-description-color;
+    }
+
+    &.free-off {
+        color: #B2B2B2;
+    }
+
     &.premium {
         color: #FFF !important;
     }
-    &.--off {
-        color: #D1B4FF;
-    }
-    &.--on {
-        color: #FFF;
-    }
+    // &.--off {
+    //     color: #D1B4FF;
+    // }
+    // &.--on {
+    //     color: #FFF;
+    // }
 }
 
 

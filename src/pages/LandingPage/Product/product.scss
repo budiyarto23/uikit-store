@@ -132,6 +132,9 @@
 
 
 @media (max-width: 576px) {
+  .custom-bg-product {
+    margin-top: 100px;
+  }
 
   .cards {
     box-shadow: 4px 12px 26px 20px rgba(156, 178, 197, 0.06);
@@ -190,6 +193,9 @@
 }
 
 @media screen and (max-width: 996px) and (min-width: 577px) {
+  .custom-bg-product {
+    margin-top: 100px;
+  }
 
   .hack-column-md {
     margin: auto !important;

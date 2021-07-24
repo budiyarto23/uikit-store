@@ -14,6 +14,9 @@ import Footer from "pages/LandingPage/Footer/footer";
 import { getUiKits } from "config/redux/action";
 import DetailSkeleton from "./DetailSkeleton";
 
+// assets
+import Info from "assets/icons/info.svg";
+
 export default function Detail() {
   const { loading, kitsData } = useSelector((state) => ({
     loading: state.utils.isLoading,
@@ -50,12 +53,32 @@ export default function Detail() {
           .map((cards, index) => (
             <div className="container" key={index}>
               <div className="container-detail mt-5">
-                <div className="column-8">
+                <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8">
                   <div className="detail-title">{cards.data.productName}</div>
                   <div className="detail-description">
                     {cards.data.productDescription}
                   </div>
-                  <ul className="nav nav-pills">
+                  <div className="d-flex flex-row mb-2">
+                    <div className="title-customization">
+                      Can be customized for
+                    </div>
+                    <img
+                      src={Info}
+                      alt="inpoh"
+                      className="info-icon"
+                      data-bs-toggle="tooltip"
+                      data-bs-placement="top"
+                      title="Tooltip on top"
+                    />
+                  </div>
+                  {cards.data.industries.map((industry, index) => (
+                    <span key={index}>
+                      <span className="industry-related">{industry.industry}</span>
+                    </span>
+                  ))}
+                  {/* <div className="divider-customization"></div> */}
+
+                  <ul className="nav nav-pills container-pills">
                     <li className="nav-item detail-pill pr-2">
                       <a
                         className="nav-link active nav-pills"
@@ -262,7 +285,9 @@ export default function Detail() {
                                 alt="icon-check-on"
                                 className="feature-icon"
                               />
-                              <div className="feature-name feature-off">Commercial Use</div>
+                              <div className="feature-name feature-off">
+                                Commercial Use
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -276,7 +301,7 @@ export default function Detail() {
                       aria-labelledby="ostrich-tab"
                     >
                       <div className="row">
-                        {Object.keys(cards.data.benefits).map(
+                        {cards.data.benefits.map(
                           (benefit, index) => (
                             <div
                               className="col-sm-12 col-md-6 col-lg-4 col-xl-4"
@@ -288,7 +313,7 @@ export default function Detail() {
                                   alt="icon-check-on"
                                   className="feature-icon"
                                 />
-                                <div className="feature-name">{benefit}</div>
+                                <div className="feature-name">{benefit.benefit}</div>
                               </div>
                             </div>
                           )
@@ -297,7 +322,7 @@ export default function Detail() {
                     </div>
                   </div>
                 </div>
-                <div className="column-4">
+                <div className="col-sm-12 col-md-12 col-lg-4 col-xl-4">
                   <div className="price-container">
                     <div className="detail-price-label">Price</div>
                     <div className="d-flex flex-row align-items-center">

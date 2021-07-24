@@ -15,7 +15,6 @@ import ConfirmIcon from "assets/icons/confirm-payment-success-ic.svg";
 // assets
 
 function AddUIKit() {
-  // consume from redux
   const { loading, modalOpen } = useSelector((state) => ({
     loading: state.utils.isLoading,
     modalOpen: state.utils.modalOpen,
@@ -29,11 +28,11 @@ function AddUIKit() {
   const history = useHistory();
   const date = new Date().getTime();
   const [status, setStatus] = useState("");
-  const [linkDownload, setLinkDownload] = useState("");
   const [productName, setProductName] = useState("");
   const [productDescription, setProductDescription] = useState("");
-  const [category, setCategory] = useState("");
+  const [industries, setIndustries] = useState([{ industry: "" }]);
   const [benefits, setBenefits] = useState([{ benefit: "" }]);
+  const [category, setCategory] = useState("");
   const [idrPrice, setIDRPrice] = useState("");
   const [idrBuyout, setIDRBuyout] = useState("");
   const [usdPrice, setUSDPrice] = useState("");
@@ -52,9 +51,6 @@ function AddUIKit() {
   const handlerProductDescription = (event) => {
     setProductDescription(event.target.value);
   };
-  const handlerLinkDownload = (event) => {
-    setLinkDownload(event.target.value);
-  };
 
   const handlerSelectCategory = (event) => {
     setCategory(event.target.value);
@@ -66,10 +62,6 @@ function AddUIKit() {
     setBenefits(values);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-  };
-
   const handleAddInput = () => {
     setBenefits([...benefits, { benefit: "" }]);
     console.log(setBenefits);
@@ -79,6 +71,26 @@ function AddUIKit() {
     const values = [...benefits];
     values.splice(index, 1);
     setBenefits(values);
+  };
+
+  const handleChangeIndustry = (index, event) => {
+    const values = [...industries];
+    values[index][event.target.name] = event.target.value;
+    setIndustries(values);
+  };
+
+  const handleAddFormIndustry = () => {
+    setIndustries([...industries, { industry: "" }]);
+  };
+
+  const handleDeleteFormIndustry = (index) => {
+    const values = [...industries];
+    values.splice(index, 1);
+    setIndustries(values);
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
 
   // dynamic form
@@ -131,9 +143,9 @@ function AddUIKit() {
       addNewKit({
         date,
         status,
-        linkDownload,
         productName,
         productDescription,
+        industries,
         category,
         benefits,
         images,
@@ -179,16 +191,6 @@ function AddUIKit() {
                 </div>
 
                 <FormText
-                  name="linkDownload"
-                  id="linkDownload"
-                  className=""
-                  type="text"
-                  value={linkDownload}
-                  placeholder="Link Download"
-                  onChange={handlerLinkDownload}
-                />
-
-                <FormText
                   name="ProductName"
                   id="product"
                   className=""
@@ -205,6 +207,45 @@ function AddUIKit() {
                   style={{ marginBottom: 30 }}
                   onChange={handlerProductDescription}
                 />
+
+                <form onSubmit={handleSubmit}>
+                  {industries.map((indusrtyItem, index) => (
+                    <div className="mb-3" key={index}>
+                      <div className="d-flex flex-row">
+                        <input
+                          type="text"
+                          className="form-control mr-2"
+                          name="industry"
+                          value={indusrtyItem.industry}
+                          placeholder="Related Industry"
+                          onChange={(event) =>
+                            handleChangeIndustry(index, event)
+                          }
+                        />
+                        <Button
+                          className={
+                            industries.length === 1
+                              ? "d-none"
+                              : "btn btn-light delete-form-btn"
+                          }
+                          onClick={() => handleDeleteFormIndustry(index)}
+                        >
+                          Delete
+                        </Button>
+                        <Button
+                          className={
+                            industries.length === 9
+                              ? "d-none"
+                              : "btn btn-outline-primary add-form-btn"
+                          }
+                          onClick={() => handleAddFormIndustry()}
+                        >
+                          Add
+                        </Button>
+                      </div>
+                    </div>
+                  ))}
+                </form>
 
                 <div className="form-item">
                   <div className="select-wrap">
@@ -234,7 +275,6 @@ function AddUIKit() {
                           className="form-control mr-2"
                           name="benefit"
                           value={benefitItem.benefit}
-                          // value={benefitItem}
                           placeholder="Benefit"
                           onChange={(event) => handleChangeInput(index, event)}
                         />
@@ -262,17 +302,6 @@ function AddUIKit() {
                     </div>
                   ))}
                 </form>
-
-                {/* <input
-                  className="btn btn-light btn-file custom-btn-file form-control"
-                  style={{ marginBottom: 28 }}
-                  type="file"
-                  accept="image/*"
-                  name="proofPayment"
-                  placeholder="Select preview image"
-                  onChange={handleImageChange}
-                  multiple={true}
-                /> */}
 
                 <div className="file-upload" style={{ marginBottom: 24 }}>
                   <div className="file-select position-relative">
@@ -355,6 +384,7 @@ function AddUIKit() {
                   !productName ||
                   !category ||
                   !productDescription ||
+                  !industries ||
                   !benefits ||
                   !status ||
                   !idrPrice ||
@@ -380,8 +410,8 @@ function AddUIKit() {
               <Modal
                 type="modal-confirm"
                 icon={ConfirmIcon}
-                title="Product Berhasil Ditambahkan"
-                description="Silahkan lihat dan cek detailnya di tabel collection"
+                title="Product Added Success"
+                description="Please see the detail product in collection table"
                 buttonAccept="Input Again"
                 buttonCancel="Go to Table"
                 onClose={modalHide}
