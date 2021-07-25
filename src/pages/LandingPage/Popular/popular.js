@@ -4,24 +4,24 @@ import { useSelector, useDispatch } from "react-redux";
 
 import "./popular.scss";
 import Card from "components/Card/card.js";
-import { getUiKits } from "config/redux/action";
+import { getPopularKits } from "config/redux/action";
 import PopularSkeleton from "./PopularSkeleton";
 
 export default function Popular() {
-  const { loading, kitsData } = useSelector((state) => ({
+  const { loading, kitsPopular } = useSelector((state) => ({
     loading: state.utils.isLoading,
-    kitsData: state.kits.kitsCollection,
+    kitsPopular: state.kits.kitsPopular,
   }));
   const dispatch = useDispatch();
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(getUiKits());
+    dispatch(getPopularKits());
     // eslint-disable-next-line
   }, []);
 
-  const showWebKit = kitsData
-    .filter((webKit) => webKit.data.category === "Web UI")
+  const showWebKit = kitsPopular
+    .filter((webKit) => webKit.data.status === "Available").filter((status) => status.data.category === "Web UI")
     .map((item, index) => (
       <Card
         thumbnailImage={item.data.images[0]}
@@ -34,8 +34,8 @@ export default function Popular() {
       />
     ));
 
-  const showMobileKit = kitsData
-    .filter((mobileKit) => mobileKit.data.category === "Mobile UI")
+  const showMobileKit = kitsPopular
+    .filter((mobileKit) => mobileKit.data.status === "Available").filter((status) => status.data.category === "Mobile UI")
     .map((mobile, index) => (
       <Card
         thumbnailImage={mobile.data.images[0]}
@@ -48,8 +48,8 @@ export default function Popular() {
       />
     ));
 
-  const showDesignSystem = kitsData
-    .filter((mobileKit) => mobileKit.data.category === "Design System")
+  const showDesignSystem = kitsPopular
+    .filter((mobileKit) => mobileKit.data.status === "Available").filter((status) => status.data.category === "Design System")
     .map((mobile, index) => (
       <Card
         thumbnailImage={mobile.data.images[0]}

@@ -9,12 +9,14 @@
 //   margin-right: 8px !important;
 // }
 
-// .badges--free {
-//   @include badge ;
-//   background: lighten($red-color, 26%);
-//   color: $red-color;
-//   margin-right: 8px !important;
-// }
+.badges--free {
+  margin-top: -5px;
+  @include badge ;
+  background: lighten($red-color, 26%);
+  color: $red-color;
+  margin-right: 8px !important;
+  padding: 0.45rem 0.9rem 0.3rem;
+}
 
 // .dollar-price {
 //   @include badge;
@@ -73,6 +75,7 @@
   border: 1px solid #EEE !important;
   border-radius: 10px;
   transition: transform 0.4s !important;
+  height: 460px;
 
   .card-item-product {
     display: flex;
@@ -117,15 +120,26 @@
     margin-top: 6px;
 
     &:hover {
-      color: #2296ff;
+      color: $primary-color;
     }
   }
 }
 
 @media (max-width: 576px) {
   .card-product {
+    height: 427px !important;
+
+    .badges--free {
+      margin-top: 4px;
+      @include badge ;
+      background: lighten($red-color, 26%);
+      color: $red-color;
+      margin-right: 8px !important;
+      padding: 0.45rem 0.9rem 0.3rem;
+    }
+    
     .card-text-product {
-      font-size: 15px;
+      font-size: 16px;
       line-height: 18px;
     }
 

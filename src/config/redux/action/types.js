@@ -12,5 +12,6 @@ export const CHANGE_ISLOGIN = 'CHANGE_ISLOGIN';
 // kits
 export const ADD_KIT_SUCCESS = 'ADD_KIT_SUCCESS';
 export const GET_KITS = 'GET_KITS';
-export const DOWNLOAD_KITS = "DOWNLOAD_KITS"
-export const CUSTOM_KITS = "CUSTOM_KITS"
+export const GET_POPULAR_KITS = "GET_POPULAR_KITS";
+export const DOWNLOAD_KITS = "DOWNLOAD_KITS";
+export const CUSTOM_KITS = "CUSTOM_KITS";

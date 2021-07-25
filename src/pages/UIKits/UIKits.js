@@ -5,7 +5,7 @@ import Header from "pages/LandingPage/Header/Header";
 import Footer from "pages/LandingPage/Footer/footer";
 import Card from "components/Card/card";
 import CardSkeleton from "components/Card/CardSkeleton";
-import { getUiKits } from "config/redux/action";
+import { getUiKits, } from "config/redux/action";
 
 import "./uikits.scss";
 
@@ -42,7 +42,7 @@ export default function UIKits() {
         productName={item.data.productName}
         productDescription={item.data.productDescription}
         key={index.id}
-        price={item.data.idrPrice}
+        price={parseInt(item.data.idrPrice)}
         usdPrice={item.data.usdPrice}
         id={item.id}
       />

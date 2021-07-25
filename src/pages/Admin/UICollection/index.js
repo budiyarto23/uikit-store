@@ -7,7 +7,7 @@ import AdminHeader from "pages/Admin/AdminHeader/index";
 import FormText from "components/Form/FormText/FormText";
 import Button from "components/Button";
 import PageNotFound from "pages/PageNotFound";
-import { getUiKits } from "config/redux/action";
+import { getAllUiKits } from "config/redux/action";
 import idrFormat from "utils/formatNumber";
 import usdFormat from "utils/formatUSD";
 
@@ -21,7 +21,7 @@ function UICollection() {
   const totalCollection = kitsData.length;
 
   const renderUiKits = () => {
-    dispatch(getUiKits());
+    dispatch(getAllUiKits());
     // eslint-disable-next-line
   };
 

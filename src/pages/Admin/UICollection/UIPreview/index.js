@@ -3,7 +3,7 @@ import { useParams, useHistory, Link } from "react-router-dom";
 import ImageViewer from "react-simple-image-viewer";
 import { useSelector, useDispatch } from "react-redux";
 
-import { getUiKits } from "config/redux/action";
+import { getAllUiKits } from "config/redux/action";
 import DetailSkeleton from "pages/DetailKits/DetailSkeleton";
 import CheckOn from "assets/icons/check-available.svg";
 import CheckOff from "assets/icons/check-not-available.svg";
@@ -35,7 +35,7 @@ export default function UIPreview() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
-    dispatch(getUiKits());
+    dispatch(getAllUiKits());
     // eslint-disable-next-line
   }, []);
 

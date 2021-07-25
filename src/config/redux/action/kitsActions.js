@@ -2,6 +2,7 @@ import { database, storage } from "../../firebase";
 import {
   CHANGE_ISLOADING,
   GET_KITS,
+  GET_POPULAR_KITS,
   MODAL_OPEN,
   DOWNLOAD_KITS,
   CUSTOM_KITS,
@@ -53,7 +54,7 @@ export const addNewKit = (data) => (dispatch) => {
 
 export const getUiKits = () => (dispatch) => {
   dispatch({ type: CHANGE_ISLOADING, value: true });
-  const kitsUrl = database.ref(`ui-collections`);
+  const kitsUrl = database.ref(`ui-collections`).orderByChild("status").equalTo("Available");
   return new Promise((resolve, reject) => {
     kitsUrl.on("value", function (snapshot) {
       const data = [];
@@ -69,6 +70,27 @@ export const getUiKits = () => (dispatch) => {
       resolve(snapshot.val());
     });
     // dispatch({ type: SKELETON_ON, value: false });
+    reject(false);
+  });
+};
+
+export const getAllUiKits = () => (dispatch) => {
+  dispatch({ type: CHANGE_ISLOADING, value: true });
+  const kitsUrl = database.ref(`ui-collections`);
+  return new Promise((resolve, reject) => {
+    kitsUrl.on("value", function (snapshot) {
+      const data = [];
+      // eslint-disable-next-line
+      Object.keys(snapshot.val()).map((key) => {
+        data.push({
+          id: key,
+          data: snapshot.val()[key],
+        });
+      });
+      dispatch({ type: GET_KITS, value: data });
+      dispatch({ type: CHANGE_ISLOADING, value: false });
+      resolve(snapshot.val());
+    });
     reject(false);
   });
 };
@@ -89,7 +111,6 @@ export const postPaidDownload = (data) => (dispatch) => {
       })
       .then((res) => {
         console.log("this success download", +res);
-        // dispatch({ type: DOWNLOAD_KITS, value: false });
         dispatch({ type: CHANGE_ISLOADING, value: false });
         resolve(true);
       })
@@ -164,3 +185,25 @@ export const getCustomKits = () => (dispatch) => {
     reject(false);
   });
 };
+
+export const getPopularKits = () => (dispatch) => {
+  dispatch({ type: CHANGE_ISLOADING, value: true });
+  const kitsUrl = database.ref(`ui-collections`).orderByChild("idrPrice").limitToFirst(4);
+  return new Promise((resolve, reject) => {
+    kitsUrl.on("value", function (snapshot) {
+      const data = [];
+      // eslint-disable-next-line
+      Object.keys(snapshot.val()).map((key) => {
+        data.push({
+          id: key,
+          data: snapshot.val()[key],
+        });
+      });
+      dispatch({ type: GET_POPULAR_KITS, value: data });
+      dispatch({ type: CHANGE_ISLOADING, value: false });
+      resolve(snapshot.val());
+    });
+    reject(false);
+  });
+};
+
