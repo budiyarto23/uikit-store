@@ -222,14 +222,13 @@ export default function PaidDownload() {
                           </div>
                         </div>
                       </div>
-                      {/* <div className="container-btn-paid mt-3"> */}
                         <Button
                           type="button"
                           className="btn btn-primary buy-now-button-1"
                           onClick={downloadKit}
                           // isLoading={false}
                         >
-                          Confirm via WhatsApp
+                          Confirm Payment via WhatsApp
                         </Button>
                         <Button
                           type="button"
@@ -237,9 +236,8 @@ export default function PaidDownload() {
                           // onClick={() => setShow(true)}
                           // isLoading={false}
                         >
-                          Confirm via Email
+                          Confirm Payment via Email
                         </Button>
-                      {/* </div> */}
                         <div className="title-buyout mt-5">Notes</div>
                         <div className="description-buyout mb-2" style={{ lineHeight: 2 }}>
                         - You just choose one payment nominal, IDR or USD. <br/> - Admin operational at 08 AM - 09 PM WIB (GMT +7)
@@ -265,7 +263,7 @@ export default function PaidDownload() {
                         {val.data.productDescription}
                       </div>
                       <div className="d-flex flex-row mt-3">
-                        <p className="total-value-payment">Free</p>
+                        <p className="total-value-payment">FREE DOWNLOAD</p>
                       </div>
                       <Button
                         type="button"
@@ -273,23 +271,12 @@ export default function PaidDownload() {
                         //   onClick={() => setShow(true)}
                         //   isLoading={false}
                       >
-                        Confirm via WhatsApp
+                        Request Link Download
                       </Button>
-                      <Button
-                        type="button"
-                        className="btn btn-outline buy-now-button-free mt-4"
-                        //   onClick={() => setShow(true)}
-                        //   isLoading={false}
-                      >
-                        Confirm via Email
-                      </Button>
-                      <div className="paid-container-note">
-                        <div className="title-buyout mt-2">Buy Out Option</div>
-                        <div className="description-buyout mb-2">
-                          This UI Kits will be removed from the store and will
-                          no longer be available for purchase.
+                      <div className="title-buyout mt-5">Notes</div>
+                        <div className="description-buyout mb-2" style={{ lineHeight: 2 }}>
+                        - Please, don't sell this design to keep support us <br/> - Admin operational at 08 AM - 09 PM WIB (GMT +7)
                         </div>
-                      </div>
                     </div>
                   </div>
                 </div>

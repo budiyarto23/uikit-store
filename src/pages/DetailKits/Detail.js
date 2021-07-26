@@ -52,12 +52,11 @@ export default function Detail() {
           .filter((card) => card.id === id)
           .map((cards, index) => (
             <div className="container" key={index}>
-              <div className="container-detail mt-5">
+              <div className="row mt-5">
                 <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8">
+                  <div className="container-detail-kit">
                   <div className="detail-title">{cards.data.productName}</div>
-                  <div className="detail-description">
-                    {cards.data.productDescription}
-                  </div>
+                  <div className="detail-description"> {cards.data.productDescription}</div>
                   <div className="d-flex flex-row mb-2">
                     <div className="title-customization">
                       Can be customized for
@@ -76,7 +75,6 @@ export default function Detail() {
                       <span className="industry-related">{industry.industry}</span>
                     </span>
                   ))}
-                  {/* <div className="divider-customization"></div> */}
 
                   <ul className="nav nav-pills container-pills">
                     <li className="nav-item detail-pill pr-2">
@@ -321,29 +319,27 @@ export default function Detail() {
                       </div>
                     </div>
                   </div>
+                  </div>
                 </div>
+
                 <div className="col-sm-12 col-md-12 col-lg-4 col-xl-4">
                   <div className="price-container">
                     <div className="detail-price-label">Price</div>
                     <div className="d-flex flex-row align-items-center">
-                      {cards.idrPrice !== 0 ? (
-                        <div className="detail-price-rupiah">
-                          {formatNumber(cards.data.idrPrice)}
-                        </div>
+                      {parseInt(cards.data.idrPrice) === 0 ? (
+                        <div className="detail-price-free">FREE DOWNLOAD</div>
                       ) : (
-                        <div className="detail-price-free">Free</div>
+                        <div className="detail-price-rupiah"> {formatNumber(cards.data.idrPrice)} </div>
                       )}
-                      {cards.data.idrPrice !== 0 ? (
-                        <div className="detail-price-dollar">{`- ${usdFormat(
-                          cards.data.usdPrice
-                        )}`}</div>
+                      {parseInt(cards.data.idrPrice) === 0 ? (
+                        <p className="d-none">FREE DOWNLOAD</p>
                       ) : (
-                        <p className="d-none">Free</p>
+                        <div className="detail-price-dollar">{`- ${usdFormat(cards.data.usdPrice)}`}</div>
                       )}
                     </div>
-                    <div className="d-flex flex-column hack-flex-md">
+                    <div className="d-flex flex-column hack-flex-md mt-3 mb-3">
                       <a
-                        className="btn btn-primary hack-md-btn hack-sm-btn"
+                        className="btn btn-primary hack-md-btn hack-sm-btn mb-1"
                         href={`/${id}/paid-download`}
                         target="_blank"
                         rel="noreferrer"
@@ -361,9 +357,11 @@ export default function Detail() {
                         Custom Request
                       </a>
                     </div>
+                    <div className="note-detail">Download or custom the design based on your personal or business needs.</div>
                   </div>
                 </div>
-              </div>
+                </div>
+              {/* </div> */}
 
               <div className="row mt-5 mb-5">
                 {cards.data.images.map((src, index) => (

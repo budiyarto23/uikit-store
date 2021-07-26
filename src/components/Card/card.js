@@ -6,7 +6,7 @@ import idrFormat from "utils/formatNumber";
 import usdFormat from "utils/formatUSD";
 
 export default function Card(props) {
-  const maxLengthDesc = 90;
+  const maxLengthDesc = 86;
   const maxLengthTitle = 26;
 
   return (

@@ -30,7 +30,7 @@
 
 .frame-pricing {
     margin-bottom: 30px;
-    padding: 50px 30px 60px 30px;
+    padding: 36px 30px 60px 30px;
     border-radius: 10px;
     background-color: #FFF;
 
@@ -41,8 +41,8 @@
     }
 
     &.premium {
-        // background-color: $blue-color !important;
-        background: linear-gradient(157.53deg, #6EBAFF 0.58%, #2296FF 101.48%);
+        background-color: $violet-color !important;
+        // background: linear-gradient(157.53deg, #6EBAFF 0.58%, #2296FF 101.48%);
     }
 
     &.buyout-pricing {
@@ -89,7 +89,7 @@
         // background: #FFF;
         // color: $violet-color;
         // width: 120px;
-        background: $violet-color;
+        background: $blue-color;
         color: #FFF;
         width: 120px;
     }
@@ -97,7 +97,7 @@
     &.premium {
         background: #FFF;
         // color: $blue-color;
-        color: #63B5FF;
+        color: $violet-color;
         width: 120px;
     }
 

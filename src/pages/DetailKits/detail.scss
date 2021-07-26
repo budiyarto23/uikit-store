@@ -18,18 +18,24 @@
     font-weight: 500;
     font-size: 24px;
     line-height: 30px;
-    color: #18191F;
-    margin-bottom: 14px;
+    color: $font-main-color;
+    margin-bottom: 20px;
 }
 
-.container-detail {
-    display: flex;
-    flex-direction: row;
+// .container-detail {
+//     display: flex;
+//     flex-direction: row;
+//     background-color: #FFF;
+//     border-radius: 10px;
+//     border: 1px solid #EEE;
+//     padding: 30px 24px 30px 24px;
+// }
+
+.container-detail-kit {
     background-color: #FFF;
     border-radius: 10px;
     border: 1px solid #EEE;
-    padding: 30px 24px 30px 24px;
-    // box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3) !important;
+    padding: 30px;
 }
 
 .hack-sm-btn {
@@ -78,6 +84,14 @@
     margin-top: 22px;
 }
 
+.note-detail {
+    font-family: $font-family;
+    font-size: 16px;
+    font-weight: 400;
+    color: $font-description-color;
+    margin-top: 24px;
+}
+
 .card-detail {
 
     border: 4px solid #FFF !important;
@@ -124,7 +138,7 @@
     line-height: 23px;
     color: $font-description-color;
     margin-top: -6px;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
     max-width: 650px;
 }
 
@@ -161,7 +175,7 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 40px;
-    color: #3F3F3F;
+    color: $font-description-color;
     margin-left: 12px;
 }
 
@@ -170,20 +184,21 @@
 }
 
 .price-container {
-    border: .5px solid #EEEEEE;
+    border: 1px solid #EEE;
     border-radius: 10px;
-    background: rgba(250, 250, 250, 0.5);
+    // background: lighten($primary-color, 48%);
+    background: #FFF;
     padding: 24px;
-    margin-top: 20px;
+    // margin-top: 20px;
 }
 
 .detail-price-label {
     font-family: $font-family;
     font-style: normal;
     font-weight: 400;
-    font-size: 16px;
+    font-size: 18px;
     line-height: 28px;
-    color: #3F3F3F;
+    color: $font-description-color;
     margin-bottom: 10px;
     padding-top: -10px !important;
 }
@@ -194,7 +209,7 @@
     font-weight: 600;
     font-size: 24px;
     line-height: 28px;
-    color: $red-color;
+    color: $font-main-color;
     margin-bottom: 14px;
 }
 
@@ -225,9 +240,10 @@
 }
 
 @media (max-width: 576px) {
-    .container-detail {
-        display: flex;
-        flex-direction: column;
+
+    .container-detail-kit {
+        padding: 20px;
+        margin-bottom: 20px;
     }
 
     .hack-sm-btn {
@@ -339,20 +355,19 @@
 
 
 @media screen and (max-width: 996px) and (min-width: 577px) {
-    .container-detail {
-        display: flex;
-        flex-direction: column;
+    .container-detail-kit {
+        margin-bottom: 26px;
     }
 
-    .column-8 {
-        width: 100%;
-        min-height: 100px;
-    }
-
-    .column-4 {
-        margin-top: 14px;
-        width: 100%;
-        min-height: 100px;
+    .industry-related {
+        @include badge;
+        background: #EEEFF4;
+        font-size: 14px;
+        font-weight: 400 !important;
+        padding: 0.15rem 0.6rem 0.2rem;
+        margin-left: 0px;
+        margin-right: 10px;
+        margin-bottom: 14px;
     }
 
     .hack-flex-md {
