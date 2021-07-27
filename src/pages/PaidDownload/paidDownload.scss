@@ -1,5 +1,6 @@
 @import "../../assets/scss/mainSytles/colors";
 @import "../../assets/scss/mainSytles/fonts";
+@import "../../assets/scss/mainSytles/mixins";
 
 .bg-paid-download {
     background: $background-color;
@@ -9,10 +10,11 @@
 }
 
 .paid-download-container-left {
-    background: #FFF !important;
-    border: 1px solid #EEE;
-    box-sizing: border-box;
-    border-radius: 10px;
+    // background: #FFF !important;
+    // border: 1px solid #DDD;
+    // box-sizing: border-box;
+    // border-radius: 12px;
+    @include container-style;
     padding: 24px;
     // box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3);
 }
@@ -66,7 +68,6 @@
 .paid-preview-img:hover {
     overflow: hidden !important;
     cursor: pointer !important;
-    border-radius: 6px;
     opacity: 0.9;
 
     // img.item-preview-img {
@@ -455,7 +456,6 @@
         width: 100% !important;
         height: 250px !important;
         object-fit: cover !important;
-        border-radius: 10px !important;
     }
 
 
@@ -500,5 +500,19 @@
         font-size: 16px;
         line-height: 20px;
         color: #7e7e7e;
+    }
+
+    .paid-preview-img .item-preview-img {
+        width: 100% !important;
+        height: 300px !important;
+        object-fit: cover !important;
+    }
+}
+
+@media screen and (max-width: 1400px) and (min-width: 997px) {
+    .paid-preview-img .item-preview-img {
+        width: 100% !important;
+        height: 300px !important;
+        object-fit: cover !important;
     }
 }

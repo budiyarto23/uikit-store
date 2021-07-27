@@ -27,9 +27,9 @@ export default function UIKits() {
       thumbnailImage={card.data.images[0]}
       productName={card.data.productName}
       productDescription={card.data.productDescription}
-      key={index.id}
-      price={card.data.idrPrice}
-      usdPrice={card.data.usdPrice}
+      key={index}
+      price={parseInt(card.data.idrPrice)}
+      usdPrice={parseInt(card.data.usdPrice)}
       id={card.id}
     />
   ));
@@ -41,9 +41,9 @@ export default function UIKits() {
         thumbnailImage={item.data.images[0]}
         productName={item.data.productName}
         productDescription={item.data.productDescription}
-        key={index.id}
+        key={index}
         price={parseInt(item.data.idrPrice)}
-        usdPrice={item.data.usdPrice}
+        usdPrice={parseInt(item.data.usdPrice)}
         id={item.id}
       />
     ));
@@ -55,9 +55,9 @@ export default function UIKits() {
         thumbnailImage={mobile.data.images[0]}
         productName={mobile.data.productName}
         productDescription={mobile.data.productDescription}
-        key={index.id}
-        price={mobile.data.idrPrice}
-        usdPrice={mobile.data.usdPrice}
+        key={index}
+        price={parseInt(mobile.data.idrPrice)}
+        usdPrice={parseInt(mobile.data.usdPrice)}
         id={mobile.id}
       />
     ));
@@ -69,9 +69,9 @@ export default function UIKits() {
         thumbnailImage={designSystemItem.data.images[0]}
         productName={designSystemItem.data.productName}
         productDescription={designSystemItem.data.productDescription}
-        key={index.id}
-        price={designSystemItem.data.idrPrice}
-        usdPrice={designSystemItem.data.usdPrice}
+        key={index}
+        price={parseInt(designSystemItem.data.idrPrice)}
+        usdPrice={parseInt(designSystemItem.data.usdPrice)}
         id={designSystemItem.id}
       />
     ));

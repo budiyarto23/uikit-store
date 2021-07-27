@@ -23,3 +23,10 @@
     margin-top: 90px;
     max-width: 500px;
 }
+
+@mixin container-style {
+    border: 1px solid #DDD;
+    border-radius: 12px;
+    background: #FFF;
+    padding: 30px;
+}

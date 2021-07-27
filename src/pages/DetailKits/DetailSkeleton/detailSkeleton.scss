@@ -1,15 +1,21 @@
+@import "../../../assets/scss/mainSytles/colors";
+@import "../../../assets/scss/mainSytles/fonts";
+@import "../../../assets/scss/mainSytles/mixins";
+
 .container-detail-skeleton {
-    border: 1px solid #EEE;
-    border-radius: 6px;
+    // border: 1px solid #EEE;
+    // border-radius: 6px;
+    // background-color: #FFF;
+    
+    @include container-style;
     padding: 30px !important;
-    background-color: #FFF;
 }
 
 .preview-image-skeleton {
     width: calc(50% - 15px);
     margin-bottom: 30px;
     border: 1px solid #EEE;
-    border-radius: 6px;
+    border-radius: 12px;
     background: #FFF;
     padding: 10px !important;
     line-height: 0 !important;
@@ -19,7 +25,7 @@
 }
 
 .item-image-skeleton {
-    border-radius: 8px;
+    border-radius: 15px;
 }
 
 @media (max-width: 576px) {
@@ -27,7 +33,7 @@
         width: calc(100% - 15px);
         margin-bottom: 30px;
         border: 1px solid #EEE;
-        border-radius: 6px;
+        border-radius: 10px;
         background: #FFF;
         padding: 10px !important;
         line-height: 0 !important;
@@ -42,7 +48,7 @@
         width: calc(100% - 15px);
         margin-bottom: 30px;
         border: 1px solid #EEE;
-        border-radius: 6px;
+        border-radius: 12px;
         background: #FFF;
         padding: 10px !important;
         line-height: 0 !important;

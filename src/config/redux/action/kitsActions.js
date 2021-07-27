@@ -54,7 +54,7 @@ export const addNewKit = (data) => (dispatch) => {
 
 export const getUiKits = () => (dispatch) => {
   dispatch({ type: CHANGE_ISLOADING, value: true });
-  const kitsUrl = database.ref(`ui-collections`).orderByChild("status").equalTo("Available");
+  const kitsUrl = database.ref(`ui-collections`).orderByChild("status").equalTo("Available")
   return new Promise((resolve, reject) => {
     kitsUrl.on("value", function (snapshot) {
       const data = [];
@@ -188,7 +188,7 @@ export const getCustomKits = () => (dispatch) => {
 
 export const getPopularKits = () => (dispatch) => {
   dispatch({ type: CHANGE_ISLOADING, value: true });
-  const kitsUrl = database.ref(`ui-collections`).orderByChild("idrPrice").limitToFirst(4);
+  const kitsUrl = database.ref(`ui-collections`).orderByChild("idrPrice").limitToFirst(4)
   return new Promise((resolve, reject) => {
     kitsUrl.on("value", function (snapshot) {
       const data = [];

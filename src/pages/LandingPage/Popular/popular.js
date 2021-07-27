@@ -27,9 +27,9 @@ export default function Popular() {
         thumbnailImage={item.data.images[0]}
         productName={item.data.productName}
         productDescription={item.data.productDescription}
-        key={index.id}
-        price={item.data.idrPrice}
-        usdPrice={item.data.usdPrice}
+        key={index}
+        price={parseInt(item.data.idrPrice)}
+        usdPrice={parseInt(item.data.usdPrice)}
         id={item.id}
       />
     ));
@@ -41,9 +41,9 @@ export default function Popular() {
         thumbnailImage={mobile.data.images[0]}
         productName={mobile.data.productName}
         productDescription={mobile.data.productDescription}
-        key={index.id}
-        price={mobile.data.idrPrice}
-        usdPrice={mobile.data.usdPrice}
+        key={index}
+        price={parseInt(mobile.data.idrPrice)}
+        usdPrice={parseInt(mobile.data.usdPrice)}
         id={mobile.id}
       />
     ));
@@ -55,9 +55,9 @@ export default function Popular() {
         thumbnailImage={mobile.data.images[0]}
         productName={mobile.data.productName}
         productDescription={mobile.data.productDescription}
-        key={index.id}
-        price={mobile.data.idrPrice}
-        usdPrice={mobile.data.usdPrice}
+        key={index}
+        price={parseInt(mobile.data.idrPrice)}
+        usdPrice={parseInt(mobile.data.usdPrice)}
         id={mobile.id}
       />
     ));
@@ -148,6 +148,7 @@ export default function Popular() {
               </div>
             </div>
           </div>
+        
         </div>
       </div>
     </div>

@@ -173,6 +173,10 @@
 }
 
 @media screen and (max-width: 900px) and (min-width: 577px) {
+  .card-product {
+    height: 436px !important;
+  }
+
   .embed-responsive .card-img-top {
     width: 100% !important;
     height: 210px !important;
@@ -183,7 +187,7 @@
 
 @media screen and (max-width: 1200px) and (min-width: 901px) {
   .card-product {
-    height: 450px;
+    height: 414px;
   }
   
   .embed-responsive .card-img-top {

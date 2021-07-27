@@ -52,9 +52,10 @@ export default function Detail() {
           .filter((card) => card.id === id)
           .map((cards, index) => (
             <div className="container" key={index}>
+              <div className="col-12">
               <div className="row mt-5">
                 <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                  <div className="container-detail-kit">
+                  {/* <div className="container-detail-kit"> */}
                   <div className="detail-title">{cards.data.productName}</div>
                   <div className="detail-description"> {cards.data.productDescription}</div>
                   <div className="d-flex flex-row mb-2">
@@ -319,11 +320,11 @@ export default function Detail() {
                       </div>
                     </div>
                   </div>
-                  </div>
+                  {/* </div> */}
                 </div>
 
                 <div className="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                  <div className="price-container">
+                  {/* <div className="price-container"> */}
                     <div className="detail-price-label">Price</div>
                     <div className="d-flex flex-row align-items-center">
                       {parseInt(cards.data.idrPrice) === 0 ? (
@@ -339,7 +340,7 @@ export default function Detail() {
                     </div>
                     <div className="d-flex flex-column hack-flex-md mt-3 mb-3">
                       <a
-                        className="btn btn-primary hack-md-btn hack-sm-btn mb-1"
+                        className="btn btn-primary hack-md-btn hack-sm-btn"
                         href={`/${id}/paid-download`}
                         target="_blank"
                         rel="noreferrer"
@@ -358,14 +359,14 @@ export default function Detail() {
                       </a>
                     </div>
                     <div className="note-detail">Download or custom the design based on your personal or business needs.</div>
-                  </div>
+                  {/* </div> */}
                 </div>
                 </div>
-              {/* </div> */}
+              </div>
 
               <div className="row mt-5 mb-5">
                 {cards.data.images.map((src, index) => (
-                  <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4">
+                  <div className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4" key={index}>
                     <div className="card-detail card-featured-detail">
                       <figure className="img-wrapper-detail">
                         <img

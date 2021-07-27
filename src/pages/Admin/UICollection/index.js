@@ -54,7 +54,7 @@ function UICollection() {
           style={{ backgroundColor: "#F3F4F6", minHeight: "110vh" }}
         >
           <AdminHeader />
-          <div className="container mt-5">
+          <div className="container mt-5 pb-5">
             <div className="title-collection">UI Kits Collection</div>
             <div className="total-collection">Total: {totalCollection}</div>
             <div

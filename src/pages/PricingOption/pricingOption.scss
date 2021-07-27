@@ -30,13 +30,14 @@
 
 .frame-pricing {
     margin-bottom: 30px;
+    @include container-style;
     padding: 36px 30px 60px 30px;
-    border-radius: 10px;
-    background-color: #FFF;
+    // border-radius: 10px;
+    // background-color: #FFF;
 
     &.free {
         background-color: #FFF !important;
-        border: 1px solid #EAEAEA;
+        border: 1px solid #DDD;
         // background: linear-gradient(158.01deg, #B5A0FE 0%, #9B60FA 99.57%);
     }
 
@@ -47,7 +48,7 @@
 
     &.buyout-pricing {
         background-color: #FFF !important;
-        border: 1px solid #EAEAEA;
+        border: 1px solid #DDD;
         // background: linear-gradient(158.27deg, #1FE9CF 0.79%, #19CFB7 100%);
     }
 
@@ -181,9 +182,10 @@
 @media (max-width: 576px) {
     .frame-pricing {
         margin-bottom: 30px;
+        @include container-style;
         padding: 40px 30px 40px 25px;
-        border-radius: 10px;
-        background-color: #FFF;
+        // border-radius: 10px;
+        // background-color: #FFF;
     }
 
     .pricing-title {

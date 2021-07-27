@@ -64,9 +64,9 @@ export default function PaidDownload() {
         kitsData
           .filter((item) => item.id === id)
           .map((val, index) => (
-            <>
+            <div key={index}>
               {val.data.idrPrice !== "0" ? (
-                <div className="row justify-content-center" key={index}>
+                <div className="row justify-content-center">
                   <div className="col-sm-12 col-md-6 col-lg-5 col-xl-5">
                     <div className="paid-download-container-left">
                       <div className="paid-preview-img">
@@ -247,7 +247,7 @@ export default function PaidDownload() {
                 </div>
               ) : (
                 <div className="row justify-content-center">
-                  <div className="col-sm-12 col-md-6 col-lg-5 col-xl-5">
+                  <div className="col-sm-12 col-md-7 col-lg-5 col-xl-5">
                     <div className="paid-download-container-left">
                       <div className="paid-preview-img">
                         <img
@@ -281,7 +281,7 @@ export default function PaidDownload() {
                   </div>
                 </div>
               )}
-            </>
+            </div>
           ))}
     </div>
   );

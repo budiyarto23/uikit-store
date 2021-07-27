@@ -34,12 +34,14 @@ export default function Card(props) {
               </p>
               <div className="divider-horizontal"></div>
               <div className="d-flex flex-row align-items-center mb-2">
-                {parseInt(props.price) === 0 ? (
+                {/* {parseInt(props.price) === 0 ? ( */}
+                {props.price === 0 ? (
                   <span className="badges--free">FREE DOWNLOAD</span>
                 ) : (
                   <span className="rupiah-price">{idrFormat(props.price)}&nbsp; -</span>
                 )} 
-                {parseInt(props.usdPrice) === 0 ? (
+                {/* {parseInt(props.usdPrice) === 0 ? ( */}
+                {props.usdPrice === 0 ? (
                   ""
                 ) : (
                   <div className="dollar-price">

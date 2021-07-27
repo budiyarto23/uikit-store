@@ -68,7 +68,7 @@ export default function CustomRequest() {
                     {val.data.productDescription}
                   </div>
                   <div className="d-flex flex-row mt-3">
-                    {val.data.idrPrice !== 0 ? (
+                    {parseInt(val.data.idrPrice) !== 0 ? (
                       <>
                         <p className="total-value-payment">
                           {idrFormat(val.data.idrPrice)} -
@@ -81,7 +81,7 @@ export default function CustomRequest() {
                         </p>
                       </>
                     ) : (
-                      <p className="total-value-payment">Free</p>
+                      <p className="total-value-payment">FREE DOWNLOAD</p>
                     )}
                   </div>
                   <Button

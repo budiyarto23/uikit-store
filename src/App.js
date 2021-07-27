@@ -26,7 +26,6 @@ import PageNotFound from "pages/PageNotFound";
 function App() {
 
 const userAuth = JSON.parse(localStorage.getItem("userId"));
-console.log(userAuth);
 
   return (
     <Router>
