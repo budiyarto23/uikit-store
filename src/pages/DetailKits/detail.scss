@@ -59,6 +59,7 @@
     background: #EEEFF4;
     margin-left: 0px;
     margin-right: 12px;
+    margin-bottom: 12px;
     padding: 0.15rem 0.6rem 0.2rem;
     font-size: 16px;
     font-weight: 400 !important;
@@ -95,7 +96,7 @@
 
     .cover-img {
         object-fit: cover;
-        height: 420px;
+        height: 460px;
         width: 100%;
 
     }
@@ -131,7 +132,7 @@
 }
 
 .container-pills {
-    margin-top: 34px;
+    margin-top: 30px;
 }
 
 .nav-pills .detail-pill .nav-link:not(.active) {
@@ -141,9 +142,10 @@
     height: 34px;
     line-height: 18px !important;
     transition: ease-out .5s;
+
     &:hover {
-      background: #E0E0E0;
-      transition: 0.5s ease-in;
+        background: #E0E0E0;
+        transition: 0.5s ease-in;
     }
 }
 
@@ -196,7 +198,6 @@
     font-size: 24px;
     line-height: 28px;
     color: $font-main-color;
-    margin-bottom: 14px;
 }
 
 .detail-price-rupiah {
@@ -207,7 +208,6 @@
     line-height: 28px;
     color: $font-main-color;
     margin-right: 12px;
-    margin-bottom: 14px;
 }
 
 .detail-price-dollar {
@@ -218,11 +218,15 @@
     line-height: 28px;
     color: $font-main-color;
     margin-right: 12px;
-    margin-bottom: 14px;
 }
 
 .frame-feature {
     height: 34px;
+    margin-bottom: 4px;
+}
+
+.frame-price {
+    margin-top: 30px;
 }
 
 @media (max-width: 576px) {
@@ -273,7 +277,6 @@
         line-height: 28px;
         color: $font-main-color;
         margin-right: 12px;
-        margin-bottom: 14px;
     }
 
     .detail-price-dollar {
@@ -284,32 +287,31 @@
         line-height: 28px;
         color: $font-main-color;
         margin-right: 12px;
-        margin-bottom: 14px;
     }
 
     .card-detail {
         border: 4px solid #FFF !important;
         border-radius: 12px !important;
         box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3) !important;
-    
+
         .img-wrapper-detail {
             height: 100%;
             margin-bottom: 0;
             border-radius: 10px;
             overflow: hidden;
         }
-    
+
         .cover-img {
             object-fit: cover;
             height: 300px;
             width: 100%;
-    
+
         }
-    
+
         &.card-featured-detail:hover {
             overflow: hidden;
             cursor: pointer;
-    
+
             .img-wrapper-detail {
                 margin: 0;
                 top: 0;
@@ -372,7 +374,7 @@
         padding: 0.15rem 0.6rem 0.2rem;
         margin-left: 0px;
         margin-right: 10px;
-        margin-bottom: 14px;
+        margin-bottom: 12px;
     }
 
     .hack-flex-md {
@@ -441,6 +443,6 @@
     }
 
     .container-pills {
-        margin-top: 12px;
+        margin-top: 25px;
     }
 }

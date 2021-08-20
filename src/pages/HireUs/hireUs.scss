@@ -29,7 +29,7 @@
 .hire-us-description {
     font-family: $font-family;
     font-style: normal;
-    font-size: 18px;
+    font-size: 22px;
     line-height: 32px;
     color: $font-description-color;
     margin-top: 20px;
@@ -132,7 +132,7 @@
         color: $font-main-color;
         margin-bottom: 10px;
     }
-    
+
     .description-work {
         font-size: 16px;
         line-height: 22px;
@@ -141,15 +141,15 @@
 
     .bg-button {
         justify-content: center;
-      }
+    }
 }
 
 @media screen and (max-width: 996px) and (min-width: 577px) {
     .bg-button {
         justify-content: left;
-      }
+    }
 
-      .frame-process {
+    .frame-process {
         margin-bottom: 40px;
     }
 }

@@ -51,12 +51,42 @@ export default function Detail() {
         kitsData
           .filter((card) => card.id === id)
           .map((cards, index) => (
-            <div className="container" key={index}>
+            <div className="container" key={index} style={{ marginBottom: 130 }}>
               <div className="col-12">
-                <div className="master-container">
-                  <div className="row">
-                    <div className="col-sm-12 col-md-12 col-lg-8 col-xl-8">
-                      {/* <div className="container-detail-kit"> */}
+                <div className="row justify-content-center mt-5 mb-5">
+                  {cards.data.images.map((src, index) => (
+                    <div
+                      className="col-sm-12 col-md-12 col-lg-7 col-xl-7 mb-4"
+                      key={index}
+                    >
+                      <div className="card-detail card-featured-detail">
+                        <figure className="img-wrapper-detail">
+                          <img
+                            src={src}
+                            onClick={() => openImageViewer(index)}
+                            key={index}
+                            alt={`index of ${index}`}
+                            className="cover-img"
+                          />
+                        </figure>
+                      </div>
+                    </div>
+                  ))}
+
+                  {isViewerOpen && (
+                    <ImageViewer
+                      src={cards.data.images}
+                      currentIndex={currentImage}
+                      onClose={closeImageViewer}
+                      backgroundStyle={{
+                        backgroundColor: "rgba(0,0,0,0.6)",
+                        zIndex: "+11",
+                      }}
+                    />
+                  )}
+
+                  <div className="col-sm-12 col-md-12 col-lg-5 col-xl-5">
+                    <div className="paid-download-container-left">
                       <div className="detail-title">
                         {cards.data.productName}
                       </div>
@@ -119,7 +149,7 @@ export default function Detail() {
                         >
                           {cards.data.idrPrice !== "0" ? (
                             <div className="row">
-                              <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                 <div className="d-flex flex-row align-items-center frame-feature">
                                   <img
                                     src={CheckOn}
@@ -150,8 +180,6 @@ export default function Detail() {
                                     Developer Friendly
                                   </div>
                                 </div>
-                              </div>
-                              <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <div className="d-flex flex-row align-items-center frame-feature">
                                   <img
                                     src={CheckOn}
@@ -172,6 +200,8 @@ export default function Detail() {
                                     Pixel Perfect
                                   </div>
                                 </div>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                 <div className="d-flex flex-row align-items-center frame-feature">
                                   <img
                                     src={CheckOn}
@@ -182,8 +212,6 @@ export default function Detail() {
                                     Responsive Design
                                   </div>
                                 </div>
-                              </div>
-                              <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <div className="d-flex flex-row align-items-center frame-feature">
                                   <img
                                     src={CheckOn}
@@ -218,7 +246,7 @@ export default function Detail() {
                             </div>
                           ) : (
                             <div className="row">
-                              <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3">
+                              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                 <div className="d-flex flex-row align-items-center frame-feature">
                                   <img
                                     src={CheckOn}
@@ -249,8 +277,6 @@ export default function Detail() {
                                     Developer Friendly
                                   </div>
                                 </div>
-                              </div>
-                              <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <div className="d-flex flex-row align-items-center frame-feature">
                                   <img
                                     src={CheckOn}
@@ -271,6 +297,8 @@ export default function Detail() {
                                     Pixel Perfect
                                   </div>
                                 </div>
+                              </div>
+                              <div className="col-sm-12 col-md-6 col-lg-6 col-xl-6">
                                 <div className="d-flex flex-row align-items-center frame-feature">
                                   <img
                                     src={CheckOff}
@@ -281,8 +309,6 @@ export default function Detail() {
                                     Responsive Design
                                   </div>
                                 </div>
-                              </div>
-                              <div className="col-sm-12 col-md-12 col-lg-3 col-xl-3">
                                 <div className="d-flex flex-row align-items-center frame-feature">
                                   <img
                                     src={CheckOff}
@@ -327,7 +353,7 @@ export default function Detail() {
                           <div className="row">
                             {cards.data.benefits.map((benefit, index) => (
                               <div
-                                className="col-sm-12 col-md-6 col-lg-4 col-xl-4"
+                                className="col-sm-12 col-md-12 col-lg-4 col-xl-4"
                                 key={index}
                               >
                                 <div className="d-flex flex-row align-items-center frame-feature">
@@ -345,13 +371,8 @@ export default function Detail() {
                           </div>
                         </div>
                       </div>
-                      {/* </div> */}
-                    </div>
 
-                    <div className="col-sm-12 col-md-12 col-lg-4 col-xl-4">
-                      <div className="price-container">
-                      <div className="detail-price-label">Price</div>
-                      <div className="d-flex flex-row align-items-center">
+                      <div className="d-flex flex-row align-items-center frame-price">
                         {parseInt(cards.data.idrPrice) === 0 ? (
                           <div className="detail-price-free">FREE DOWNLOAD</div>
                         ) : (
@@ -377,7 +398,10 @@ export default function Detail() {
                         >
                           Download
                         </a>
-                        <div className="m-2"></div>
+                        <div
+                          className="fake-divider"
+                          style={{ margin: 12 }}
+                        ></div>
                         <a
                           className="btn btn-outline hack-md-btn hack-sm-btn"
                           id="btn-hover"
@@ -392,42 +416,8 @@ export default function Detail() {
                         Download or custom the design based on your personal or
                         business needs.
                       </div>
-                      </div>
                     </div>
                   </div>
-                </div>
-
-                <div className="row mt-5 mb-5">
-                  {cards.data.images.map((src, index) => (
-                    <div
-                      className="col-sm-12 col-md-12 col-lg-6 col-xl-6 mb-4"
-                      key={index}
-                    >
-                      <div className="card-detail card-featured-detail">
-                        <figure className="img-wrapper-detail">
-                          <img
-                            src={src}
-                            onClick={() => openImageViewer(index)}
-                            key={index}
-                            alt={`index of ${index}`}
-                            className="cover-img"
-                          />
-                        </figure>
-                      </div>
-                    </div>
-                  ))}
-
-                  {isViewerOpen && (
-                    <ImageViewer
-                      src={cards.data.images}
-                      currentIndex={currentImage}
-                      onClose={closeImageViewer}
-                      backgroundStyle={{
-                        backgroundColor: "rgba(0,0,0,0.6)",
-                        zIndex: "+11",
-                      }}
-                    />
-                  )}
                 </div>
               </div>
             </div>
