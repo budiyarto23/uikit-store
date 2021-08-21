@@ -8,7 +8,7 @@ export default function index() {
     <>
       <div className="row justify-content-center">
         <div className="col-sm-12 col-md-6 col-lg-5 col-xl-5">
-          <div className="paid-download-container-left">
+          <div className="paid-download-container-left"> 
             <Skeleton width={"100%"} height={300} />
             <h3>
               <Skeleton width={"80%"} className="mt-4" />

@@ -34,7 +34,7 @@ export default function Strength() {
               className="btn btn-primary btn-small-1 btn-recommended"
               onClick={routeUIKits}
             >
-              See More
+              See Recommended UI Kits
             </Button>
           </div>
         </div>

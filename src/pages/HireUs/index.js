@@ -50,10 +50,10 @@ export default function HireUs() {
           </div>
 
           <div className="col-sm-12 col-md-12 col-lg-5 col-xl-5 mt-5">
-            <div className="row pt-5">
+            <div className="row">
               <div className="col-12">
-              <p className="work-process text-underline">
-                <ins>Our Work Process</ins>
+              <p className="work-process">
+                Our Work Process
               </p>
 
               <div className="frame-process">
@@ -72,8 +72,7 @@ export default function HireUs() {
                 <div className="d-flex flex-column">
                   <div className="title-work">Design</div>
                   <div className="description-work">
-                    After defining the problem and research, we start to create
-                    a design from wireframe to high fidelity design.
+                  After defining the problem and research, we jump to start creating the design.
                   </div>
                 </div>
               </div>
@@ -83,8 +82,7 @@ export default function HireUs() {
                 <div className="d-flex flex-column">
                   <div className="title-work">Validate</div>
                   <div className="description-work">
-                    This step it’s very important because it helps us to
-                    understand whether their design works for the users.
+                  This step helps us to confirm the design works or not for the users.
                   </div>
                 </div>
               </div>
@@ -94,8 +92,7 @@ export default function HireUs() {
                 <div className="d-flex flex-column">
                   <div className="title-work">Delivery</div>
                   <div className="description-work">
-                    The design delivers to the client with a full document to
-                    customization, with Figma, Adobe XD file and etc.
+                  The design delivers to the client with a full document and source in Figma, Adobe XD file etc.
                   </div>
                 </div>
               </div>
