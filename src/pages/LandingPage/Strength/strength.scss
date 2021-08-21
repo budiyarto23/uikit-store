@@ -11,6 +11,7 @@
   color: $font-main-color;
   text-align: left;
   max-width: 470px;
+  margin-top: 70px;
 }
 
 .strength-description-main {
@@ -35,9 +36,9 @@
 .recommended-title {
   font-family: $font-family;
   font-size: 18px;
-  font-weight: 500;
-  color: $font-main-color;
-  margin-bottom: 8px;
+  font-weight: 600;
+  color: $font-description-color;
+  margin-bottom: 5px;
 }
 
 .recommended-description {
@@ -50,35 +51,104 @@
   max-width: 450px;
 }
 
+// .frame-recom {
+//   background: #FFF;
+//   border-radius: 10px;
+//   padding: 16px 24px 18px 24px;
+//   box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3);
+//   margin-bottom: 20px;
+// }
+
 .frame-recom {
-  background: #FFF;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  background: #FFFFFF;
+  box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3);
   border-radius: 10px;
   padding: 16px 24px 18px 24px;
-  box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3);
-  margin-bottom: 20px;
 }
 
+.ornament-strength {
+  top: -20px !important;
+  left: -80px;
+}
 
-@media (max-width: 576px) {
+@media screen and (max-width: 996px) and (min-width: 577px) {
+  .ornament-strength {
+    display: none;
+  }
+
   .strength-title-main {
-    font-family: $font-family;
-    font-style: normal;
-    font-weight: bold;
     font-size: 32px !important;
     line-height: 44px;
-    color: $font-main-color;
     text-align: center;
+    margin: auto;
+    max-width: 470px;
   }
 
   .strength-description-main {
-    font-family: $font-family;
-    font-style: normal;
-    font-size: 18px;
-    color: $font-description-color;
-    margin-top: 16px;
+    font-size: 22px;
+    line-height: 32px;
+    margin: auto;
+    margin-top: 35px;
     text-align: center;
-    line-height: 24px;
+    max-width: 470px;
   }
+
+  .frame-btn-recommended {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .frame-recom {
+    padding: 16px 24px 18px 24px;
+    margin-bottom: 20px;
+  }
+
 }
 
-@media screen and (max-width: 996px) and (min-width: 577px) {}
+@media (max-width: 576px) {
+  .ornament-strength {
+    display: none;
+  }
+
+  .strength-title-main {
+    font-size: 32px !important;
+    line-height: 44px;
+    text-align: center;
+    margin: auto;
+  }
+
+  .strength-description-main {
+    font-size: 20px;
+    line-height: 28px;
+    margin: auto;
+    margin-top: 35px;
+    text-align: center;
+    max-width: 320px;
+  }
+
+  .frame-btn-recommended {
+    justify-content: center;
+    margin-bottom: 40px;
+  }
+
+  .frame-recom {
+    // margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    // background: #FFFFFF;
+    // box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3);
+    // border-radius: 10px;
+    // padding: 16px 24px 18px 24px;
+  }
+
+  .recommended-icon {
+    margin-right: 30px;
+    margin-bottom: 14px;
+    width: 60px;
+    height: 60px;
+  }
+
+}

@@ -20,7 +20,6 @@
 .btn-hire-us {
     width: 160px;
     font-size: 16px;
-    // font-weight: 500;
     height: 54px;
     margin: 50px 0px 60px 0px;
 }
@@ -46,15 +45,14 @@
     margin-bottom: 30px;
 }
 
-// .frame-work-process {
-//     display: flex;
-//     flex-direction: row;
-// }
-
 .frame-process {
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     display: flex;
     flex-direction: row;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 3px rgba(217, 219, 225, 0.3);
+    border-radius: 10px;
+    padding: 16px 24px 18px 24px;
 }
 
 .custom-icon-hire {
@@ -64,11 +62,11 @@
 .title-work {
     font-family: $font-family;
     font-style: normal;
-    font-weight: 500;
-    font-size: 20px;
+    font-weight: 600;
+    font-size: 18px;
     line-height: 30px;
-    color: $font-main-color;
-    margin-bottom: 7px;
+    color: $font-description-color;
+    margin-bottom: 4px;
 }
 
 .description-work {
@@ -82,7 +80,7 @@
 
 @media (max-width: 576px) {
     .frame-process {
-        margin-bottom: 40px;
+        margin-bottom: 20px !important;
         display: flex;
         flex-direction: column;
     }

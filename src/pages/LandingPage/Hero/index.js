@@ -44,12 +44,6 @@ export default function Hero() {
                 Custom Design
               </a> */}
             </div>
-            {/* <div className="d-flex flex-row align-items-center border-cstm">
-              <div className="note-divider"></div>
-              <div className="header-subtitle">
-              Get free intuitive user interface templates for personal and business needs
-              </div>
-            </div> */}
           </div>
         </div>
 

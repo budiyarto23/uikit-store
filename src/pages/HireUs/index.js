@@ -51,6 +51,7 @@ export default function HireUs() {
 
           <div className="col-sm-12 col-md-12 col-lg-5 col-xl-5 mt-5">
             <div className="row pt-5">
+              <div className="col-12">
               <p className="work-process text-underline">
                 <ins>Our Work Process</ins>
               </p>
@@ -97,6 +98,7 @@ export default function HireUs() {
                     customization, with Figma, Adobe XD file and etc.
                   </div>
                 </div>
+              </div>
               </div>
             </div>
           </div>
