@@ -65,7 +65,6 @@
   display: flex;
   margin-bottom: 2rem;
   width: 100%;
-  // box-shadow: 4px 12px 26px 20px rgba(156, 178, 197, 0.1);
   border: 1px solid #EEEEEE !important;
   border-radius: 12px;
   transition: transform 0.4s;
@@ -74,9 +73,7 @@
     
     transition: transform 0.5s;
     transform: translateY(-4px);
-    // box-shadow: 0px 16px 24px rgba(0, 0, 0, 0.06), 0px 2px 6px rgba(0, 0, 0, 0.04), 0px 0px 1px rgba(0, 0, 0, 0.04);
-    // box-shadow: 0px 10px 16px rgba(167, 167, 167, 0.2);
-    box-shadow: 0px 10px 16px rgba(156, 178, 197, 0.2);
+    box-shadow: 0px 8px 12px rgba(156, 178, 197, 0.1);
 
   }
 

@@ -19,7 +19,7 @@ export default function Strength() {
 
   return (
     <div className="container">
-      <div className="row" style={{ marginBottom: 140, marginTop: 100 }}>
+      <div className="row" style={{ marginBottom: 140, marginTop: 120 }}>
         <div className="col-sm-12 col-md-12 col-lg-7 col-xl-7">
           <div className="strength-title-main">
             Who Is <span className="variant-text">Recommended</span> To Use Our

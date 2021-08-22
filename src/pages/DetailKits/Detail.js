@@ -51,9 +51,13 @@ export default function Detail() {
         kitsData
           .filter((card) => card.id === id)
           .map((cards, index) => (
-            <div className="container" key={index} style={{ marginBottom: 130 }}>
+            <div
+              className="container"
+              key={index}
+              style={{ marginBottom: 130 }}
+            >
               <div className="col-12">
-                <div className="row justify-content-center mt-5 mb-5">
+                <div className="row justify-content-center mt-5 mb-5 reverse-column-md-sm">
                   {cards.data.images.map((src, index) => (
                     <div
                       className="col-sm-12 col-md-12 col-lg-7 col-xl-7 mb-4"
@@ -86,7 +90,7 @@ export default function Detail() {
                   )}
 
                   <div className="col-sm-12 col-md-12 col-lg-5 col-xl-5">
-                    <div className="paid-download-container-left">
+                    <div className="container-detail-kit">
                       <div className="detail-title">
                         {cards.data.productName}
                       </div>

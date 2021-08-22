@@ -19,7 +19,7 @@ export default function Product() {
       <p className="title-product mt-5">
       Available <span className="variant-text">UI Kits</span> Categories
       </p>
-      <p className="description-product">Lorem ispum this is description bebiebh</p>
+      <p className="description-product">Three categories that can solve your problems.</p>
         <div className="row product-responsive">
           <div className="col col-sm-12 col-md-6 col-lg-4 col-xl-4 product-margin-responsive">
             <div className="cards cards-responsive">

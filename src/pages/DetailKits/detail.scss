@@ -29,9 +29,6 @@
 }
 
 .container-detail-kit {
-    // background-color: #FFF;
-    // border-radius: 10px;
-    // border: 1px solid #EEE;
     @include container-style;
     padding: 30px;
 }
@@ -230,10 +227,14 @@
 }
 
 @media (max-width: 576px) {
-
+    .reverse-column-md-sm {
+        display: flex;
+        flex-flow: column-reverse;
+    }
+    
     .container-detail-kit {
-        padding: 12px;
-        margin-bottom: 12px;
+        padding: 18px;
+        margin-bottom: 20px;
     }
 
     .detail-title {
@@ -358,8 +359,13 @@
 
 
 @media screen and (max-width: 996px) and (min-width: 577px) {
+    .reverse-column-md-sm {
+        display: flex;
+        flex-flow: column-reverse;
+    }
+
     .container-detail-kit {
-        margin-bottom: 26px;
+        margin-bottom: 30px;
     }
 
     .price-container {

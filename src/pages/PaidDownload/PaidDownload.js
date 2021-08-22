@@ -262,12 +262,12 @@ export default function PaidDownload() {
                       <div className="paid-description-name">
                         {val.data.productDescription}
                       </div>
-                      <div className="d-flex flex-row mt-3">
+                      <div className="d-flex flex-row mt-5">
                         <p className="total-value-payment">FREE DOWNLOAD</p>
                       </div>
                       <Button
                         type="button"
-                        className="btn btn-primary buy-now-button mt-4"
+                        className="btn btn-primary buy-now-button"
                         //   onClick={() => setShow(true)}
                         //   isLoading={false}
                       >
