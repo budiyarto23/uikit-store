@@ -41,7 +41,7 @@ export default function Hero() {
                 href="/custom-design"
                 className="btn btn-outline-primary btn-small-2"
               >
-                Custom Design
+                Consultation Now
               </a> */}
             </div>
           </div>
