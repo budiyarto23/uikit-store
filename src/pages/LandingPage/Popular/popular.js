@@ -66,7 +66,7 @@ export default function Popular() {
     <div className="container bg-popular">
       <div className="row mt-3">
         <div className="col-sm-12 col-md-12 col-lg-12 col-xl-12">
-          <p className="popular-title">The Most <span className="variant-text">Popular</span> For You</p>
+          <p className="popular-title">The <span className="variant-text">Most Popular</span> For You</p>
           <p className="description-product">Don't miss the most popular UI Kits.</p>
           <ul className="nav nav-pills mt-4">
             <li className="nav-item pill-1">

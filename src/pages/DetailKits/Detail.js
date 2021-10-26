@@ -56,8 +56,7 @@ export default function Detail() {
               key={index}
               style={{ marginBottom: 130 }}
             >
-              <div className="col-12">
-                <div className="row justify-content-center mt-5 mb-5 reverse-column-md-sm">
+                <div className="row mt-5 mb-5 reverse-column-md-sm">
                   {cards.data.images.map((src, index) => (
                     <div
                       className="col-sm-12 col-md-12 col-lg-7 col-xl-7 mb-4"
@@ -422,8 +421,8 @@ export default function Detail() {
                       </div>
                     </div>
                   </div>
+                
                 </div>
-              </div>
             </div>
           ))}
 

@@ -21,6 +21,7 @@ const DetailSkeleton = () => {
               ))}
           </ul>
         </div>
+        
         <div className="col-sm-12 col-md-12 col-lg-5 col-xl-5">
           <div className="paid-download-container-left mt-5">
             <Skeleton width={"90%"} height={40} />
@@ -33,7 +34,6 @@ const DetailSkeleton = () => {
             <h5>
               <Skeleton width={"60%"} className="mt-2" />
               <Skeleton width={"50%"} className="mt-2" />
-              {/* <Skeleton width={"60%"} className="mt-2" /> */}
             </h5>
             <Skeleton width={"30%"} height={40} className="mt-4" style={{ marginRight: 20 }} />
             <Skeleton width={"30%"} height={40} className="mt-4" />
